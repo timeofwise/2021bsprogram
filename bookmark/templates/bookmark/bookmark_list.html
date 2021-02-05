@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}Bookmark List -{% endblock %}
+
+{% block content %}
+<div class="btn-group">
+    <a href="{% url 'add' %}" class="btn btn-info">BS 대상 설비 추가</a>
+</div>
+<p></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">고객사</th>
+            <th scope="col">설비</th>
+            <th scope="col">시리얼 번호</th>
+            <th scope="col">점검자</th>
+            <th scope="col">확인자</th>
+            <th scope="col">결과</th>
+            <th scope="col">진단 및 확인</th>
+            <th scope="col">삭제</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for bookmark in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'detail' pk=bookmark.id %}">{{ bookmark.client }}</a></td>
+                <td>{{ bookmark.model_type }}</td>
+                <td>{{ bookmark.model_no }}</td>
+                <td>{{ bookmark.inspector }}</td>
+                <td>{{ bookmark.manager }}</td>
+
+                {% if bookmark.confirm_bs != 1 %}
+                <td><span>-</span></td>
+                {% elif bookmark.manager != None %}
+                <td><span id="confirmed">완료</span></td>
+                {% else %}
+                <td><span id="not_confirmed">미완료</span></td>
+                {% endif %}
+
+                {% if bookmark.confirm_bs != 1 %}
+                <td><a href="{% url 'update' pk=bookmark.id %}" class="btn btn-success btn-sm">결과입력</a></td>
+                {% elif bookmark.manager != None %}
+                <td><a href="{% url 'update' pk=bookmark.id %}" class="btn btn-success btn-sm disabled">결과입력</a></td>
+                {% else %}
+                <td><a href="{% url 'update' pk=bookmark.id %}" class="btn btn-success btn-sm">결과입력</a></td>
+                {% endif %}
+
+                {% if bookmark.confirm_bs != 1 %}
+                <td><a href="{% url 'delete' pk=bookmark.id %}" class="btn btn-danger btn-sm">삭제</a></td>
+                {% elif bookmark.manager != None %}
+                <td><a href="{% url 'delete' pk=bookmark.id %}" class="btn btn-danger btn-sm disabled">삭제</a></td>
+                {% else %}
+                <td><a href="{% url 'delete' pk=bookmark.id %}" class="btn btn-danger btn-sm">삭제</a></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block pagination %}
+    {% if is_paginated %}
+        <ul class="pagination justify-content-center pagination-sm">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'list' %}?page={{ page_obj.previous_page_number }}" tabindex="-1">이전</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">이전</a>
+                </li>
+            {% endif %}
+
+            {% for object in page_obj.paginator.page_range %}
+                <li class="page-item {% if page_obj.number == forloop.counter %} disabled {% endif %}">
+                    <a class="page-link" href="{{ request.path }}?page={{ forloop.counter }}">{{ forloop.counter }}</a>
+                </li>
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'list' %}?page={{ page_obj.next_page_number }}" tabindex="-1">다음</a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">다음</a>
+                </li>
+            {% endif %}
+        </ul>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,471 @@
+{% extends 'base.html' %}
+
+{% block title %}Bookmark Update -{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>고객사</th>
+                <th>설비 모델</th>
+                <th>설비 일련번호</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{object.client}}</td>
+                <td>{{object.model_type}}</td>
+                <td><input type="text" name="model_no" value="{{object.model_no}}" maxlength="20" required="" id="id_model_no"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>점검 항목</th>
+                <th>세부 항목</th>
+                <th>OK</th>
+                <th>NG</th>
+                <th>비고</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Software</td>
+                <td>최신 버전 확인</td>
+                {% if object.col1 == 1 %}
+                <td><input type="radio" name="col1" value="1" checked="checked" required="" id="id_col1"></td>
+                <td><input type="radio" name="col1" value="2" required="" id="id_col1"></td>
+                {% else %}
+                <td><input type="radio" name="col1" value="1" required="" id="id_col1"></td>
+                <td><input type="radio" name="col1" value="2" checked="checked" required="" id="id_col1"></td>
+                {% endif %}
+                <td><input type="text" name="col1_txt" value="{{object.col1_txt}}" maxlength="150" required="" id="id_col1_txt"></td>
+            </tr>
+            <tr>
+                <td rowspan="9">Head & ANC</td>
+                <td>Ball Spindle, LM 상태, Grease주입 확인</td>
+                {% if object.col2 == 1 %}
+                <td><input type="radio" name="col2" value="1" checked="checked" required="" id="id_col2"></td>
+                <td><input type="radio" name="col2" value="2" required="" id="id_col2"></td>
+                {% else %}
+                <td><input type="radio" name="col2" value="1" required="" id="id_col2"></td>
+                <td><input type="radio" name="col2" value="2" checked="checked" required="" id="id_col2"></td>
+                {% endif %}
+                <td><input type="text" name="col2_txt" value="{{object.col2_txt}}" maxlength="150" required="" id="id_col2_txt"></td>
+            </tr>
+            <tr>
+                <td>Compliance부 원활한 움직임, 직진성, 막힘 상태 확인</td>
+                {% if object.col3 == 1 %}
+                <td><input type="radio" name="col3" value="1" checked="checked" required="" id="id_col3"></td>
+                <td><input type="radio" name="col3" value="2" required="" id="id_col3"></td>
+                {% else %}
+                <td><input type="radio" name="col3" value="1" required="" id="id_col3"></td>
+                <td><input type="radio" name="col3" value="2" checked="checked" required="" id="id_col3"></td>
+                {% endif %}
+                <td><input type="text" name="col3_txt" value="{{object.col3_txt}}" maxlength="150" required="" id="id_col3_txt"></td>
+            </tr>
+            <tr>
+                <td>Coil Tube마모, 빠짐, 굽혀짐 상태 확인</td>
+                {% if object.col4 == 1 %}
+                <td><input type="radio" name="col4" value="1" checked="checked" required="" id="id_col4"></td>
+                <td><input type="radio" name="col4" value="2" required="" id="id_col4"></td>
+                {% else %}
+                <td><input type="radio" name="col4" value="1" required="" id="id_col4"></td>
+                <td><input type="radio" name="col4" value="2" checked="checked" required="" id="id_col4"></td>
+                {% endif %}
+                <td><input type="text" name="col4_txt" value="{{object.col4_txt}}" maxlength="150" required="" id="id_col4_txt"></td>
+            </tr>
+            <tr>
+                <td>Nozzle 선단 마모, 막힘, 내부 오염 상태 확인</td>
+                {% if object.col5 == 1 %}
+                <td><input type="radio" name="col5" value="1" checked="checked" required="" id="id_col5"></td>
+                <td><input type="radio" name="col5" value="2" required="" id="id_col5"></td>
+                {% else %}
+                <td><input type="radio" name="col5" value="1" required="" id="id_col5"></td>
+                <td><input type="radio" name="col5" value="2" checked="checked" required="" id="id_col5"></td>
+                {% endif %}
+                <td><input type="text" name="col5_txt" value="{{object.col5_txt}}" maxlength="150" required="" id="id_col5_txt"></td>
+            </tr>
+            <tr>
+                <td>Head별 Vacuum Test시 압력 상태 확인</td>
+                {% if object.col6 == 1 %}
+                <td><input type="radio" name="col6" value="1" checked="checked" required="" id="id_col6"></td>
+                <td><input type="radio" name="col6" value="2" required="" id="id_col6"></td>
+                {% else %}
+                <td><input type="radio" name="col6" value="1" required="" id="id_col6"></td>
+                <td><input type="radio" name="col6" value="2" checked="checked" required="" id="id_col6"></td>
+                {% endif %}
+                <td><input type="text" name="col6_txt" value="{{object.col6_txt}}" maxlength="150" required="" id="id_col6_txt"></td>
+            </tr>
+            <tr>
+                <td>Vacuum Generator/Vaccum Pump 상태 점검</td>
+                {% if object.col7 == 1 %}
+                <td><input type="radio" name="col7" value="1" checked="checked" required="" id="id_col7"></td>
+                <td><input type="radio" name="col7" value="2" required="" id="id_col7"></td>
+                {% else %}
+                <td><input type="radio" name="col7" value="1" required="" id="id_col7"></td>
+                <td><input type="radio" name="col7" value="2" checked="checked" required="" id="id_col7"></td>
+                {% endif %}
+                <td><input type="text" name="col7_txt" value="{{object.col7_txt}}" maxlength="150" required="" id="id_col7_txt"></td>
+            </tr>
+            <tr>
+                <td>Head Blow 압력 조정 상태 확인</td>
+                {% if object.col8 == 1 %}
+                <td><input type="radio" name="col8" value="1" checked="checked" required="" id="id_col8"></td>
+                <td><input type="radio" name="col8" value="2" required="" id="id_col8"></td>
+                {% else %}
+                <td><input type="radio" name="col8" value="1" required="" id="id_col8"></td>
+                <td><input type="radio" name="col8" value="2" checked="checked" required="" id="id_col8"></td>
+                {% endif %}
+                <td><input type="text" name="col8_txt" value="{{object.col8_txt}}" maxlength="150" required="" id="id_col8_txt"></td>
+            </tr>
+            <tr>
+                <td>Head Z축 offset 확인</td>
+                {% if object.col9 == 1 %}
+                <td><input type="radio" name="col9" value="1" checked="checked" required="" id="id_col9"></td>
+                <td><input type="radio" name="col9" value="2" required="" id="id_col9"></td>
+                {% else %}
+                <td><input type="radio" name="col9" value="1" required="" id="id_col9"></td>
+                <td><input type="radio" name="col9" value="2" checked="checked" required="" id="id_col9"></td>
+                {% endif %}
+                <td><input type="text" name="col9_txt" value="{{object.col9_txt}}" maxlength="150" required="" id="id_col9_txt"></td>
+            </tr>
+            <tr>
+                <td>ANC Position 확인</td>
+                {% if object.col10 == 1 %}
+                <td><input type="radio" name="col10" value="1" checked="checked" required="" id="id_col10"></td>
+                <td><input type="radio" name="col10" value="2" required="" id="id_col10"></td>
+                {% else %}
+                <td><input type="radio" name="col10" value="1" required="" id="id_col10"></td>
+                <td><input type="radio" name="col10" value="2" checked="checked" required="" id="id_col10"></td>
+                {% endif %}
+                <td><input type="text" name="col10_txt" value="{{object.col10_txt}}" maxlength="150" required="" id="id_col10_txt"></td>
+            </tr>
+            <tr>
+                <td rowspan="6">X-Y Frame</td>
+                <td>LM Guide오염 및 Grease주입 확인</td>
+                {% if object.col11 == 1 %}
+                <td><input type="radio" name="col11" value="1" checked="checked" required="" id="id_col11"></td>
+                <td><input type="radio" name="col11" value="2" required="" id="id_col11"></td>
+                {% else %}
+                <td><input type="radio" name="col11" value="1" required="" id="id_col11"></td>
+                <td><input type="radio" name="col11" value="2" checked="checked" required="" id="id_col11"></td>
+                {% endif %}
+                <td><input type="text" name="col11_txt" value="{{object.col11_txt}}" maxlength="150" required="" id="id_col11_txt"></td>
+            </tr>
+            <tr>
+                <td>Ball Screw오염 및 Grease주입 확인</td>
+                {% if object.col12 == 1 %}
+                <td><input type="radio" name="col12" value="1" checked="checked" required="" id="id_col12"></td>
+                <td><input type="radio" name="col12" value="2" required="" id="id_col12"></td>
+                {% else %}
+                <td><input type="radio" name="col12" value="1" required="" id="id_col12"></td>
+                <td><input type="radio" name="col12" value="2" checked="checked" required="" id="id_col12"></td>
+                {% endif %}
+                <td><input type="text" name="col12_txt" value="{{object.col12_txt}}" maxlength="150" required="" id="id_col12_txt"></td>
+            </tr>
+            <tr>
+                <td>Timing Belt장력 및 마모 상태 확인</td>
+                {% if object.col13 == 1 %}
+                <td><input type="radio" name="col13" value="1" checked="checked" required="" id="id_col13"></td>
+                <td><input type="radio" name="col13" value="2" required="" id="id_col13"></td>
+                {% else %}
+                <td><input type="radio" name="col13" value="1" required="" id="id_col13"></td>
+                <td><input type="radio" name="col13" value="2" checked="checked" required="" id="id_col13"></td>
+                {% endif %}
+                <td><input type="text" name="col13_txt" value="{{object.col13_txt}}" maxlength="150" required="" id="id_col13_txt"></td>
+            </tr>
+            <tr>
+                <td>구동부 Cableveyor내 피복 상태 및 마모 확인</td>
+                {% if object.col14 == 1 %}
+                <td><input type="radio" name="col14" value="1" checked="checked" required="" id="id_col14"></td>
+                <td><input type="radio" name="col14" value="2" required="" id="id_col14"></td>
+                {% else %}
+                <td><input type="radio" name="col14" value="1" required="" id="id_col14"></td>
+                <td><input type="radio" name="col14" value="2" checked="checked" required="" id="id_col14"></td>
+                {% endif %}
+                <td><input type="text" name="col14_txt" value="{{object.col14_txt}}" maxlength="150" required="" id="id_col14_txt"></td>
+            </tr>
+            <tr>
+                <td>X-Y Limit Sensor 및 Sensor Dog  오염 상태 확인</td>
+                {% if object.col15 == 1 %}
+                <td><input type="radio" name="col15" value="1" checked="checked" required="" id="id_col15"></td>
+                <td><input type="radio" name="col15" value="2" required="" id="id_col15"></td>
+                {% else %}
+                <td><input type="radio" name="col15" value="1" required="" id="id_col15"></td>
+                <td><input type="radio" name="col15" value="2" checked="checked" required="" id="id_col15"></td>
+                {% endif %}
+                <td><input type="text" name="col15_txt" value="{{object.col15_txt}}" maxlength="150" required="" id="id_col15_txt"></td>
+            </tr>
+            <tr>
+                <td>X-Y 소음 확인</td>
+                {% if object.col16 == 1 %}
+                <td><input type="radio" name="col16" value="1" checked="checked" required="" id="id_col16"></td>
+                <td><input type="radio" name="col16" value="2" required="" id="id_col16"></td>
+                {% else %}
+                <td><input type="radio" name="col16" value="1" required="" id="id_col16"></td>
+                <td><input type="radio" name="col16" value="2" checked="checked" required="" id="id_col16"></td>
+                {% endif %}
+                <td><input type="text" name="col16_txt" value="{{object.col16_txt}}" maxlength="150" required="" id="id_col16_txt"></td>
+            </tr>
+            <tr>
+            <td rowspan="5">PCB 이송부<br>(Conveyor 부)</td>
+            <td>Belt장력, 벗겨짐, 마모 상태 확인</td>
+                {% if object.col17 == 1 %}
+                <td><input type="radio" name="col17" value="1" checked="checked" required="" id="id_col17"></td>
+                <td><input type="radio" name="col17" value="2" required="" id="id_col17"></td>
+                {% else %}
+                <td><input type="radio" name="col17" value="1" required="" id="id_col17"></td>
+                <td><input type="radio" name="col17" value="2" checked="checked" required="" id="id_col17"></td>
+                {% endif %}
+                <td><input type="text" name="col17_txt" value="{{object.col17_txt}}" maxlength="150" required="" id="id_col17_txt"></td>
+            </tr>
+            <tr>
+                <td>PCB감지 센서 창오염 및 동작 상태 확인</td>
+                {% if object.col18 == 1 %}
+                <td><input type="radio" name="col18" value="1" checked="checked" required="" id="id_col18"></td>
+                <td><input type="radio" name="col18" value="2" required="" id="id_col18"></td>
+                {% else %}
+                <td><input type="radio" name="col18" value="1" required="" id="id_col18"></td>
+                <td><input type="radio" name="col18" value="2" checked="checked" required="" id="id_col18"></td>
+                {% endif %}
+                <td><input type="text" name="col18_txt" value="{{object.col18_txt}}" maxlength="150" required="" id="id_col18_txt"></td>
+            </tr>
+            <tr>
+                <td>Pcb Clamp 부위 이물질 확인 및 stopper 상태 확인</td>
+                {% if object.col19 == 1 %}
+                <td><input type="radio" name="col19" value="1" checked="checked" required="" id="id_col19"></td>
+                <td><input type="radio" name="col19" value="2" required="" id="id_col19"></td>
+                {% else %}
+                <td><input type="radio" name="col19" value="1" required="" id="id_col19"></td>
+                <td><input type="radio" name="col19" value="2" checked="checked" required="" id="id_col19"></td>
+                {% endif %}
+                <td><input type="text" name="col19_txt" value="{{object.col19_txt}}" maxlength="150" required="" id="id_col19_txt"></td>
+            </tr>
+            <tr>
+                <td>BUT up/down 상태 확인 (소음 발생시 Speed con. 조정)</td>
+                {% if object.col20 == 1 %}
+                <td><input type="radio" name="col20" value="1" checked="checked" required="" id="id_col20"></td>
+                <td><input type="radio" name="col20" value="2" required="" id="id_col20"></td>
+                {% else %}
+                <td><input type="radio" name="col20" value="1" required="" id="id_col20"></td>
+                <td><input type="radio" name="col20" value="2" checked="checked" required="" id="id_col20"></td>
+                {% endif %}
+                <td><input type="text" name="col20_txt" value="{{object.col20_txt}}" maxlength="150" required="" id="id_col20_txt"></td>
+            </tr>
+            <tr>
+                <td>PCB 이송상태 확인 / 소음 확인</td>
+                {% if object.col21 == 1 %}
+                <td><input type="radio" name="col21" value="1" checked="checked" required="" id="id_col21"></td>
+                <td><input type="radio" name="col21" value="2" required="" id="id_col21"></td>
+                {% else %}
+                <td><input type="radio" name="col21" value="1" required="" id="id_col21"></td>
+                <td><input type="radio" name="col21" value="2" checked="checked" required="" id="id_col21"></td>
+                {% endif %}
+                <td><input type="text" name="col21_txt" value="{{object.col21_txt}}" maxlength="150" required="" id="id_col21_txt"></td>
+            </tr>
+            <tr>
+                <td>Feeder Station</td>
+                <td>고정 slot 마모 상태 확인</td>
+                {% if object.col22 == 1 %}
+                <td><input type="radio" name="col22" value="1" checked="checked" required="" id="id_col22"></td>
+                <td><input type="radio" name="col22" value="2" required="" id="id_col22"></td>
+                {% else %}
+                <td><input type="radio" name="col22" value="1" required="" id="id_col22"></td>
+                <td><input type="radio" name="col22" value="2" checked="checked" required="" id="id_col22"></td>
+                {% endif %}
+                <td><input type="text" name="col22_txt" value="{{object.col22_txt}}" maxlength="150" required="" id="id_col22_txt"></td>
+            </tr>
+            <tr>
+                <td rowspan="5">Vision 및 Camera</td>
+                <td>Camera창 오염상태 확인(Fixed / Fiducial / Flying Camera)</td>
+                {% if object.col23 == 1 %}
+                <td><input type="radio" name="col23" value="1" checked="checked" required="" id="id_col23"></td>
+                <td><input type="radio" name="col23" value="2" required="" id="id_col23"></td>
+                {% else %}
+                <td><input type="radio" name="col23" value="1" required="" id="id_col23"></td>
+                <td><input type="radio" name="col23" value="2" checked="checked" required="" id="id_col23"></td>
+                {% endif %}
+                <td><input type="text" name="col23_txt" value="{{object.col23_txt}}" maxlength="150" required="" id="id_col23_txt"></td>
+            </tr>
+            <tr>
+                <td>Camera 초점, Calibration상태 확인(Fixed, Fiducial)</td>
+                {% if object.col24 == 1 %}
+                <td><input type="radio" name="col24" value="1" checked="checked" required="" id="id_col24"></td>
+                <td><input type="radio" name="col24" value="2" required="" id="id_col24"></td>
+                {% else %}
+                <td><input type="radio" name="col24" value="1" required="" id="id_col24"></td>
+                <td><input type="radio" name="col24" value="2" checked="checked" required="" id="id_col24"></td>
+                {% endif %}
+                <td><input type="text" name="col24_txt" value="{{object.col24_txt}}" maxlength="150" required="" id="id_col24_txt"></td>
+            </tr>
+            <tr>
+                <td>Flying camera, cable 점검</td>
+                {% if object.col25 == 1 %}
+                <td><input type="radio" name="col25" value="1" checked="checked" required="" id="id_col25"></td>
+                <td><input type="radio" name="col25" value="2" required="" id="id_col25"></td>
+                {% else %}
+                <td><input type="radio" name="col25" value="1" required="" id="id_col25"></td>
+                <td><input type="radio" name="col25" value="2" checked="checked" required="" id="id_col25"></td>
+                {% endif %}
+                <td><input type="text" name="col25_txt" value="{{object.col25_txt}}" maxlength="150" required="" id="id_col25_txt"></td>
+            </tr>
+            <tr>
+                <td>Mirror 오염 상태 확인</td>
+                {% if object.col26 == 1 %}
+                <td><input type="radio" name="col26" value="1" checked="checked" required="" id="id_col26"></td>
+                <td><input type="radio" name="col26" value="2" required="" id="id_col26"></td>
+                {% else %}
+                <td><input type="radio" name="col26" value="1" required="" id="id_col26"></td>
+                <td><input type="radio" name="col26" value="2" checked="checked" required="" id="id_col26"></td>
+                {% endif %}
+                <td><input type="text" name="col26_txt" value="{{object.col26_txt}}" maxlength="150" required="" id="id_col26_txt"></td>
+            </tr>
+            <tr>
+                <td>Side 조명, Flying Camera 인식부위 오염 상태 확인</td>
+                {% if object.col27 == 1 %}
+                <td><input type="radio" name="col27" value="1" checked="checked" required="" id="id_col27"></td>
+                <td><input type="radio" name="col27" value="2" required="" id="id_col27"></td>
+                {% else %}
+                <td><input type="radio" name="col27" value="1" required="" id="id_col27"></td>
+                <td><input type="radio" name="col27" value="2" checked="checked" required="" id="id_col27"></td>
+                {% endif %}
+                <td><input type="text" name="col27_txt" value="{{object.col27_txt}}" maxlength="150" required="" id="id_col27_txt"></td>
+            </tr>
+            <tr>
+                <td rowspan="2">공압부</td>
+                <td>Main 압력 확인 (4.5 ~ 5.5 kgf/cm<sup>2</sup>)</td>
+                {% if object.col28 == 1 %}
+                <td><input type="radio" name="col28" value="1" checked="checked" required="" id="id_col28"></td>
+                <td><input type="radio" name="col28" value="2" required="" id="id_col28"></td>
+                {% else %}
+                <td><input type="radio" name="col28" value="1" required="" id="id_col28"></td>
+                <td><input type="radio" name="col28" value="2" checked="checked" required="" id="id_col28"></td>
+                {% endif %}
+                <td><input type="text" name="col28_txt" value="{{object.col28_txt}}" maxlength="150" required="" id="id_col28_txt"></td>
+            </tr>
+            <tr>
+                <td>수분 또는 오일 침투 확인 및 가능성 확인</td>
+                {% if object.col29 == 1 %}
+                <td><input type="radio" name="col29" value="1" checked="checked" required="" id="id_col29"></td>
+                <td><input type="radio" name="col29" value="2" required="" id="id_col29"></td>
+                {% else %}
+                <td><input type="radio" name="col29" value="1" required="" id="id_col29"></td>
+                <td><input type="radio" name="col29" value="2" checked="checked" required="" id="id_col29"></td>
+                {% endif %}
+                <td><input type="text" name="col29_txt" value="{{object.col29_txt}}" maxlength="150" required="" id="id_col29_txt"></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="width:20%">점검 담당자</th>
+                <th style="width:80%">종합 의견</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="width:20%"><textarea class="form-control" name="inspector" required="" id="id_inspector">{{object.inspector}}</textarea></td>
+                <td style="width:80%"><textarea class="form-control" name="bs_opinion" required="" id="id_bs_opinion">{{object.bs_opinion}}</textarea></td>
+            </tr>
+        </tbody>
+    </table><br>
+    <h3>고객 담당자 확인</h3>
+    <ul>
+        <li>
+            <label for="id_manager_opinion">의견 및 요청사항</label><br>
+            <textarea class="form-control" name="manager_opinion" placeholder="의견을 작성해주세요." required="" id="id_manager_opinion">{{object.manager_opinion}}</textarea>
+        </li>
+        <li>
+            <label for="id_confirm_bs">한화정밀기계(주)에서 실시한 BS 프로그램 진단 결과를 확인하였습니다.&nbsp;&nbsp;</label><input type="checkbox" name="confirm_bs" value="1" required="" id="id_confirm_bs">
+        </li>
+        <li>
+            <label for="id_confirm_news">한화정밀기계(주)에서 제공하는 이벤트/뉴스레터를 받아보겠습니다.&nbsp;&nbsp;</label><input type="checkbox" name="confirm_news" value="1" required="" id="id_confirm_news">
+        </li>
+    </ul>
+    <input type="submit" value="Update" class="btn btn-info btn-sm">
+</form>
+
+<!--
+<form action="" method="post">
+    <input type="hidden" name="csrfmiddlewaretoken" value="EQVdLqwAh67aDjFDElSGgY7yUitagkioeze33UiVbbK20V2qx8M2fbZGp8vQAXT9">
+    <label for="id_client">Client:</label><input type="text" name="client" value="큐엠텍" maxlength="100" required="" id="id_client">
+<label for="id_model_type">Model type:</label><select name="model_type" required="" id="id_model_type">
+  <option value="">---------</option>
+
+  <option value="1" selected="">DECAN F2</option>
+
+  <option value="2">DECAN S2</option>
+
+  <option value="3">DECAN S1</option>
+
+  <option value="4">DECAN L2</option>
+
+</select>
+<label for="id_model_no">Model no:</label><input type="text" name="model_no" value="0001" maxlength="20" required="" id="id_model_no">
+<label for="id_col1">Col1:</label><input type="number" name="col1" value="2" required="" id="id_col1">
+<label for="id_col1_txt">Col1 txt:</label><input type="text" name="col1_txt" value="-" maxlength="150" required="" id="id_col1_txt">
+<label for="id_col2">Col2:</label><input type="number" name="col2" value="1" required="" id="id_col2">
+<label for="id_col2_txt">Col2 txt:</label><input type="text" name="col2_txt" value="-" maxlength="150" required="" id="id_col2_txt">
+<label for="id_col3">Col3:</label><input type="number" name="col3" value="1" required="" id="id_col3">
+<label for="id_col3_txt">Col3 txt:</label><input type="text" name="col3_txt" value="-" maxlength="150" required="" id="id_col3_txt">
+<label for="id_col4">Col4:</label><input type="number" name="col4" value="1" required="" id="id_col4">
+<label for="id_col4_txt">Col4 txt:</label><input type="text" name="col4_txt" value="-" maxlength="150" required="" id="id_col4_txt">
+<label for="id_col5">Col5:</label><input type="number" name="col5" value="1" required="" id="id_col5">
+<label for="id_col5_txt">Col5 txt:</label><input type="text" name="col5_txt" value="-" maxlength="150" required="" id="id_col5_txt">
+<label for="id_col6">Col6:</label><input type="number" name="col6" value="1" required="" id="id_col6">
+<label for="id_col6_txt">Col6 txt:</label><input type="text" name="col6_txt" value="-" maxlength="150" required="" id="id_col6_txt">
+<label for="id_col7">Col7:</label><input type="number" name="col7" value="1" required="" id="id_col7">
+<label for="id_col7_txt">Col7 txt:</label><input type="text" name="col7_txt" value="-" maxlength="150" required="" id="id_col7_txt">
+<label for="id_col8">Col8:</label><input type="number" name="col8" value="1" required="" id="id_col8">
+<label for="id_col8_txt">Col8 txt:</label><input type="text" name="col8_txt" value="-" maxlength="150" required="" id="id_col8_txt">
+<label for="id_col9">Col9:</label><input type="number" name="col9" value="1" required="" id="id_col9">
+<label for="id_col9_txt">Col9 txt:</label><input type="text" name="col9_txt" value="-" maxlength="150" required="" id="id_col9_txt">
+<label for="id_col10">Col10:</label><input type="number" name="col10" value="1" required="" id="id_col10">
+<label for="id_col10_txt">Col10 txt:</label><input type="text" name="col10_txt" value="-" maxlength="150" required="" id="id_col10_txt">
+<label for="id_col11">Col11:</label><input type="number" name="col11" value="1" required="" id="id_col11">
+<label for="id_col11_txt">Col11 txt:</label><input type="text" name="col11_txt" value="-" maxlength="150" required="" id="id_col11_txt">
+<label for="id_col12">Col12:</label><input type="number" name="col12" value="1" required="" id="id_col12">
+<label for="id_col12_txt">Col12 txt:</label><input type="text" name="col12_txt" value="-" maxlength="150" required="" id="id_col12_txt">
+<label for="id_col13">Col13:</label><input type="number" name="col13" value="1" required="" id="id_col13">
+<label for="id_col13_txt">Col13 txt:</label><input type="text" name="col13_txt" value="-" maxlength="150" required="" id="id_col13_txt">
+<label for="id_col14">Col14:</label><input type="number" name="col14" value="1" required="" id="id_col14">
+<label for="id_col14_txt">Col14 txt:</label><input type="text" name="col14_txt" value="-" maxlength="150" required="" id="id_col14_txt">
+<label for="id_col15">Col15:</label><input type="number" name="col15" value="2" required="" id="id_col15">
+<label for="id_col15_txt">Col15 txt:</label><input type="text" name="col15_txt" value="-" maxlength="150" required="" id="id_col15_txt">
+<label for="id_col16">Col16:</label><input type="number" name="col16" value="1" required="" id="id_col16">
+<label for="id_col16_txt">Col16 txt:</label><input type="text" name="col16_txt" value="-" maxlength="150" required="" id="id_col16_txt">
+<label for="id_col17">Col17:</label><input type="number" name="col17" value="1" required="" id="id_col17">
+<label for="id_col17_txt">Col17 txt:</label><input type="text" name="col17_txt" value="-" maxlength="150" required="" id="id_col17_txt">
+<label for="id_col18">Col18:</label><input type="number" name="col18" value="1" required="" id="id_col18">
+<label for="id_col18_txt">Col18 txt:</label><input type="text" name="col18_txt" value="-" maxlength="150" required="" id="id_col18_txt">
+<label for="id_col19">Col19:</label><input type="number" name="col19" value="1" required="" id="id_col19">
+<label for="id_col19_txt">Col19 txt:</label><input type="text" name="col19_txt" value="-" maxlength="150" required="" id="id_col19_txt">
+<label for="id_col20">Col20:</label><input type="number" name="col20" value="1" required="" id="id_col20">
+<label for="id_col20_txt">Col20 txt:</label><input type="text" name="col20_txt" value="-" maxlength="150" required="" id="id_col20_txt">
+<label for="id_col21">Col21:</label><input type="number" name="col21" value="1" required="" id="id_col21">
+<label for="id_col21_txt">Col21 txt:</label><input type="text" name="col21_txt" value="-" maxlength="150" required="" id="id_col21_txt">
+<label for="id_col22">Col22:</label><input type="number" name="col22" value="1" required="" id="id_col22">
+<label for="id_col22_txt">Col22 txt:</label><input type="text" name="col22_txt" value="-" maxlength="150" required="" id="id_col22_txt">
+<label for="id_col23">Col23:</label><input type="number" name="col23" value="1" required="" id="id_col23">
+<label for="id_col23_txt">Col23 txt:</label><input type="text" name="col23_txt" value="-" maxlength="150" required="" id="id_col23_txt">
+<label for="id_col24">Col24:</label><input type="number" name="col24" value="1" required="" id="id_col24">
+<label for="id_col24_txt">Col24 txt:</label><input type="text" name="col24_txt" value="-" maxlength="150" required="" id="id_col24_txt">
+<label for="id_col25">Col25:</label><input type="number" name="col25" value="1" required="" id="id_col25">
+<label for="id_col25_txt">Col25 txt:</label><input type="text" name="col25_txt" value="-" maxlength="150" required="" id="id_col25_txt">
+<label for="id_col26">Col26:</label><input type="number" name="col26" value="1" required="" id="id_col26">
+<label for="id_col26_txt">Col26 txt:</label><input type="text" name="col26_txt" value="-" maxlength="150" required="" id="id_col26_txt">
+<label for="id_col27">Col27:</label><input type="number" name="col27" value="1" required="" id="id_col27">
+<label for="id_col27_txt">Col27 txt:</label><input type="text" name="col27_txt" value="-" maxlength="150" required="" id="id_col27_txt">
+<label for="id_col28">Col28:</label><input type="number" name="col28" value="1" required="" id="id_col28">
+<label for="id_col28_txt">Col28 txt:</label><input type="text" name="col28_txt" value="-" maxlength="150" required="" id="id_col28_txt">
+<label for="id_col29">Col29:</label><input type="number" name="col29" value="1" required="" id="id_col29">
+<label for="id_col29_txt">Col29 txt:</label><input type="text" name="col29_txt" value="-" maxlength="150" required="" id="id_col29_txt">
+    <input type="submit" value="Update" class="btn btn-info btn-sm">
+</form>
+-->
+{% endblock %}

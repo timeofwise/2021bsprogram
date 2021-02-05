@@ -1,0 +1,363 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Bookmark Detail -{% endblock %}
+
+{% block content %}
+<h2>BS 결과 리포트</h2><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>고객사</th>
+            <th>설비 모델</th>
+            <th>설비 일련번호</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{object.client}}</td>
+            <td>{{object.model_type}}</td>
+            <td>{{object.model_no}}</td>
+        </tr>
+    </tbody>
+</table><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>점검 항목</th>
+            <th>세부 항목</th>
+            <th>점검 결과</th>
+            <th>비고</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Software</td>
+            <td>최신 버전 확인</td>
+            {% if object.col1 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col1_txt}}</td>
+        </tr>
+        <tr>
+            <td rowspan="9">Head & ANC</td>
+            <td>Ball Spindle, LM 상태, Grease주입 확인</td>
+            {% if object.col2 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col2_txt}}</td>
+        </tr>
+        <tr>
+            <td>Compliance부 원활한 움직임, 직진성, 막힘 상태 확인</td>
+            {% if object.col3 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col3_txt}}</td>
+        </tr>
+        <tr>
+            <td>Coil Tube마모, 빠짐, 굽혀짐 상태 확인</td>
+            {% if object.col4 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col4_txt}}</td>
+        </tr>
+        <tr>
+            <td>Nozzle 선단 마모, 막힘, 내부 오염 상태 확인</td>
+            {% if object.col5 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col5_txt}}</td>
+        </tr>
+        <tr>
+            <td>Head별 Vacuum Test시 압력 상태 확인</td>
+            {% if object.col6 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col6_txt}}</td>
+        </tr>
+        <tr>
+            <td>Vacuum Generator/Vaccum Pump 상태 점검</td>
+            {% if object.col7 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col7_txt}}</td>
+        </tr>
+        <tr>
+            <td>Head Blow 압력 조정 상태 확인</td>
+            {% if object.col8 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col8_txt}}</td>
+        </tr>
+        <tr>
+            <td>Head Z축 offset 확인</td>
+            {% if object.col9 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col9_txt}}</td>
+        </tr>
+        <tr>
+            <td>ANC Position 확인</td>
+            {% if object.col10 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col10_txt}}</td>
+        </tr>
+        <tr>
+            <td rowspan="6">X-Y Frame</td>
+            <td>LM Guide오염 및 Grease주입 확인</td>
+            {% if object.col11 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col11_txt}}</td>
+        </tr>
+        <tr>
+            <td>Ball Screw오염 및 Grease주입 확인</td>
+            {% if object.col12 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col12_txt}}</td>
+        </tr>
+        <tr>
+            <td>Timing Belt장력 및 마모 상태 확인</td>
+            {% if object.col13 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col13_txt}}</td>
+        </tr>
+        <tr>
+            <td>구동부 Cableveyor내 피복 상태 및 마모 확인</td>
+            {% if object.col14 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col14_txt}}</td>
+        </tr>
+        <tr>
+            <td>X-Y Limit Sensor 및 Sensor Dog  오염 상태 확인</td>
+            {% if object.col15 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col15_txt}}</td>
+        </tr>
+        <tr>
+            <td>X-Y 소음 확인</td>
+            {% if object.col16 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col16_txt}}</td>
+        </tr>
+        <tr>
+        <td rowspan="5">PCB 이송부<br>(Conveyor 부)</td>
+        <td>Belt장력, 벗겨짐, 마모 상태 확인</td>
+            {% if object.col17 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col17_txt}}</td>
+        </tr>
+        <tr>
+            <td>PCB감지 센서 창오염 및 동작 상태 확인</td>
+            {% if object.col18 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col18_txt}}</td>
+        </tr>
+        <tr>
+            <td>Pcb Clamp 부위 이물질 확인 및 stopper 상태 확인</td>
+            {% if object.col19 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col19_txt}}</td>
+        </tr>
+        <tr>
+            <td>BUT up/down 상태 확인 (소음 발생시 Speed con. 조정)</td>
+            {% if object.col20 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col20_txt}}</td>
+        </tr>
+        <tr>
+            <td>PCB 이송상태 확인 / 소음 확인</td>
+            {% if object.col21 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col21_txt}}</td>
+        </tr>
+        <tr>
+            <td>Feeder Station</td>
+            <td>고정 slot 마모 상태 확인</td>
+            {% if object.col22 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col22_txt}}</td>
+        </tr>
+        <tr>
+            <td rowspan="5">Vision 및 Camera</td>
+            <td>Camera창 오염상태 확인(Fixed / Fiducial / Flying Camera)</td>
+            {% if object.col23 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col23_txt}}</td>
+        </tr>
+        <tr>
+            <td>Camera 초점, Calibration상태 확인(Fixed, Fiducial)</td>
+            {% if object.col24 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col24_txt}}</td>
+        </tr>
+        <tr>
+            <td>Flying camera, cable 점검</td>
+            {% if object.col25 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col25_txt}}</td>
+        </tr>
+        <tr>
+            <td>Mirror 오염 상태 확인</td>
+            {% if object.col26 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col26_txt}}</td>
+        </tr>
+        <tr>
+            <td>Side 조명, Flying Camera 인식부위 오염 상태 확인</td>
+            {% if object.col27 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col27_txt}}</td>
+        </tr>
+        <tr>
+            <td rowspan="2">공압부</td>
+            <td>Main 압력 확인 (4.5 ~ 5.5 kgf/cm<sup>2</sup>)</td>
+            {% if object.col28 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col28_txt}}</td>
+        </tr>
+        <tr>
+            <td>수분 또는 오일 침투 확인 및 가능성 확인</td>
+            {% if object.col29 != 1 %}
+            <td id="ng">NG</td>
+            {% else %}
+            <td id="ok">OK</td>
+            {% endif %}
+            <td>{{object.col29_txt}}</td>
+        </tr>
+    </tbody>
+</table><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:20%">점검 담당자</th>
+            <th style="width:80%">종합 의견</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{object.inspector}}</td>
+            <td>{{object.bs_opinion}}</td>
+        </tr>
+    </tbody>
+</table><br><br>
+<h2>고객 확인</h2><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:20%">확인 담당자</th>
+            <th style="width:80%">기타 의견 및 요청 항목</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{object.manager}}</td>
+            <td>{{object.manager_opinion}}</td>
+        </tr>
+    </tbody>
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>점검시작 시간</th>
+            <th>확인 시간</th>
+            <th>고객 전자서명</th>
+            <th>뉴스레터 수신</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{object.created | date:'y년 n월 j일, G시 i분'}}</td>
+            <td>{{object.updated | date:'y년 n월 j일, G시 i분'}}</td>
+            {% if object.confirm_bs != 1 %}
+            <td></td>
+            {% else %}
+            <td>완료</td>
+            {% endif %}
+            {% if object.confirm_news != 1 %}
+            <td></td>
+            {% else %}
+            <td>수신허용</td>
+            {% endif %}
+        </tr>
+    </tbody>
+</table><br><br><br>
+<center>
+    <img display="inline" src="{% static 'img/resize_hpm.jpg' %}" style="margin-left:150px;width:20%;float:left">
+    <img display="inline" src="{% static 'img/resize_sts.png' %}" style="margin-right:150px;width:10%;float:right">
+</center>
+{% endblock %}

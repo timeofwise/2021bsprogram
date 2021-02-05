@@ -1,0 +1,13 @@
+body {
+    padding-bottom:60px !important;
+}
+#ng {
+    background-color:yellow !important;
+    color:red;
+}
+#ok {
+    color:green;
+}
+#confirmed {
+    color:black;
+}
