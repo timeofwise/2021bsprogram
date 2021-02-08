@@ -5,8 +5,54 @@
 {% block content %}
 <form action="" method="post">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Add" class="btn btn-info btn-sm">
+    {{ form.non_field_errors }}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>입력필드</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {{ form.client.errors }}
+                    <label for="id_client">고객사명:</label>
+                </td>
+                <td>
+                    {{ form.client }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form.model_type.errors }}
+                    <label for="id_model_type">모델 타입:</label>
+                </td>
+                <td>
+                    {{ form.model_type }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form.model_no.errors }}
+                    <label for="id_model_no">시리얼 번호:</label>
+                </td>
+                <td>
+                    {{ form.model_no }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form.inspector.errors }}
+                    <label for="id_inspector">검사자:</label>
+                </td>
+                <td>
+                    {{ form.inspector }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <input type="submit" value="추가하기" class="btn btn-info btn-sm">
 
 </form>
 {% endblock %}

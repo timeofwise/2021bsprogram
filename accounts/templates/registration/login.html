@@ -7,8 +7,36 @@
         <div class="col-md-8 panel panel-default">
             <div class="alert alert-info">로그인 정보를 입력해주세요.</div>
             <form action="" method="post">
-                {{ form.as_p }}
                 {% csrf_token %}
+                {{ form.non_field_errors }}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>입력필드</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                {{ form.username.errors }}
+                                <label for="id_username">담당자 이름:</label>
+                            </td>
+                            <td>
+                                {{ form.username }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{ form.password.errors }}
+                                <label for="id_password">비밀번호:</label>
+                            </td>
+                            <td>
+                                {{ form.password }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
                 <input class="btn btn-primary" type="submit" value="Login">
             </form>
         </div>

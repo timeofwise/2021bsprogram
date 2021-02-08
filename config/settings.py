@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'home',
     'bookmark',
     'accounts',
+    'survey',
 ]
 
 MIDDLEWARE = [
