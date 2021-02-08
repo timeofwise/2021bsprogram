@@ -5,7 +5,10 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8 panel panel-default">
-            <div class="alert alert-info">로그인 정보를 입력해주세요.</div>
+            <div class="alert alert-info">
+                로그인 정보를 입력해주세요.<br>
+                비밀번호 입력 시에는 '한/영'키 입력 상태가 <strong>영문</strong>으로 되어있는지 확인해주세요.
+            </div>
             <form action="" method="post">
                 {% csrf_token %}
                 {{ form.non_field_errors }}
@@ -37,7 +40,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <input class="btn btn-primary" type="submit" value="Login">
+                <input class="btn btn-primary" type="submit" value="로그인" style="float:right">
             </form>
         </div>
         <div class="col-md-2"></div>

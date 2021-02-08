@@ -6,6 +6,6 @@
 <form action="" method="post">
     {% csrf_token %}
     <div class="alert alert-danger">정말 "{{object}}" 데이터를 삭제하시겠습니까?</div>
-    <input type="submit" value="삭제하기" class="btn btn-danger">
+    <input type="submit" value="삭제하기" class="btn btn-danger" style="float:right">
 </form>
 {% endblock %}
