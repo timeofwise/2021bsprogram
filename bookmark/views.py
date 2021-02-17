@@ -9,7 +9,7 @@ from django.urls import reverse_lazy
 
 class BookmarkListView(ListView):
     model = Bookmark
-    paginate_by = 6
+    paginate_by = 10
 
 class BookmarkCreateView(CreateView):
     model = Bookmark

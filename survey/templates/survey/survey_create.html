@@ -6,7 +6,7 @@
 {% block content %}
 <form action="" method="post">
     {% csrf_token %}
-    {{ form.non_field_errors }}
+
 <h2>고객 설문 조사</h2><br><br>
 <h3>1. 설문자 정보</h3>
 <table class="table">
@@ -96,7 +96,7 @@
             <td><input type="text" class="form-control" name="position_other" value="'기타' 선택 시 입력"></td>
         </tr>
     </tbody>
-</table><br><br><input type="submit" value="제출하기1"></form>
+</table><br><br>
 <h3>2. BS 프로그램 관련</h3>
 <table class="table">
     <thead>
@@ -112,91 +112,81 @@
     <tbody>
         <tr>
             <td>이번 BS 프로그램의 전체적인 만족도를 평가해주세요.</td>
-            <td><input type="radio" name="sv1" value="1" required="" id="id_sv1"></td>
-            <td><input type="radio" name="sv1" value="2" required="" id="id_sv1"></td>
-            <td><input type="radio" name="sv1" value="3" required="" id="id_sv1"></td>
-            <td><input type="radio" name="sv1" value="4" required="" id="id_sv1"></td>
-            <td><input type="radio" name="sv1" value="5" required="" id="id_sv1"></td>
+            <td><input class="form-check-input" type="radio" name="q2_overall" value="1" required="" id="id_q2_overall"></td>
+            <td><input class="form-check-input" type="radio" name="q2_overall" value="2" required="" id="id_q2_overall"></td>
+            <td><input class="form-check-input" type="radio" name="q2_overall" value="3" required="" id="id_q2_overall"></td>
+            <td><input class="form-check-input" type="radio" name="q2_overall" value="4" required="" id="id_q2_overall"></td>
+            <td><input class="form-check-input" type="radio" name="q2_overall" value="5" required="" id="id_q2_overall"></td>
         </tr>
         <tr>
             <td>&nbsp;&nbsp;- <strong>SW 부</strong> 점검 및 진단 프로그램의 만족도록 평가해주세요.</td>
-            <td><input type="radio" name="sv2" value="1" required="" id="id_sv2"></td>
-            <td><input type="radio" name="sv2" value="2" required="" id="id_sv2"></td>
-            <td><input type="radio" name="sv2" value="3" required="" id="id_sv2"></td>
-            <td><input type="radio" name="sv2" value="4" required="" id="id_sv2"></td>
-            <td><input type="radio" name="sv2" value="5" required="" id="id_sv2"></td>
+            <td><input class="form-check-input" type="radio" name="q2_sw" value="1" required="" id="id_q2_sw"></td>
+            <td><input class="form-check-input" type="radio" name="q2_sw" value="2" required="" id="id_q2_sw"></td>
+            <td><input class="form-check-input" type="radio" name="q2_sw" value="3" required="" id="id_q2_sw"></td>
+            <td><input class="form-check-input" type="radio" name="q2_sw" value="4" required="" id="id_q2_sw"></td>
+            <td><input class="form-check-input" type="radio" name="q2_sw" value="5" required="" id="id_q2_sw"></td>
         </tr>
         <tr>
             <td>&nbsp;&nbsp;- <strong>헤드 & ANC 부</strong> 점검 및 진단 프로그램의 만족도록 평가해주세요.</td>
-            <td><input type="radio" name="sv3" value="1" required="" id="id_sv3"></td>
-            <td><input type="radio" name="sv3" value="2" required="" id="id_sv3"></td>
-            <td><input type="radio" name="sv3" value="3" required="" id="id_sv3"></td>
-            <td><input type="radio" name="sv3" value="4" required="" id="id_sv3"></td>
-            <td><input type="radio" name="sv3" value="5" required="" id="id_sv3"></td>
+            <td><input class="form-check-input" type="radio" name="q2_head_anc" value="1" required="" id="id_q2_head_anc"></td>
+            <td><input class="form-check-input" type="radio" name="q2_head_anc" value="2" required="" id="id_q2_head_anc"></td>
+            <td><input class="form-check-input" type="radio" name="q2_head_anc" value="3" required="" id="id_q2_head_anc"></td>
+            <td><input class="form-check-input" type="radio" name="q2_head_anc" value="4" required="" id="id_q2_head_anc"></td>
+            <td><input class="form-check-input" type="radio" name="q2_head_anc" value="5" required="" id="id_q2_head_anc"></td>
         </tr>
         <tr>
             <td>&nbsp;&nbsp;- <strong>XY 프레임 부</strong> 점검 및 진단 프로그램의 만족도록 평가해주세요.</td>
-            <td><input type="radio" name="sv4" value="1" required="" id="id_sv4"></td>
-            <td><input type="radio" name="sv4" value="2" required="" id="id_sv4"></td>
-            <td><input type="radio" name="sv4" value="3" required="" id="id_sv4"></td>
-            <td><input type="radio" name="sv4" value="4" required="" id="id_sv4"></td>
-            <td><input type="radio" name="sv4" value="5" required="" id="id_sv4"></td>
+            <td><input class="form-check-input" type="radio" name="q2_xy" value="1" required="" id="id_q2_xy"></td>
+            <td><input class="form-check-input" type="radio" name="q2_xy" value="2" required="" id="id_q2_xy"></td>
+            <td><input class="form-check-input" type="radio" name="q2_xy" value="3" required="" id="id_q2_xy"></td>
+            <td><input class="form-check-input" type="radio" name="q2_xy" value="4" required="" id="id_q2_xy"></td>
+            <td><input class="form-check-input" type="radio" name="q2_xy" value="5" required="" id="id_q2_xy"></td>
         </tr>
         <tr>
             <td>&nbsp;&nbsp;- <strong>PCB 이송부</strong> 점검 및 진단 프로그램의 만족도록 평가해주세요.</td>
-            <td><input type="radio" name="sv5" value="1" required="" id="id_sv5"></td>
-            <td><input type="radio" name="sv5" value="2" required="" id="id_sv5"></td>
-            <td><input type="radio" name="sv5" value="3" required="" id="id_sv5"></td>
-            <td><input type="radio" name="sv5" value="4" required="" id="id_sv5"></td>
-            <td><input type="radio" name="sv5" value="5" required="" id="id_sv5"></td>
+            <td><input class="form-check-input" type="radio" name="q2_conveyor" value="1" required="" id="id_q2_conveyor"></td>
+            <td><input class="form-check-input" type="radio" name="q2_conveyor" value="2" required="" id="id_q2_conveyor"></td>
+            <td><input class="form-check-input" type="radio" name="q2_conveyor" value="3" required="" id="id_q2_conveyor"></td>
+            <td><input class="form-check-input" type="radio" name="q2_conveyor" value="4" required="" id="id_q2_conveyor"></td>
+            <td><input class="form-check-input" type="radio" name="q2_conveyor" value="5" required="" id="id_q2_conveyor"></td>
         </tr>
         <tr>
             <td>&nbsp;&nbsp;- <strong>피더 공급부</strong> 점검 및 진단 프로그램의 만족도록 평가해주세요.</td>
-            <td><input type="radio" name="sv6" value="1" required="" id="id_sv6"></td>
-            <td><input type="radio" name="sv6" value="2" required="" id="id_sv6"></td>
-            <td><input type="radio" name="sv6" value="3" required="" id="id_sv6"></td>
-            <td><input type="radio" name="sv6" value="4" required="" id="id_sv6"></td>
-            <td><input type="radio" name="sv6" value="5" required="" id="id_sv6"></td>
+            <td><input class="form-check-input" type="radio" name="q2_feederbase" value="1" required="" id="id_q2_feederbase"></td>
+            <td><input class="form-check-input" type="radio" name="q2_feederbase" value="2" required="" id="id_q2_feederbase"></td>
+            <td><input class="form-check-input" type="radio" name="q2_feederbase" value="3" required="" id="id_q2_feederbase"></td>
+            <td><input class="form-check-input" type="radio" name="q2_feederbase" value="4" required="" id="id_q2_feederbase"></td>
+            <td><input class="form-check-input" type="radio" name="q2_feederbase" value="5" required="" id="id_q2_feederbase"></td>
         </tr>
         <tr>
             <td>&nbsp;&nbsp;- <strong>조명 & 카메라부</strong> 점검 및 진단 프로그램의 만족도록 평가해주세요.</td>
-            <td><input type="radio" name="sv7" value="1" required="" id="id_sv7"></td>
-            <td><input type="radio" name="sv7" value="2" required="" id="id_sv7"></td>
-            <td><input type="radio" name="sv7" value="3" required="" id="id_sv7"></td>
-            <td><input type="radio" name="sv7" value="4" required="" id="id_sv7"></td>
-            <td><input type="radio" name="sv7" value="5" required="" id="id_sv7"></td>
+            <td><input class="form-check-input" type="radio" name="q2_illumination" value="1" required="" id="id_q2_illumination"></td>
+            <td><input class="form-check-input" type="radio" name="q2_illumination" value="2" required="" id="id_q2_illumination"></td>
+            <td><input class="form-check-input" type="radio" name="q2_illumination" value="3" required="" id="id_q2_illumination"></td>
+            <td><input class="form-check-input" type="radio" name="q2_illumination" value="4" required="" id="id_q2_illumination"></td>
+            <td><input class="form-check-input" type="radio" name="q2_illumination" value="5" required="" id="id_q2_illumination"></td>
         </tr>
         <tr>
             <td>&nbsp;&nbsp;- <strong>공압부</strong> 점검 및 진단 프로그램의 만족도록 평가해주세요.</td>
-            <td><input type="radio" name="sv8" value="1" required="" id="id_sv8"></td>
-            <td><input type="radio" name="sv8" value="2" required="" id="id_sv8"></td>
-            <td><input type="radio" name="sv8" value="3" required="" id="id_sv8"></td>
-            <td><input type="radio" name="sv8" value="4" required="" id="id_sv8"></td>
-            <td><input type="radio" name="sv8" value="5" required="" id="id_sv8"></td>
+            <td><input class="form-check-input" type="radio" name="q2_air" value="1" required="" id="id_q2_air"></td>
+            <td><input class="form-check-input" type="radio" name="q2_air" value="2" required="" id="id_q2_air"></td>
+            <td><input class="form-check-input" type="radio" name="q2_air" value="3" required="" id="id_q2_air"></td>
+            <td><input class="form-check-input" type="radio" name="q2_air" value="4" required="" id="id_q2_air"></td>
+            <td><input class="form-check-input" type="radio" name="q2_air" value="5" required="" id="id_q2_air"></td>
         </tr>
         <tr>
-            <td>이번 BS 프로그램에서 전체적인 서비스 엔지니어의 신뢰도를 평가해주세요.</td>
-            <td><input type="radio" name="sv9" value="1" required="" id="id_sv9"></td>
-            <td><input type="radio" name="sv9" value="2" required="" id="id_sv9"></td>
-            <td><input type="radio" name="sv9" value="3" required="" id="id_sv9"></td>
-            <td><input type="radio" name="sv9" value="4" required="" id="id_sv9"></td>
-            <td><input type="radio" name="sv9" value="5" required="" id="id_sv9"></td>
+            <td>BS 엔지니어의 진단결과를 신뢰하고 후속조치에 응할 의향이 있으십니까?</td>
+            <td>네<br><input class="form-check-input" type="radio" name="q2_trust" value="yes" required="" id="id_q2_trust"></td>
+            <td>아니오<br><input class="form-check-input" type="radio" name="q2_trust" value="no" required="" id="id_q2_trust"></td>
+            <td>기타<br><input class="form-check-input" type="radio" name="q2_trust" value="other" required="" id="id_q2_trust"></td>
+            <td colspan="2"><input type="text" class="form-control" name="q2_trust_other" value="'기타' 선택 시 입력"></td>
         </tr>
         <tr>
-            <td>&nbsp;&nbsp;- BS 엔지니어의 진단결과를 신뢰하고 후속조치에 응할 의향이 있으십니까?</td>
-            <td>네<br><input type="radio" name="sv10" value="ok" required="" id="id_sv10"></td>
-            <td>아니오<br><input type="radio" name="sv10" value="ng" required="" id="id_sv10"></td>
-            <td>기타<br><input type="radio" name="sv10" value="hf" required="" id="id_sv10"></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>&nbsp;&nbsp;- 당사 서비스 엔지니어의 점검 및 진단을 정기적으로 받아볼 의향이 있으십니까?</td>
-            <td>네<br><input type="radio" name="sv11" value="ok" required="" id="id_sv11"></td>
-            <td>아니오<br><input type="radio" name="sv11" value="ng" required="" id="id_sv11"></td>
-            <td>기타<br><input type="radio" name="sv11" value="hf" required="" id="id_sv11"></td>
-            <td></td>
-            <td></td>
+            <td>당사 서비스 엔지니어의 점검 및 진단을 정기적으로 받아볼 의향이 있으십니까?</td>
+            <td>네<br><input class="form-check-input" type="radio" name="q2_after_service" value="yes" required="" id="id_q2_after_service"></td>
+            <td>아니오<br><input class="form-check-input" type="radio" name="q2_after_service" value="no" required="" id="id_q2_after_service"></td>
+            <td>기타<br><input class="form-check-input" type="radio" name="q2_after_service" value="other" required="" id="id_q2_after_service"></td>
+            <td colspan="2"><input type="text" class="form-control" name="q2_after_service_other" value="'기타' 선택 시 입력"></td>
         </tr>
     </tbody>
 </table><br><br>
@@ -204,23 +194,24 @@
 <p>
 <h5>3-1. 현재 귀하의 생산 환경 개선을 위해 가장 신경을 쓰고 있는 부분은 무엇입니까?</h5>
     <ol id="survey_ol">
-        <li id="survey_li">SW 기능 업그레이드를 통한 생산성/품질 개선&nbsp;&nbsp;<input type="radio" name="sv12" value="1" required="" id="id_sv12"></li>
-        <li id="survey_li">HW 성능 개조를 통한 생산성/품질 개선&nbsp;&nbsp;<input type="radio" name="sv12" value="2" required="" id="id_sv12"></li>
-        <li id="survey_li">생산공정 컨설팅/개선을 통한 생산성/품질 개선&nbsp;&nbsp;<input type="radio" name="sv12" value="3" required="" id="id_sv12"></li>
-        <li id="survey_li">SW 결함/고장 개선을 통한 생산성/품질 개선&nbsp;&nbsp;<input type="radio" name="sv12" value="4" required="" id="id_sv12"></li>
-        <li id="survey_li">HW 결함/고장 개선을 통한 생산성/품질 개선&nbsp;&nbsp;<input type="radio" name="sv12" value="5" required="" id="id_sv12"></li>
+        <li id="survey_li">SW 기능 업그레이드를 통한 생산성/품질 개선&nbsp;&nbsp;<input class="form-check-input" type="radio" name="q3_1_main_concern" value="SW 기능 업그레이드를 통한 생산성/품질 개선" required="" id="id_q3_1"></li>
+        <li id="survey_li">HW 성능 개조를 통한 생산성/품질 개선&nbsp;&nbsp;<input class="form-check-input" type="radio" name="q3_1_main_concern" value="HW 성능 개조를 통한 생산성/품질 개선" required="" id="id_q3_1"></li>
+        <li id="survey_li">생산공정 컨설팅/개선을 통한 생산성/품질 개선&nbsp;&nbsp;<input class="form-check-input" type="radio" name="q3_1_main_concern" value="생산공정 컨설팅/개선을 통한 생산성/품질 개선" required="" id="id_q3_1"></li>
+        <li id="survey_li">SW 결함/고장 개선을 통한 생산성/품질 개선&nbsp;&nbsp;<input class="form-check-input" type="radio" name="q3_1_main_concern" value="SW 결함/고장 개선을 통한 생산성/품질 개선" required="" id="id_q3_1"></li>
+        <li id="survey_li">HW 결함/고장 개선을 통한 생산성/품질 개선&nbsp;&nbsp;<input class="form-check-input" type="radio" name="q3_1_main_concern" value="HW 결함/고장 개선을 통한 생산성/품질 개선" required="" id="id_q3_1"></li>
     </ol>
 </p><br>
 <p>
 <h5>3-2. 불확실한 미래에 업계 경쟁력을 갖추기 위해 귀하께서 관심을 두고 계신 기술분야는 어디입니까? (복수선택 가능)</h5>
     <ol id="survey_ol">
-        <li id="survey_li">스마트 ERP(MES) 시스템&nbsp;&nbsp;<input type="checkbox" name="sv13" value="1" required="" id="id_sv13"></li>
-        <li id="survey_li">공장 자동화 솔루션&nbsp;&nbsp;<input type="checkbox" name="sv14" value="2" required="" id="id_sv14"></li>
-        <li id="survey_li">원격 서비스/지원&nbsp;&nbsp;<input type="checkbox" name="sv15" value="3" required="" id="id_sv15"></li>
-        <li id="survey_li">체계적 양성 프로그램(트레이닝/유지보수)&nbsp;&nbsp;<input type="checkbox" name="sv16" value="4" required="" id="id_sv16"></li>
-        <li id="survey_li">기타&nbsp;&nbsp;<input type="checkbox" name="sv17" value="5" required="" id="id_sv17"></li>
+        <li id="survey_li">스마트 ERP(MES) 시스템&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="q3_2_1_future_interest_smart_erp" value="1" required="" id="id_q3_2_1"></li>
+        <li id="survey_li">공장 자동화 솔루션&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="q3_2_2_future_interest_factory_automation" value="2" required="" id="id_q3_2_2"></li>
+        <li id="survey_li">원격 서비스/지원&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="q3_2_3_future_interest_remote_support" value="3" required="" id="id_q3_2_3"></li>
+        <li id="survey_li">체계적 양성 프로그램(트레이닝/유지보수)&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="q3_2_4_future_interest_systematical_training" value="4" required="" id="id_q3_2_4"></li>
+        <li id="survey_li">기타&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="q3_2_5_future_interest_other" value="5" required="" id="id_q3_2_5"></li>
+        <li id="survey_li"><input type="text" class="form-control" name="q3_2_5_other" value="'기타' 선택 시 입력"></li>
     </ol>
-</p><br>
+</p><br><input type="submit" value="제출하기1"></form>
 <p>
 <h5>3-3. 귀하는 한화정밀기계의 제품 및 서비스를 주변에 추천할 의향이 있으십니까? : <output id="amount" name="amount" for="rangeInput">5</output> 점</h5>
 <table class="table table-sm table-borderless">
@@ -249,7 +240,7 @@
 </p><br><br>
 
 <h3>4. 기타 및 제출</h3>
-    <ul>
+    <ul id="survey_li">
         <li id="survey_li">
             <label for="id_manager_opinion">기타의견 및 요청사항</label><br>
             <textarea class="form-control" name="manager_opinion" placeholder="의견을 작성해주세요." required="" id="id_manager_opinion">{{object.manager_opinion}}</textarea>
@@ -257,7 +248,7 @@
         <li id="survey_li">
             <label for="id_confirm_news">한화정밀기계주식회사의 <button style="display:inline" type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
   개인정보 수집정책
-</button>에 동의합니다.&nbsp;</label><input type="checkbox" name="confirm_news" value="1" required="" id="id_confirm_news">
+</button>에 동의합니다.&nbsp;</label><input class="form-check-input" type="checkbox" name="confirm_news" value="1" required="" id="id_confirm_news">
         </li>
     </ul>
 <!--

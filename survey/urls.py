@@ -1,7 +1,8 @@
 from django.urls import path
 from .views import *
 
-app_name = 'survey'
+#app_name = 'survey'
 urlpatterns = [
-    path('', AddSurvey, name='add'),
+    path('', AddSurvey.as_view(), name='survey_add'),
+    path('complete/', SurveyComplete, name='survey_complete'),
 ]
