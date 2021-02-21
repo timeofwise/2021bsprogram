@@ -21,9 +21,16 @@
             <td>
                 <label class="form-check-label" for="id_name">설문자 이름 :</label>
             </td>
+
+            {% if user.is_authenticated %}
+            <td colspan="7">
+                <input type="text" class="form-control" name="name" value="{{user.get_username}}" required="" id="id_name">
+            </td>
+            {% else %}
             <td colspan="7">
                 <input type="text" class="form-control" name="name" placeholder="성함을 입력해주세요." required="" id="id_name">
             </td>
+            {% endif %}
         </tr>
         <tr>
             <td>
@@ -45,9 +52,17 @@
             <td>
                 <label class="form-check-label" for="id_email">연락처(이메일) :</label>
             </td>
+
+            {% if user.is_authenticated %}
+            <td colspan="7">
+                <input type="text" class="form-control" name="email" value="{{user.email}}" required="" id="id_email">
+            </td>
+            {% else %}
             <td colspan="7">
                 <input type="text" class="form-control" name="email" placeholder="이메일 주소를 입력해주세요." required="" id="id_email">
             </td>
+            {% endif %}
+
         </tr>
         <tr>
             <td style="width:20%">담당업무 :</td>
@@ -295,5 +310,5 @@
       </div>
     </div>
   </div>
-</div>
+</div><br><br><br>
 {% endblock %}

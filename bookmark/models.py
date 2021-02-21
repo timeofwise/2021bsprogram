@@ -4,6 +4,17 @@ from django.urls import reverse
 
 # Create your models here.
 
+class Client(models.Model):
+    name = models.CharField(max_length=50, null=True)
+    code = models.CharField(max_length=10, null=True)
+    order = models.IntegerField(null=True)
+    remarks_1 = models.CharField(max_length=50, null=True)
+    remarks_2 = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Machine(models.Model):
     model_type = models.CharField(max_length=50)
 
@@ -13,7 +24,8 @@ class Machine(models.Model):
 
 class Bookmark(models.Model):
     # Basic Informations
-    client = models.CharField(max_length=100)
+    # client = models.CharField(max_length=100, null=True)
+    client = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True)
     model_type = models.ForeignKey(Machine, on_delete=models.SET_NULL, null=True)
     model_no = models.CharField(max_length=20)
 
@@ -90,7 +102,7 @@ class Bookmark(models.Model):
     manager_opinion = models.TextField(default='기타 의견 및 요청항목이 없습니다.', null=True)
 
     def __str__(self):
-        return "고객명 : " + self.client + ", 시리얼번호 : " + self.model_no + ", 생성일 : " + self.created.strftime("%Y-%m-%d %H:%M:%S")
+        return "시리얼번호 : " + self.model_no + ", 생성일 : " + self.created.strftime("%Y-%m-%d %H:%M:%S")
 
     def get_absolute_url(self):
         return reverse('detail', args=[str(self.id)])
