@@ -6,7 +6,7 @@
 {% block content %}
 <form action="" method="post">
     {% csrf_token %}
-
+    {{ form.non_field_errors }}
 <h2>고객 설문 조사</h2><br><br>
 <h3>1. 설문자 정보</h3>
 <table class="table">
@@ -204,16 +204,16 @@
 <p>
 <h5>3-2. 불확실한 미래에 업계 경쟁력을 갖추기 위해 귀하께서 관심을 두고 계신 기술분야는 어디입니까? (복수선택 가능)</h5>
     <ol id="survey_ol">
-        <li id="survey_li">스마트 ERP(MES) 시스템&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="q3_2_1_future_interest_smart_erp" value="1" required="" id="id_q3_2_1"></li>
-        <li id="survey_li">공장 자동화 솔루션&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="q3_2_2_future_interest_factory_automation" value="2" required="" id="id_q3_2_2"></li>
-        <li id="survey_li">원격 서비스/지원&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="q3_2_3_future_interest_remote_support" value="3" required="" id="id_q3_2_3"></li>
-        <li id="survey_li">체계적 양성 프로그램(트레이닝/유지보수)&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="q3_2_4_future_interest_systematical_training" value="4" required="" id="id_q3_2_4"></li>
-        <li id="survey_li">기타&nbsp;&nbsp;<input class="form-check-input" type="checkbox" name="q3_2_5_future_interest_other" value="5" required="" id="id_q3_2_5"></li>
-        <li id="survey_li"><input type="text" class="form-control" name="q3_2_5_other" value="'기타' 선택 시 입력"></li>
+        <li id="survey_li">스마트 ERP(MES) 시스템&nbsp;&nbsp;<input class="form-check-input" type="hidden" name="q3_21_fi_smart_erp" value="0" required="" id="id_q3_2_1"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value"></li>
+        <li id="survey_li">공장 자동화 솔루션&nbsp;&nbsp;<input class="form-check-input" type="hidden" name="q3_22_fi_factory_automation" value="0" required="" id="id_q3_2_2"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value"></li>
+        <li id="survey_li">원격 서비스/지원&nbsp;&nbsp;<input class="form-check-input" type="hidden" name="q3_23_fi_remote_support" value="0" required="" id="id_q3_2_3"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value"></li>
+        <li id="survey_li">체계적 양성 프로그램(트레이닝/유지보수)&nbsp;&nbsp;<input class="form-check-input" type="hidden" name="q3_24_fi_systematical_training" value="0" required="" id="id_q3_2_4"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value"></li>
+        <li id="survey_li">기타&nbsp;&nbsp;<input class="form-check-input" type="hidden" name="q3_25_fi_other" value="0" required="" id="id_q3_2_5"><input class="form-check-input" type="checkbox" onclick="this.previousSibling.value=1-this.previousSibling.value"></li>
+        <li id="survey_li"><input type="text" class="form-control" name="q3_25_other" value="'기타' 선택 시 입력"></li>
     </ol>
-</p><br><input type="submit" value="제출하기1"></form>
+</p><br>
 <p>
-<h5>3-3. 귀하는 한화정밀기계의 제품 및 서비스를 주변에 추천할 의향이 있으십니까? : <output id="amount" name="amount" for="rangeInput">5</output> 점</h5>
+<h5>3-3. 귀하는 한화정밀기계의 제품 및 서비스를 주변에 추천할 의향이 있으십니까? : <output id="amount" name="amount" for="q3_3_recommend_to_other">5</output> 점</h5>
 <table class="table table-sm table-borderless">
     <tr>
         <td style="width:9.1%">비추천<br><span style="font-size:9pt">0</span></td>
@@ -231,7 +231,7 @@
     <tr>
         <td colspan="11">
             <div style="width:91%">
-                <input type="range" id="rangeInput" name="rangeInput" class="form-range" min="0" max="10" step="1"
+                <input type="range" id="rangeInput" name="q3_3_recommend_to_other" class="form-range" min="0" max="10" step="1"
        oninput="amount.value=rangeInput.value">
             </div>
         </td>
@@ -248,15 +248,14 @@
         <li id="survey_li">
             <label for="id_confirm_news">한화정밀기계주식회사의 <button style="display:inline" type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
   개인정보 수집정책
-</button>에 동의합니다.&nbsp;</label><input class="form-check-input" type="checkbox" name="confirm_news" value="1" required="" id="id_confirm_news">
+</button>에 동의합니다.&nbsp;</label><input class="form-check-input" type="checkbox" name="policy_agreement" value="yes" required="" id="id_confirm_news">
         </li>
     </ul>
-<!--
 <input type="submit" value="제출하기" class="btn btn-primary" style="float:right">
--->
-<button onclick="javascript:btn()" class="btn btn-primary" style="float:right">제출하기</button>
 <br><br><br><br>
-<script> function btn(){ alert('현재 제출기능은 꺼진 상태입니다.'); } </script>
+<!--
+    <script> function btn(){ alert('현재 제출기능은 꺼진 상태입니다.'); } </script>
+-->
 
 
 <!-- Modal -->

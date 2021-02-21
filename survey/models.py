@@ -26,13 +26,18 @@ class Survey(models.Model):
     q2_after_service_other = models.CharField(max_length=50, null=True)
 
     # 3 Concerns & Interests
-    q3_1_main_concern = models.CharField(max_length=10, default='-', null=True)
-    q3_2_1_future_interest_smart_erp = models.CharField(max_length=10, default='-', null=True)
-    q3_2_2_future_interest_factory_automation = models.CharField(max_length=10, default='-', null=True)
-    q3_2_3_future_interest_remote_support = models.CharField(max_length=10, default='-', null=True)
-    q3_2_4_future_interest_systematical_training = models.CharField(max_length=10, default='-', null=True)
-    q3_2_5_future_interest_other = models.CharField(max_length=10, default='-', null=True)
-    q3_2_5_other = models.CharField(max_length=50, null=True)
+    q3_1_main_concern = models.CharField(max_length=80, default='-', null=True)
+    q3_21_fi_smart_erp = models.CharField(max_length=10, default='-', null=True)
+    q3_22_fi_factory_automation = models.CharField(max_length=10, default='-', null=True)
+    q3_23_fi_remote_support = models.CharField(max_length=10, default='-', null=True)
+    q3_24_fi_systematical_training = models.CharField(max_length=10, default='-', null=True)
+    q3_25_fi_other = models.CharField(max_length=10, default='-', null=True)
+    q3_25_other = models.CharField(max_length=50, null=True)
+    q3_3_recommend_to_other = models.IntegerField(null=True)
+
+    # 4 agreement and others
+    manager_opinion = models.TextField(default='기타 의견 및 요청항목이 없습니다.', null=True)
+    policy_agreement = models.CharField(max_length=10, null=True)
 
 
 

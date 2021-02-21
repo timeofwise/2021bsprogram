@@ -31,15 +31,27 @@ class AddSurvey(CreateView):
         'q2_after_service',
         'q2_after_service_other',
         'q3_1_main_concern',
-        'q3_2_1_future_interest_smart_erp',
-        'q3_2_2_future_interest_factory_automation',
-        'q3_2_3_future_interest_remote_support',
-        'q3_2_4_future_interest_systematical_training',
-        'q3_2_5_future_interest_other',
-        'q3_2_5_other',
+        'q3_21_fi_smart_erp',
+        'q3_22_fi_factory_automation',
+        'q3_23_fi_remote_support',
+        'q3_24_fi_systematical_training',
+        'q3_25_fi_other',
+        'q3_25_other',
+        'q3_3_recommend_to_other',
+        'manager_opinion',
+        'policy_agreement',
     ]
     success_url = reverse_lazy('survey_complete')
     template_name_suffix = '_create' #CreateView class template의  기본접미사(_form) 변경 : _form -> _create
 
 def SurveyComplete(request):
     return render(request, 'survey/survey_complete.html')
+
+"""
+
+
+
+
+
+
+"""
