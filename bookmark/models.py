@@ -101,6 +101,9 @@ class Bookmark(models.Model):
     bs_opinion = models.TextField(default='BS 프로그램에 기준한 점검결과 특이사항이 없습니다.', null=True)
     manager_opinion = models.TextField(default='기타 의견 및 요청항목이 없습니다.', null=True)
 
+    class Meta:
+        ordering = ['-updated']
+
     def __str__(self):
         return "시리얼번호 : " + self.model_no + ", 생성일 : " + self.created.strftime("%Y-%m-%d %H:%M:%S")
 
