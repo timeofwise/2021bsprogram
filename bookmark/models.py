@@ -101,6 +101,9 @@ class Bookmark(models.Model):
     bs_opinion = models.TextField(default='BS 프로그램에 기준한 점검결과 특이사항이 없습니다.', null=True)
     manager_opinion = models.TextField(default='기타 의견 및 요청항목이 없습니다.', null=True)
 
+    # etc.
+    visibility = models.IntegerField(default=1, null=True)
+
     class Meta:
         ordering = ['-updated']
 
