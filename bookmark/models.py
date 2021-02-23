@@ -105,7 +105,7 @@ class Bookmark(models.Model):
     visibility = models.IntegerField(default=1, null=True)
 
     class Meta:
-        ordering = ['-updated']
+        ordering = ['-created']
 
     def __str__(self):
         return "시리얼번호 : " + self.model_no + ", 생성일 : " + self.created.strftime("%Y-%m-%d %H:%M:%S")
