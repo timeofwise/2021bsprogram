@@ -14,12 +14,44 @@ class Client(models.Model):
     def __str__(self):
         return self.name
 
+class Consumed(models.Model):
+    part_code = models.CharField(max_length=20, null=True, unique=True)
+    part_name = models.CharField(max_length=30, null=True)
+    part_img = models.ImageField(upload_to='static/img', default='photos/no_image.png', null=True)
+    part_desc = models.CharField(max_length=50, null=True)
+
+
+    def __str__(self):
+        return self.part_code
+
 
 class Machine(models.Model):
-    model_type = models.CharField(max_length=50)
+    model_type = models.CharField(max_length=50, null=True)
+    part1 = models.ForeignKey(Consumed, to_field='part_code', on_delete=models.SET_NULL, null=True, related_name='part1')
+    part1_qty = models.IntegerField(null=True)
+    part2 = models.ForeignKey(Consumed, to_field='part_code', on_delete=models.SET_NULL, null=True, related_name='part2')
+    part2_qty = models.IntegerField(null=True)
+    part3 = models.ForeignKey(Consumed, to_field='part_code', on_delete=models.SET_NULL, null=True, related_name='part3')
+    part3_qty = models.IntegerField(null=True)
+    part4 = models.ForeignKey(Consumed, to_field='part_code', on_delete=models.SET_NULL, null=True, related_name='part4')
+    part4_qty = models.IntegerField(null=True)
+    part5 = models.ForeignKey(Consumed, to_field='part_code', on_delete=models.SET_NULL, null=True, related_name='part5')
+    part5_qty = models.IntegerField(null=True)
+    part6 = models.ForeignKey(Consumed, to_field='part_code', on_delete=models.SET_NULL, null=True, related_name='part6')
+    part6_qty = models.IntegerField(null=True)
+    part7 = models.ForeignKey(Consumed, to_field='part_code', on_delete=models.SET_NULL, null=True, related_name='part7')
+    part7_qty = models.IntegerField(null=True)
+    part8 = models.ForeignKey(Consumed, to_field='part_code', on_delete=models.SET_NULL, null=True, related_name='part8')
+    part8_qty = models.IntegerField(null=True)
+    part9 = models.ForeignKey(Consumed, to_field='part_code', on_delete=models.SET_NULL, null=True, related_name='part9')
+    part9_qty = models.IntegerField(null=True)
+
 
     def __str__(self):
         return self.model_type
+
+
+
 
 
 class Bookmark(models.Model):

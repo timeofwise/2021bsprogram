@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Bookmark, Machine, Client
+from .models import Bookmark, Machine, Client, Consumed
 # Register your models here.
 
 # admin.site.register(Bookmark)
 admin.site.register(Client)
-admin.site.register(Machine)
+#admin.site.register(Machine)
 
 # Register your models here.
 from .models import *
@@ -16,3 +16,15 @@ class BookmarkAdmin(admin.ModelAdmin):
     ordering = ['-updated', '-created']
 
 admin.site.register(Bookmark,BookmarkAdmin)
+
+class MachineAdmin(admin.ModelAdmin):
+    list_display = ['id', 'model_type']
+    # raw_id_fields = ['author']
+
+admin.site.register(Machine,MachineAdmin)
+
+class ConsumedAdmin(admin.ModelAdmin):
+    list_display = ['id', 'part_code', 'part_name', 'part_img', 'part_desc']
+    # raw_id_fields = ['author']
+
+admin.site.register(Consumed,ConsumedAdmin)

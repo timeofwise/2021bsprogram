@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'bookmark',
     'accounts',
     'survey',
+    'parts',
 ]
 
 MIDDLEWARE = [
