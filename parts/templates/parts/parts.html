@@ -45,6 +45,8 @@
                 <td id="parts">
                     {%if sm421 == list.model_type%}
                     11{{list.model_type}}
+                    {% elif sm411 == list.model_type %}
+                    22{{list.model_type}}-{{sm411}}
                     {% else %}
                     55 {{sm421}}{{list.model_type}}
                     {% endif %}
