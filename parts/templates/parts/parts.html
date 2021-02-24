@@ -9,7 +9,7 @@
         <tr>
             <th colspan="3"></th>
             {% for part in parts %}
-                {% if part.part_name != dummy %}
+                {% if part.part_name != 'dummy' %}
                     <th scope="col">{{ part.part_code }}</th>
                 {% endif %}
             {% endfor %}
