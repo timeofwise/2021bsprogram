@@ -41,13 +41,19 @@
                 <!--<td>{{ list.client }}</td>-->
                 <td id="parts">{{ list.model_type }}</td>
                 <td id="parts">{{ list.model_no }}</td>
-                <td>{{ list.part1.part1_qty }}</td>
-                <td>{{ list.part2_qty }}</td>
-                <td>{{ list.part3_qty }}</td>
-                <td>{{ list.part4_qty }}</td>
-                <td>{{ list.part5_qty }}</td>
-                <td>{{ list.part6_qty }}</td>
-                <td>{{ list.part7_qty }}</td>
+                <td id="parts">2</td>
+                <td id="parts">
+                    {%if sm421 == list.model_type%}
+                    11{{list.model_type}}
+                    {% else %}
+                    55 {{sm421}}{{list.model_type}}
+                    {% endif %}
+                </td>
+                <td id="parts">{{ list.part3_qty }}</td>
+                <td id="parts">{{ list.part4_qty }}</td>
+                <td id="parts">{{ list.part5_qty }}</td>
+                <td id="parts">{{ list.part6_qty }}</td>
+                <td id="parts">{{ list.part7_qty }}</td>
             </tr>
             {% endif %}
         {% endfor %}

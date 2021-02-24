@@ -10,6 +10,8 @@ def PartsListView(request):
     machines = Machine.objects.all()
     lists = Bookmark.objects.all()
     parts = Consumed.objects.all()
+    sm421 = 'SM421'
+    decan_f2 = 'DECAN F2'
 
 
-    return render(request, 'parts/parts.html', {'lists' : lists, 'parts' : parts, 'machines' : machines})
+    return render(request, 'parts/parts.html', {'lists' : lists, 'parts' : parts, 'machines' : machines, 'sm421' : sm421})
