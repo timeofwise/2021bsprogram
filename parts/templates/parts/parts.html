@@ -1,0 +1,60 @@
+{% extends 'print.html' %}
+
+{% block title %}BS 프로그램 대상 설비 목록 -{% endblock %}
+
+{% block content %}
+<h2>BS 소모품 이용 내역</h2><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="3"></th>
+            {% for part in parts %}
+                {% if part.part_name != dummy %}
+                    <th scope="col">{{ part.part_code }}</th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <th colspan="3"></th>
+            {% for part in parts %}
+                {% if part.part_name != dummy %}
+                    <th scope="col">{{ part.part_name }}</th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">설비</th>
+            <th scope="col">시리얼 번호</th>
+            {% for part in parts %}
+                {% if part.part_name != dummy %}
+                    <th><img src="{{part.part_img.url}}" width="100px"></th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for list in lists %}
+            {% if list.visibility != 0 %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <!--<td>{{ list.client }}</td>-->
+                <td>{{ list.model_type }}</td>
+                <td>{{ list.model_no }}</td>
+                <td>{{ list.part1_qty }}</td>
+                <td>{{ list.part2_qty }}</td>
+                <td>{{ list.part3_qty }}</td>
+                <td>{{ list.part4_qty }}</td>
+                <td>{{ list.part5_qty }}</td>
+                <td>{{ list.part6_qty }}</td>
+                <td>{{ list.part7_qty }}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block pagination %}
+
+{% endblock %}
