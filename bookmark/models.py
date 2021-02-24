@@ -61,6 +61,7 @@ class Bookmark(models.Model):
     model_type = models.ForeignKey(Machine, on_delete=models.SET_NULL, null=True)
     model_no = models.CharField(max_length=20)
 
+
     # Manager & Confirm
     inspector = models.CharField(max_length=50, null=True)
     manager = models.ForeignKey(User, on_delete=models.PROTECT, related_name="manager_bookmark", null=True)
@@ -145,35 +146,3 @@ class Bookmark(models.Model):
     def get_absolute_url(self):
         return reverse('detail', args=[str(self.id)])
 
-
-'''
-    col_1 = models.IntegerField(default=1)
-    col_2 = models.IntegerField(default=1)
-    col_3 = models.IntegerField(default=1)
-    col_4 = models.IntegerField(default=1)
-    col_5 = models.IntegerField(default=1)
-    col_6 = models.IntegerField(default=1)
-    col_7 = models.IntegerField(default=1)
-    col_8 = models.IntegerField(default=1)
-    col_9 = models.IntegerField(default=1)
-    col_10 = models.IntegerField(default=1)
-    col_11 = models.IntegerField(default=1)
-    col_12 = models.IntegerField(default=1)
-    col_13 = models.IntegerField(default=1)
-    col_14 = models.IntegerField(default=1)
-    col_15 = models.IntegerField(default=1)
-    col_16 = models.IntegerField(default=1)
-    col_17 = models.IntegerField(default=1)
-    col_18 = models.IntegerField(default=1)
-    col_19 = models.IntegerField(default=1)
-    col_20 = models.IntegerField(default=1)
-    col_21 = models.IntegerField(default=1)
-    col_22 = models.IntegerField(default=1)
-    col_23 = models.IntegerField(default=1)
-    col_24 = models.IntegerField(default=1)
-    col_25 = models.IntegerField(default=1)
-    col_26 = models.IntegerField(default=1)
-    col_27 = models.IntegerField(default=1)
-    col_28 = models.IntegerField(default=1)
-    col_29 = models.IntegerField(default=1)
-'''

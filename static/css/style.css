@@ -14,3 +14,6 @@ body {
 survey_li {
     margin-bottom:10px;
 }
+#parts {
+    font-size:9px !important;
+}

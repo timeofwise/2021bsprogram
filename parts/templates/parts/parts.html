@@ -7,25 +7,25 @@
 <table class="table">
     <thead>
         <tr>
-            <th colspan="3"></th>
+            <th colspan="3" id="parts" style="width:16%">Part Code</th>
             {% for part in parts %}
                 {% if part.part_name != 'dummy' %}
-                    <th scope="col">{{ part.part_code }}</th>
+                    <th scope="col" id="parts" style="width:12%">{{ part.part_code }}</th>
                 {% endif %}
             {% endfor %}
         </tr>
         <tr>
-            <th colspan="3"></th>
+            <th colspan="3" id="parts">Part Name</th>
             {% for part in parts %}
                 {% if part.part_name != 'dummy' %}
-                    <th scope="col">{{ part.part_name }}</th>
+                    <th scope="col" id="parts">{{ part.part_name }}</th>
                 {% endif %}
             {% endfor %}
         </tr>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">설비</th>
-            <th scope="col">시리얼 번호</th>
+            <th scope="col" id="parts" style="width:2%">#</th>
+            <th scope="col" id="parts" style="width:6%">설비</th>
+            <th scope="col" id="parts" style="width:8%">일련번호</th>
             {% for part in parts %}
                 {% if part.part_name != 'dummy' %}
                     <th><img src="{{part.part_img.url}}" width="100px"></th>
@@ -37,11 +37,11 @@
         {% for list in lists %}
             {% if list.visibility != 0 %}
             <tr>
-                <td>{{ forloop.counter }}</td>
+                <td id="parts">{{ forloop.counter }}</td>
                 <!--<td>{{ list.client }}</td>-->
-                <td>{{ list.model_type }}</td>
-                <td>{{ list.model_no }}</td>
-                <td>{{ list.part1_qty }}</td>
+                <td id="parts">{{ list.model_type }}</td>
+                <td id="parts">{{ list.model_no }}</td>
+                <td>{{ list.part1.part1_qty }}</td>
                 <td>{{ list.part2_qty }}</td>
                 <td>{{ list.part3_qty }}</td>
                 <td>{{ list.part4_qty }}</td>
@@ -53,6 +53,10 @@
         {% endfor %}
     </tbody>
 </table>
+
+{% for machine in machines %}
+
+{% endfor %}
 {% endblock %}
 
 {% block pagination %}

@@ -18,7 +18,7 @@ class BookmarkAdmin(admin.ModelAdmin):
 admin.site.register(Bookmark,BookmarkAdmin)
 
 class MachineAdmin(admin.ModelAdmin):
-    list_display = ['id', 'model_type']
+    list_display = ['id', 'model_type', 'part1']
     # raw_id_fields = ['author']
 
 admin.site.register(Machine,MachineAdmin)
