@@ -138,7 +138,7 @@ class Bookmark(models.Model):
     manager_opinion = models.TextField(default='기타 의견 및 요청항목이 없습니다.', null=True)
 
     # etc.
-    # visibility = models.IntegerField(default=1, null=True)
+    visibility = models.IntegerField(default=1, null=True)
     available_display = models.BooleanField('Display', default=True)
 
     class Meta:
