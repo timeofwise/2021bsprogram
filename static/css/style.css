@@ -17,3 +17,6 @@ survey_li {
 #parts {
     font-size:9px !important;
 }
+#survey_list_width {
+    width:20% !important;
+}

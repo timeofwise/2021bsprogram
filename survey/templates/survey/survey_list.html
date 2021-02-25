@@ -6,13 +6,14 @@
 <div class="btn-group">
     <a href="{% url 'add' %}" class="btn btn-info">BS 대상 설비 추가</a>
 </div>
-<p></p>
+<p></p><br><br>
+<h3>1. 고객 정보</h3>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">고객사</th>
             {% for survey in object_list %}
-                <th scope="col" style="width:20%">{{ survey.company }}</th>
+                <th scope="col" id="survey_list_width">{{ survey.company }}</th>
             {% endfor %}
         </tr>
     </thead>
@@ -41,13 +42,151 @@
                 <td scope="col">{{ survey.position }}</td>
             {% endfor %}
         </tr>
+    </tbody>
+</table>
+<p></p><br><br>
+<h3>2. BS 만족도</h3>
+<table class="table">
+    <thead>
+        <th scope="col"></th>
+            {% for survey in object_list %}
+                <th scope="col" id="survey_list_width">{{ survey.dummy }}</th>
+            {% endfor %}
+    </thead>
+    <tbody>
         <tr>
-            <td scope="col">BS 만족도</td>
+            <td scope="col">전체 점수</td>
             {% for survey in object_list %}
                 <td scope="col">{{ survey.q2_overall }}</td>
             {% endfor %}
         </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">SW 부</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q2_sw }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">Head & ANC 부</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q2_head_anc }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">XY 프레임부</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q2_xy }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">PCB 이송부</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q2_conveyor }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">피더 공급부</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q2_feederbase }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">조명 & 카메라 부</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q2_illumination }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">공압부</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q2_air }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col">BS 진단결과 신뢰도</td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q2_trust }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col">정기점검 의향</td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q2_after_service }}</td>
+            {% endfor %}
+        </tr>
     </tbody>
 </table>
+<p></p><br><br>
+<h3>3. 서비스 관심분야</h3>
+<table class="table">
+    <thead>
+        <th scope="col"></th>
+            {% for survey in object_list %}
+                <th scope="col" id="survey_list_width">{{ survey.dummy }}</th>
+            {% endfor %}
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="col">1. 생산성향상 관심사</td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q3_1_main_concern }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col">2. 관심 기술분야</td>
+            <td scope="col" colspan="{{object_list|length}}"></td>
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">스마트 ERP(MES) 시스템</li></li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q3_21_fi_smart_erp }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">공장 자동화 솔루션</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q3_22_fi_factory_automation }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">원격 서비스/지원</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q3_23_fi_remote_support }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">체계적 양성 프로그램(트레이닝/유지보수)</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q3_24_fi_systematical_training }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col"><li type="circle" style="text-indent:16px">기타</li></td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q3_25_fi_other }}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+<p></p><br><br>
+<h3>4. 기타 의견</h3>
+<table class="table">
+    <thead>
+        <th scope="col"></th>
+            {% for survey in object_list %}
+                <th scope="col" id="survey_list_width">{{ survey.dummy }}</th>
+            {% endfor %}
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="col">기타 의견</td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.manager_opinion }}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+
+
 {% endblock %}
 
