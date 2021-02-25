@@ -35,7 +35,6 @@
     </thead>
     <tbody>
         {% for list in lists %}
-            {% if list.visibility != 0 %}
             <tr>
                 <td id="parts">{{ forloop.counter }}</td>
                 <!--<td>{{ list.client }}</td>-->
@@ -49,14 +48,10 @@
                 <td id="parts">2</td>
                 <td id="parts">2</td>
             </tr>
-            {% endif %}
         {% endfor %}
     </tbody>
 </table>
 
-{% for machine in machines %}
-
-{% endfor %}
 {% endblock %}
 
 {% block pagination %}
