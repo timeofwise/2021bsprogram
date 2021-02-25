@@ -8,191 +8,346 @@
 </div>
 <p></p><br><br>
 <h3>1. 고객 정보</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">고객사</th>
-            {% for survey in object_list %}
-                <th scope="col" id="survey_list_width">{{ survey.company }}</th>
-            {% endfor %}
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td scope="col">설문자</td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.name }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col">연락처(모바일)</td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.mobile }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col">연락처(이메일)</td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.email }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col">담당업무</td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.position }}</td>
-            {% endfor %}
-        </tr>
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">고객사</th>
+                {% for survey in object_list %}
+                    <th scope="col" id="survey_list_width">{{ survey.company }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="col">설문자</td>
+                {% for survey in object_list %}
+                    <td scope="col">{{ survey.name }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col">연락처(모바일)</td>
+                {% for survey in object_list %}
+                    <td scope="col">{{ survey.mobile }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col">연락처(이메일)</td>
+                {% for survey in object_list %}
+                    <td scope="col">{{ survey.email }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col">담당업무</td>
+                {% for survey in object_list %}
+                    <td scope="col">{{ survey.position }}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</div>
 <p></p><br><br>
 <h3>2. BS 만족도</h3>
-<table class="table">
-    <thead>
-        <th scope="col"></th>
-            {% for survey in object_list %}
-                <th scope="col" id="survey_list_width">{{ survey.dummy }}</th>
-            {% endfor %}
-    </thead>
-    <tbody>
-        <tr>
-            <td scope="col">전체 점수</td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q2_overall }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">SW 부</li></td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q2_sw }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">Head & ANC 부</li></td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q2_head_anc }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">XY 프레임부</li></td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q2_xy }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">PCB 이송부</li></td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q2_conveyor }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">피더 공급부</li></td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q2_feederbase }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">조명 & 카메라 부</li></td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q2_illumination }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">공압부</li></td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q2_air }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col">BS 진단결과 신뢰도</td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q2_trust }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col">정기점검 의향</td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q2_after_service }}</td>
-            {% endfor %}
-        </tr>
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">고객사</th>
+                {% for survey in object_list %}
+                    <th scope="col" id="survey_list_width">{{ survey.company }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="col">전체 점수</td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q2_overall == 1 %}
+                        	<i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_overall == 2 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_overall == 3 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_overall == 4 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_overall == 5 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">SW 부</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q2_sw == 1 %}
+                        	<i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_sw == 2 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_sw == 3 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_sw == 4 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_sw == 5 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">Head & ANC 부</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q2_head_anc == 1 %}
+                        	<i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_head_anc == 2 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_head_anc == 3 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_head_anc == 4 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_head_anc == 5 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">XY 프레임부</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q2_xy == 1 %}
+                        	<i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_xy == 2 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_xy == 3 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_xy == 4 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_xy == 5 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">PCB 이송부</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q2_conveyor == 1 %}
+                        	<i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_conveyor == 2 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_conveyor == 3 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_conveyor == 4 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_conveyor == 5 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">피더 공급부</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q2_feederbase == 1 %}
+                        	<i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_feederbase == 2 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_feederbase == 3 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_feederbase == 4 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_feederbase == 5 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">조명 & 카메라 부</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q2_illumination == 1 %}
+                        	<i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_illumination == 2 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_illumination == 3 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_illumination == 4 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_illumination == 5 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">공압부</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q2_air == 1 %}
+                        	<i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_air == 2 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_air == 3 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_air == 4 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% elif survey.q2_air == 5 %}
+                            <i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i><i id="star" class="fa fa-star" style="font-size:18px"></i>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col">BS 진단결과 신뢰도</td>
+                {% for survey in object_list %}
+                    <td scope="col">{{ survey.q2_trust }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col">정기점검 의향</td>
+                {% for survey in object_list %}
+                    <td scope="col">{{ survey.q2_after_service }}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</div>
 <p></p><br><br>
 <h3>3. 서비스 관심분야</h3>
-<table class="table">
-    <thead>
-        <th scope="col"></th>
-            {% for survey in object_list %}
-                <th scope="col" id="survey_list_width">{{ survey.dummy }}</th>
-            {% endfor %}
-    </thead>
-    <tbody>
-        <tr>
-            <td scope="col">1. 생산성향상 관심사</td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.q3_1_main_concern }}</td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col">2. 관심 기술분야</td>
-            <td scope="col" colspan="{{object_list|length}}"></td>
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">스마트 ERP(MES) 시스템</li></li></td>
-            {% for survey in object_list %}
-                <td scope="col"><span class="badge rounded-pill bg-success">{{ survey.q3_21_fi_smart_erp }}</span></td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">공장 자동화 솔루션</li></td>
-            {% for survey in object_list %}
-                <td scope="col"><span class="badge rounded-pill bg-success">{{ survey.q3_22_fi_factory_automation }}</span></td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">원격 서비스/지원</li></td>
-            {% for survey in object_list %}
-                <td scope="col"><span class="badge rounded-pill bg-success">{{ survey.q3_23_fi_remote_support }}</span></td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">체계적 양성 프로그램(트레이닝/유지보수)</li></td>
-            {% for survey in object_list %}
-                <td scope="col"><span class="badge rounded-pill bg-success">{{ survey.q3_24_fi_systematical_training }}</span></td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col"><li type="circle" style="text-indent:16px">기타</li></td>
-            {% for survey in object_list %}
-                <td scope="col"><span class="badge rounded-pill bg-success">{{ survey.q3_25_fi_other }}</span></td>
-            {% endfor %}
-        </tr>
-        <tr>
-            <td scope="col">3. 추천 점수</td>
-            {% for survey in object_list %}
-                <td scope="col"><span class="badge rounded-pill bg-success">{{ survey.q3_3_recommend_to_other }}</span></td>
-            {% endfor %}
-        </tr>
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">고객사</th>
+                {% for survey in object_list %}
+                    <th scope="col" id="survey_list_width">{{ survey.company }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="col">1. 생산성향상 관심사</td>
+                {% for survey in object_list %}
+                    <td scope="col">{{ survey.q3_1_main_concern }}</td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col">2. 관심 기술분야</td>
+                <td scope="col" colspan="{{object_list|length}}"></td>
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">스마트 ERP(MES) 시스템</li></li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q3_21_fi_smart_erp == '1' %}
+                            <i class="fa fa-check-square" style="font-size:18px"></i>
+                        {% else %}
+                            <i class="fa fa-minus" style="font-size:12px"></i>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">공장 자동화 솔루션</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q3_22_fi_factory_automation == '1' %}
+                            <i class="fa fa-check-square" style="font-size:18px"></i>
+                        {% else %}
+                            <i class="fa fa-minus" style="font-size:12px"></i>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">원격 서비스/지원</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q3_23_fi_remote_support == '1' %}
+                            <i class="fa fa-check-square" style="font-size:18px"></i>
+                        {% else %}
+                            <i class="fa fa-minus" style="font-size:12px"></i>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">체계적 양성 프로그램(트레이닝/유지보수)</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q3_24_fi_systematical_training == '1' %}
+                            <i class="fa fa-check-square" style="font-size:18px"></i>
+                        {% else %}
+                            <i class="fa fa-minus" style="font-size:12px"></i>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col"><li type="circle" style="text-indent:16px">기타</li></td>
+                {% for survey in object_list %}
+                    <td scope="col">
+                        {% if survey.q3_25_fi_other == '1' %}
+                            <i class="fa fa-check-square" style="font-size:18px"></i>
+                        {% else %}
+                            <i class="fa fa-minus" style="font-size:12px"></i>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+            <tr>
+                <td scope="col">3. 추천 점수</td>
+                {% for survey in object_list %}
+                    <td scope="col"><span class="badge rounded-pill bg-success">{{ survey.q3_3_recommend_to_other }}</span></td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</div>
 <p></p><br><br>
 <h3>4. 기타 의견</h3>
-<table class="table">
-    <thead>
-        <th scope="col"></th>
-            {% for survey in object_list %}
-                <th scope="col" id="survey_list_width">{{ survey.dummy }}</th>
-            {% endfor %}
-    </thead>
-    <tbody>
-        <tr>
-            <td scope="col">기타 의견</td>
-            {% for survey in object_list %}
-                <td scope="col">{{ survey.manager_opinion|linebreaks }}</td>
-            {% endfor %}
-        </tr>
-    </tbody>
-</table>
-
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">고객사</th>
+                {% for survey in object_list %}
+                    <th scope="col" id="survey_list_width">{{ survey.company }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="col">기타 의견</td>
+                {% for survey in object_list %}
+                    <td scope="col">{{ survey.manager_opinion|linebreaks }}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}
 
