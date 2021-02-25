@@ -139,7 +139,7 @@ class Bookmark(models.Model):
 
     # etc.
     visibility = models.IntegerField(default=1, null=True)
-    # available_display = models.BooleanField('Display', default=True)
+    available_display = models.BooleanField('Display', default=True)
 
     class Meta:
         ordering = ['-created']
