@@ -2,8 +2,8 @@ from django.urls import path
 from .views import BookmarkListView, BookmarkCreateView, BookmarkDetailView, BookmarkUpdateView, BookmarkDeleteView, BookmarkPrintView, BookmarkListDef
 
 urlpatterns = [
-    path('', BookmarkListView.as_view(), name='list'),
-    path('list/', BookmarkListDef, name='list2'),
+    path('list/', BookmarkListView.as_view(), name='list2'),
+    path('', BookmarkListDef, name='list'),
     #path('<slug:category_slug>/', product_in_category, name='product_in_category'),
     path('add/', BookmarkCreateView.as_view(), name='add'),
     path('detail/<int:pk>/', BookmarkDetailView.as_view(), name='detail'),
