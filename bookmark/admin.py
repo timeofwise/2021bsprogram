@@ -9,9 +9,9 @@ admin.site.register(Client)
 # Register your models here.
 from .models import *
 class BookmarkAdmin(admin.ModelAdmin):
-    list_display = ['id', 'client', 'model_type', 'model_no', 'visibility', 'available_display', 'slug', 'created', 'updated']
+    list_display = ['id', 'client', 'model_type', 'model_no', 'visibility', 'slug', 'created', 'updated']
     # raw_id_fields = ['author']
-    list_editable = ['slug', 'available_display', 'visibility']
+    list_editable = ['slug', 'visibility']
     list_filter = ['client', 'created', 'updated']
     search_fields = ['client', 'created', 'model_type']
     ordering = ['-updated', '-created']
