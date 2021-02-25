@@ -20,3 +20,7 @@ survey_li {
 #survey_list_width {
     width:20% !important;
 }
+#star {
+    color:#8549F1!important;
+    margin-right:2px;
+}

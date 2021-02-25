@@ -320,7 +320,31 @@
             <tr>
                 <td scope="col">3. 추천 점수</td>
                 {% for survey in object_list %}
-                    <td scope="col"><span class="badge rounded-pill bg-success">{{ survey.q3_3_recommend_to_other }}</span></td>
+                    <td scope="col">
+                        {% if survey.q3_3_recommend_to_other == 1 %}
+                            <i id="star" class="fa fa-star-half"></i>
+                        {% elif survey.q3_3_recommend_to_other == 2 %}
+                            <i id="star" class="fa fa-star"></i>
+                        {% elif survey.q3_3_recommend_to_other == 3 %}
+                            <i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star-half"></i>
+                        {% elif survey.q3_3_recommend_to_other == 4 %}
+                            <i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i>
+                        {% elif survey.q3_3_recommend_to_other == 5 %}
+                            <i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star-half"></i>
+                        {% elif survey.q3_3_recommend_to_other == 6 %}
+                            <i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i>
+                        {% elif survey.q3_3_recommend_to_other == 7 %}
+                            <i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star-half"></i>
+                        {% elif survey.q3_3_recommend_to_other == 8 %}
+                            <i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i>
+                        {% elif survey.q3_3_recommend_to_other == 9 %}
+                            <i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star-half"></i>
+                        {% elif survey.q3_3_recommend_to_other == 10 %}
+                            <i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i><i id="star" class="fa fa-star"></i>
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
                 {% endfor %}
             </tr>
         </tbody>
