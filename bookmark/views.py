@@ -11,6 +11,10 @@ class BookmarkListView(ListView):
     model = Bookmark
     paginate_by = 9
 
+def BookmarkListDef(request):
+    bookmarks = Bookmark.objects.filter(available_display=True)
+    return render(request, 'bookmark/list.html', {'bookmarks':bookmarks})
+
 '''
 def BookmarkListByClient(request, category_slug=None):
     current_category = None
