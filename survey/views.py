@@ -3,6 +3,7 @@ from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
 from django.views.generic.detail import DetailView
 from .models import Survey
+from bookmark.models import Bookmark
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -47,11 +48,6 @@ class AddSurvey(CreateView):
 def SurveyComplete(request):
     return render(request, 'survey/survey_complete.html')
 
-"""
 
-
-
-
-
-
-"""
+class DisplaySurvey(ListView):
+    model = Survey

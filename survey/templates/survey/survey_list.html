@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}BS 프로그램 설문결과 -{% endblock %}
+
+{% block content %}
+<div class="btn-group">
+    <a href="{% url 'add' %}" class="btn btn-info">BS 대상 설비 추가</a>
+</div>
+<p></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">고객사</th>
+            {% for survey in object_list %}
+                <th scope="col" style="width:20%">{{ survey.company }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="col">설문자</td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.name }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col">연락처(모바일)</td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.mobile }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col">연락처(이메일)</td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.email }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col">담당업무</td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.position }}</td>
+            {% endfor %}
+        </tr>
+        <tr>
+            <td scope="col">BS 만족도</td>
+            {% for survey in object_list %}
+                <td scope="col">{{ survey.q2_overall }}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
+

@@ -61,6 +61,9 @@ class Bookmark(models.Model):
     model_type = models.ForeignKey(Machine, on_delete=models.SET_NULL, null=True)
     model_no = models.CharField(max_length=20)
 
+    # Slug
+    slug = models.SlugField(max_length=50, db_index=True, unique=True, allow_unicode=True, null=True)
+
 
     # Manager & Confirm
     inspector = models.CharField(max_length=50, null=True)
@@ -145,4 +148,5 @@ class Bookmark(models.Model):
 
     def get_absolute_url(self):
         return reverse('detail', args=[str(self.id)])
+    #    return reverse('detail', args=[self.slug])
 

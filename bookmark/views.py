@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
@@ -10,6 +10,21 @@ from django.urls import reverse_lazy
 class BookmarkListView(ListView):
     model = Bookmark
     paginate_by = 9
+
+'''
+def BookmarkListByClient(request, category_slug=None):
+    current_category = None
+    categories = Category.objects.all()
+    products = Product.objects.filter(available_display=True)
+    if category_slug:
+        current_category = get_object_or_404(Category, slug=category_slug)
+        products = products.filter(category=current_category)
+    return render(request, 'shop/list.html', {
+        'current_category' : current_category,
+        'categories' : categories,
+        'products' : products,
+    })
+'''
 
 class BookmarkCreateView(CreateView):
     model = Bookmark
