@@ -21,6 +21,15 @@ survey_li {
     width:20% !important;
 }
 #star {
-    color:#8549F1!important;
+    color:#8549F1 !important;
     margin-right:2px;
+    font-size:18px;
+}
+#check {
+    color:black;
+    font-size:18px !important;
+}
+#minus {
+    color:black;
+    font-size:12px !important;
 }
