@@ -181,7 +181,7 @@
         <tr>
             <td scope="col">기타 의견</td>
             {% for survey in object_list %}
-                <td scope="col">{{ survey.manager_opinion }}</td>
+                <td scope="col">{{ survey.manager_opinion|linebreaks }}</td>
             {% endfor %}
         </tr>
     </tbody>
