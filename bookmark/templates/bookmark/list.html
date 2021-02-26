@@ -6,10 +6,6 @@
 <p></p>
 <div class="row">
     <div class="col-lg-2">
-        <div class="btn-group">
-            <a href="{% url 'add' %}" class="btn btn-info">BS 대상 설비 추가</a>
-        </div>
-        <br><br>
         <div id="expand_hide" class="list-group-flush">
             <a href="{% url 'list' %}" class="list-group-item list-group-item-action list-group-item-light {% if not current_client %}active{% endif %}">All</a>
             {% for c in clients %}
@@ -18,6 +14,10 @@
         </div>
     </div>
     <div class="col-lg-10">
+        <div class="btn-group pull-right">
+            <a href="{% url 'add' %}" class="btn btn-secondary">BS 대상 설비 추가</a>
+        </div>
+        <br><br><br>
         <table class="table">
             <thead>
                 <tr>
