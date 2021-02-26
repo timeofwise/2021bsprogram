@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="col-8">
-        <div class="list-group list-group-horizontal">
+        <div class="list-group list-group-horizontal pull-right">
             <a href="{% url 'list' %}" class="list-group-item {% if not current_client %}active{% endif %}">All</a>
             {% for c in clients %}
             <a href="{{ c.get_absolute_url }}" class="list-group-item {% if current_client.slug == c.slug %}active{% endif %}">{{ c.name }}</a>
