@@ -8,7 +8,8 @@ from django.urls import reverse_lazy
 def PartsListView(request):
     # 보여줄 사진 데이터
     machines = Machine.objects.all()
-    lists = Bookmark.objects.filter(available_display=True)
+    lists = Bookmark.objects.all()
+    # lists = Bookmark.objects.filter(available_display=True)
     parts = Consumed.objects.all()
     sm421 = 'SM421'
     sm411 = 'SM411'
