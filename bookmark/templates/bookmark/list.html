@@ -10,10 +10,10 @@
         </div>
     </div>
     <div class="col-8">
-        <div class="list-group list-group-horizontal pull-right">
-            <a href="{% url 'list' %}" class="list-group-item {% if not current_client %}active{% endif %}">All</a>
+        <div id="expand_hide" class="list-group-flush pull-right">
+            <a href="{% url 'list' %}" class="list-group-item list-group-item-action list-group-item-light {% if not current_client %}active{% endif %}">All</a>
             {% for c in clients %}
-            <a href="{{ c.get_absolute_url }}" class="list-group-item {% if current_client.slug == c.slug %}active{% endif %}">{{ c.name }}</a>
+            <a href="{{ c.get_absolute_url }}" class="list-group-item list-group-item-action list-group-item-light {% if current_client.slug == c.slug %}active{% endif %}">{{ c.name }}</a>
             {% endfor %}
         </div>
     </div>
@@ -72,6 +72,10 @@
         {% endfor %}
     </tbody>
 </table>
+
+
+<script>
+</script>
 {% endblock %}
 
 {% block pagination %}
