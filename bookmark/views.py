@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
-from .models import Bookmark
+from .models import Bookmark, Client
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -11,9 +11,15 @@ class BookmarkListView(ListView):
     model = Bookmark
     paginate_by = 9
 
-def BookmarkListDef(request):
+def BookmarkListDef(request, client_slug=None):
+    current_client = None
+    clients = Client.objects.all()
     bookmarks = Bookmark.objects.filter(available_display=True)
-    return render(request, 'bookmark/list.html', {'bookmarks':bookmarks})
+
+    if client_slug:
+        current_client = get_object_or_404(Client, slug=client_slug)
+        bookmarks = bookmarks.filter(client=current_client)
+    return render(request, 'bookmark/list.html', {'bookmarks':bookmarks, 'current_client' : current_client, 'clients':clients})
 
 '''
 def BookmarkListByClient(request, category_slug=None):

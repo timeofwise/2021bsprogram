@@ -3,8 +3,20 @@
 {% block title %}BS 프로그램 대상 설비 목록 -{% endblock %}
 
 {% block content %}
-<div class="btn-group">
-    <a href="{% url 'add' %}" class="btn btn-info">BS 대상 설비 추가</a>
+<div class="row">
+    <div class="col-4">
+        <div class="btn-group">
+            <a href="{% url 'add' %}" class="btn btn-info">BS 대상 설비 추가</a>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="list-group list-group-horizontal-sm">
+            <a href="{% url 'list' %}" class="list-group-item {% if not current_client %}active{% endif %}">All</a>
+            {% for c in clients %}
+            <a href="{{ c.get_absolute_url }}" class="list-group-item {% if current_client.slug == c.slug %}active{% endif %}">{{ c.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
 </div>
 <p></p>
 <table class="table">

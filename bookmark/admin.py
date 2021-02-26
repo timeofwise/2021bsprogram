@@ -3,7 +3,7 @@ from .models import Bookmark, Machine, Client, Consumed
 # Register your models here.
 
 # admin.site.register(Bookmark)
-admin.site.register(Client)
+# admin.site.register(Client)
 #admin.site.register(Machine)
 
 # Register your models here.
@@ -17,6 +17,12 @@ class BookmarkAdmin(admin.ModelAdmin):
     ordering = ['-updated', '-created']
 
 admin.site.register(Bookmark,BookmarkAdmin)
+
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'code', 'slug']
+    list_editable = ['slug']
+
+admin.site.register(Client,ClientAdmin)
 
 class MachineAdmin(admin.ModelAdmin):
     list_display = ['id', 'model_type', 'part1']

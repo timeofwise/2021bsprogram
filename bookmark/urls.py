@@ -4,7 +4,7 @@ from .views import BookmarkListView, BookmarkCreateView, BookmarkDetailView, Boo
 urlpatterns = [
     path('list/', BookmarkListView.as_view(), name='list2'),
     path('', BookmarkListDef, name='list'),
-    #path('<slug:category_slug>/', product_in_category, name='product_in_category'),
+    path('<slug:client_slug>/', BookmarkListDef, name='sort_by_client'),
     path('add/', BookmarkCreateView.as_view(), name='add'),
     path('detail/<int:pk>/', BookmarkDetailView.as_view(), name='detail'),
     path('update/<int:pk>/', BookmarkUpdateView.as_view(), name='update'),

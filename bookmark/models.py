@@ -11,8 +11,15 @@ class Client(models.Model):
     remarks_1 = models.CharField(max_length=50, null=True)
     remarks_2 = models.CharField(max_length=50, null=True)
 
+    # Slug
+    slug = models.SlugField(max_length=50, db_index=True, unique=True, allow_unicode=True, null=True)
+
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        #상세페이지 출력
+        return reverse('sort_by_client', args=[self.slug])
 
 class Consumed(models.Model):
     part_code = models.CharField(max_length=20, null=True, unique=True)
@@ -57,7 +64,7 @@ class Machine(models.Model):
 class Bookmark(models.Model):
     # Basic Informations
     # client = models.CharField(max_length=100, null=True)
-    client = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True)
+    client = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, related_name='clients')
     model_type = models.ForeignKey(Machine, on_delete=models.SET_NULL, null=True)
     model_no = models.CharField(max_length=20)
 
