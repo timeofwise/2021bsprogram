@@ -358,7 +358,11 @@
             <tr>
                 <td scope="col">기타 의견</td>
                 {% for survey in object_list %}
-                    <td scope="col">{{ survey.manager_opinion|linebreaks }}</td>
+                    {% if survey.manager_opinion == '의견을 작성해주세요.' %}
+                        <td scope="col">없음</td>
+                    {% else %}
+                        <td scope="col">{{ survey.manager_opinion|linebreaks }}</td>
+                    {% endif %}
                 {% endfor %}
             </tr>
         </tbody>
