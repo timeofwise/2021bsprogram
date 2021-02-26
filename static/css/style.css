@@ -25,6 +25,11 @@ survey_li {
     margin-right:2px;
     font-size:18px;
 }
+#star_recommend {
+    color:#DA3849 !important;
+    margin-right:2px;
+    font-size:18px;
+}
 #check {
     color:black;
     font-size:18px !important;
