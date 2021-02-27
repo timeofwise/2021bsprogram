@@ -35,6 +35,29 @@ class Consumed(models.Model):
     def __str__(self):
         return self.part_code
 
+class Reportitem(models.Model):
+    num = models.IntegerField(default=1, null=True, unique=True)
+    item = models.CharField(max_length=30, default='-', null=True)
+
+    class Meta:
+        ordering = ['num']
+
+    def __str__(self):
+        return self.item
+
+class Report(models.Model):
+    client = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, related_name='report_for_clients')
+    item = models.ForeignKey(Reportitem, on_delete=models.SET_NULL, null=True, related_name='report_for_items')
+    desc = models.CharField(max_length=250, null=True)
+    img = models.ImageField(upload_to='static/img/report', default='photos/no_image.png', null=True)
+    target_goods = models.CharField(max_length=50, default='-', null=True)
+    target_goods_price = models.DecimalField(default=0, max_digits=100000000, decimal_places=0, null=True)
+    target_goods_qty = models.IntegerField(default=0, null=True)
+
+
+    def __str__(self):
+        return self.desc
+
 
 class Machine(models.Model):
     model_type = models.CharField(max_length=50, null=True)

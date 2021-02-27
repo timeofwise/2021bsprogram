@@ -24,6 +24,18 @@ class ClientAdmin(admin.ModelAdmin):
 
 admin.site.register(Client,ClientAdmin)
 
+class ReportItemAdmin(admin.ModelAdmin):
+    list_display = ['id', 'num', 'item']
+    list_editable = ['num', 'item']
+
+admin.site.register(Reportitem,ReportItemAdmin)
+
+class ReportAdmin(admin.ModelAdmin):
+    list_display = ['id', 'client', 'item', 'desc', 'img', 'target_goods', 'target_goods_price', 'target_goods_qty']
+    list_editable = ['client', 'item', 'desc', 'img']
+
+admin.site.register(Report,ReportAdmin)
+
 class MachineAdmin(admin.ModelAdmin):
     list_display = ['id', 'part1_qty', 'part2_qty', 'part3_qty', 'part4_qty', 'part5_qty', 'part6_qty', 'part7_qty']
     list_editable = ['part1_qty', 'part2_qty', 'part3_qty', 'part4_qty', 'part5_qty', 'part6_qty', 'part7_qty']
