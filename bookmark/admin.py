@@ -14,7 +14,7 @@ class BookmarkAdmin(admin.ModelAdmin):
     list_editable = ['slug', 'visibility', 'available_display', 'line', 'order']
     list_filter = ['client', 'created', 'updated']
     search_fields = ['client', 'created', 'model_type']
-    ordering = ['-created', 'line', 'order']
+    ordering = ['-client', 'line', 'order']
 
 admin.site.register(Bookmark,BookmarkAdmin)
 
