@@ -5,7 +5,7 @@
 {% block content %}
 <p></p>
 <div class="row">
-    <div class="col-lg-2 sticky-top">
+    <div class="col-lg-2">
         <div class="btn-group">
             <a href="#" class="btn btn-secondary">리포트 등록</a>
         </div><br><br>
@@ -36,6 +36,7 @@
                         <th>호기</th>
                         <th>모델</th>
                         <th>일련번호</th>
+                        <th>비고</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,7 @@
                     <td>{{ obj.order }}</td>
                     <td>{{ obj.model_type }}</td>
                     <td>{{ obj.model_no }}</td>
+                    <td><a href="{% url 'detail' pk=obj.id %}" class="btn btn-success btn-sm">세부</a></td>
                 </tr>
                 {% endfor %}
                 {% endfor %}
@@ -60,6 +62,44 @@
             <li>지원 인력</li>
         </div>
         {% else %}
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>일정</th>
+                        <th>고객사</th>
+                        <th>소재지</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2/22</td>
+                        <td>유로티에스텍</td>
+                        <td>군포 당정동</td>
+                    </tr>
+                    <tr>
+                        <td>2/23</td>
+                        <td>웍스텝</td>
+                        <td>군포 당정동</td>
+                    </tr>
+                    <tr>
+                        <td>2/24</td>
+                        <td>디테크</td>
+                        <td>수원 고색동</td>
+                    </tr>
+                    <tr>
+                        <td>2/25</td>
+                        <td>TSA</td>
+                        <td>용인 유방동</td>
+                    </tr>
+                    <tr>
+                        <td>2/26</td>
+                        <td>큐엠텍</td>
+                        <td>수원 영통동</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         {% endif %}
 
     </div>
