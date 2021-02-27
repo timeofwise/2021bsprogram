@@ -51,6 +51,8 @@ class Report(models.Model):
     mini_title = models.CharField(max_length=50, default='-', null=True)
     desc = models.CharField(max_length=250, null=True)
     img = models.ImageField(upload_to='static/img/report', default='photos/no_image.png', null=True)
+    img2 = models.ImageField(upload_to='static/img/report', default='photos/no_image.png', null=True)
+    img3 = models.ImageField(upload_to='static/img/report', default='photos/no_image.png', null=True)
     target_goods = models.CharField(max_length=50, default='-', null=True)
     target_goods_price = models.DecimalField(default=0, max_digits=100000000, decimal_places=0, null=True)
     target_goods_qty = models.IntegerField(default=0, null=True)
