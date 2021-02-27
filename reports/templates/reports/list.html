@@ -6,20 +6,40 @@
 <p></p>
 <div class="row">
     <div class="col-lg-2">
+        <div class="btn-group">
+            <a href="#" class="btn btn-secondary">리포트 등록</a>
+        </div><br><br>
         <div id="expand_hide" class="list-group-flush">
-            <a href="{% url 'reports_list' %}" class="list-group-item list-group-item-action list-group-item-light {% if not current_client %}active{% endif %}">All</a>
+            <a href="{% url 'reports_list' %}" class="list-group-item list-group-item-action list-group-item-light {% if not current_client %}active{% endif %}">초기 화면</a>
             {% for c in clients %}
             <a href="{{ c.get_absolute_url_reports }}" class="list-group-item list-group-item-action list-group-item-light {% if current_client.slug == c.slug %}active{% endif %}">{{ c.name }}</a>
             {% endfor %}
         </div><br>
     </div>
     <div class="col-lg-10">
-        <div class="btn-group pull-right">
-            <a href="#" class="btn btn-secondary">리포트 등록</a>
+        {% if current_client %}
+        <div class="alert alert-secondary">
+            <h3 style="display:inline">{{ current_client.name }} - {{current_client.order}}차</h3>
+        </div><br>
+        {% else %}
+        <div class="alert alert-warning">
+            <h3 style="display:inline">리포트 페이지</h3>
+        </div><br>
+        {% endif %}
+        {% if current_client %}
+        <div>
+            <h4>1. 라인 현황</h4><br>
+            {% for bookmark in bookmarks %}
+                {{ bookmark.model_type }}<br>
+            {% endfor %}
+            <h4>2. BS 작업 간 특이사항</h4><br>
+            <h4>3. 고객의 소리</h4><br>
+            <h4>4. 기타</h4><br>
+            <li>지원 인력</li>
         </div>
-        <br><br><br>
-        <table class="table">
-        </table>
+        {% else %}
+        {% endif %}
+
     </div>
 </div>
 {% endblock %}

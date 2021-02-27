@@ -9,12 +9,12 @@ from .models import Bookmark, Machine, Client, Consumed
 # Register your models here.
 from .models import *
 class BookmarkAdmin(admin.ModelAdmin):
-    list_display = ['id', 'client', 'model_type', 'model_no', 'available_display', 'visibility', 'slug', 'created', 'updated']
+    list_display = ['id', 'client', 'model_type', 'model_no', 'line', 'order', 'available_display', 'visibility', 'slug', 'created', 'updated']
     # raw_id_fields = ['author']
-    list_editable = ['slug', 'visibility', 'available_display']
+    list_editable = ['slug', 'visibility', 'available_display', 'line', 'order']
     list_filter = ['client', 'created', 'updated']
     search_fields = ['client', 'created', 'model_type']
-    ordering = ['-updated', '-created']
+    ordering = ['-created', 'line', 'order']
 
 admin.site.register(Bookmark,BookmarkAdmin)
 

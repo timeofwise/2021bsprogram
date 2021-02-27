@@ -75,6 +75,10 @@ class Bookmark(models.Model):
     # Slug
     slug = models.SlugField(max_length=50, db_index=True, unique=True, allow_unicode=True, null=True)
 
+    # line info
+    line = models.CharField(max_length=10, null=True)
+    order = models.IntegerField(default=1, null=True)
+
 
     # Manager & Confirm
     inspector = models.CharField(max_length=50, null=True)
