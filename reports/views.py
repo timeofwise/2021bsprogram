@@ -10,7 +10,7 @@ def ReportsView(request, client_slug=None):
     current_client = None
     clients = Client.objects.all()
     bookmarks = Bookmark.objects.filter(available_display=True)
-    line_rowspan = []
+    line_rowspan = [0]
     line_max={}
     if client_slug:
         current_client = get_object_or_404(Client, slug=client_slug)

@@ -39,36 +39,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% for bookmark in bookmarks %}
-                    <tr>
-                        <td>{{ bookmark.line }}</td>
-                        <td>{{ bookmark.order }}</td>
-                        <td>{{ bookmark.model_type }}</td>
-                        <td>{{ bookmark.model_no }}</td>
-                    </tr>
+                {% regroup bookmarks by line as grouped %}
+                {% for group in grouped %}
+                {% for obj in group.list %}
+                <tr>
+                    {% ifchanged %}
+                    <td rowspan="{{group.list|length}}">{{ obj.line }}</td>
+                    {% endifchanged %}
+                    <td>{{ obj.order }}</td>
+                    <td>{{ obj.model_type }}</td>
+                    <td>{{ obj.model_no }}</td>
+                </tr>
+                {% endfor %}
                 {% endfor %}
                 </tbody>
             </table>
             <h4>2. BS 작업 간 특이사항</h4><br>
-            <table class="table">
-                <tbody>
-                    {% for line in line_rowspan %}
-                        {% if line != 1 %}
-                    <tr>
-                        <td rowspan="{{line}}">1</td>
-                        <td>2</td>
-                        <td>3</td>
-                    </tr>
-                        {% else %}
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                    </tr>
-                        {% endif %}
-                    {% endfor %}
-                </tbody>
-            </table>
             <h4>3. 고객의 소리</h4><br>
             <h4>4. 기타</h4><br>
             <li>지원 인력</li>
@@ -76,8 +62,8 @@
         {% else %}
         {% endif %}
 
-    </div>{% for line in line_max.min %}{{line}},{%endfor%}<br>{% for line in line_rowspan %}{{line}}{% endfor %}
-</div><br>
+    </div>
+</div>
 {% endblock %}
 
 {% block pagination %}
