@@ -13,6 +13,9 @@ def ReportsView(request, client_slug=None):
     reports = Report.objects.all()
     product = None
     bs_issue = None
+    voc = None
+    interested = None
+    etc = None
 
     if client_slug:
         current_client = get_object_or_404(Client, slug=client_slug)
@@ -20,9 +23,23 @@ def ReportsView(request, client_slug=None):
         reports = reports.filter(client=current_client)
         product = reports.filter(item_id=6)
         bs_issue = reports.filter(item_id=2)
+        voc = reports.filter(item_id=3)
+        interested = reports.filter(item_id=4)
+        etc = reports.filter(item_id=5)
 
 
 
 
 
-    return render(request, 'reports/list.html', {'bookmarks':bookmarks, 'current_client' : current_client, 'clients':clients, 'reports' : reports, 'product' : product, 'bs_issue' : bs_issue})
+
+    return render(request, 'reports/list.html', {
+        'bookmarks':bookmarks,
+        'current_client' : current_client,
+        'clients':clients,
+        'reports' : reports,
+        'product' : product,
+        'bs_issue' : bs_issue,
+        'voc' : voc,
+        'interested' : interested,
+        'etc' : etc,
+    })

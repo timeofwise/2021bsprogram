@@ -6,9 +6,6 @@
 <p></p>
 <div class="row">
     <div class="col-lg-2">
-        <div class="btn-group">
-            <a href="#" class="btn btn-secondary">리포트 등록</a>
-        </div><br><br>
         <div id="expand_hide" class="list-group-flush">
             <a href="{% url 'reports_list' %}" class="list-group-item list-group-item-action list-group-item-light {% if not current_client %}active{% endif %}">초기 화면</a>
             {% for c in clients %}
@@ -98,7 +95,77 @@
             </table>
         </div>
         <div class="mb-5 mt-5">
-            <h4>4. 기타</h4><br>
+            <h4>4. 고객의 소리</h4><br>
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>구분</th>
+                        <th>상세</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for v in voc %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ v.mini_title }}</td>
+                        <td>{{ v.desc }}</td>
+                        {% if v.img.url != '/photos/no_image.png' %}
+                        <td><img src="{{ v.img.url }}" width="200px" alt="..."></td>
+                        {% else %}
+                        <td>-</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="mb-5 mt-5">
+            <h4>5. 고객 관심 항목(상품)</h4><br>
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>관심 항목(상품)</th>
+                        <th>가격</th>
+                        <th>수량(예상)</th>
+                        <th>전체 가격</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in interested %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ i.target_goods }}</td>
+                        <td>{{ i.target_goods_price }}</td>
+                        <td>{{ i.target_goods_qty }}</td>
+                        <td>-</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="mb-5 mt-5">
+            <h4>6. 기타</h4><br>
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>내용</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in etc %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ e.desc }}</td>
+                        <td>-</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
             <ul>지원 인력
                 <li>HPM - 박홍균</li>
                 <li>STS - 정우현, 이준채, 김상근 외</li>
