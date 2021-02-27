@@ -3,7 +3,20 @@
 {% block title %}BS 프로그램 대상 설비 목록 -{% endblock %}
 
 {% block content %}
-<h2>BS 소모품 이용 내역</h2><br>
+<div class="row">
+    <div class="col-3">
+        <h2 style="display:inline;margin-right:20px">BS 소모품 이용 내역</h2>
+    </div>
+    <div class="col-9">
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+            <option>고객사 : 모두</option>
+            {% for client in clients %}
+            <option>고객사 : {{ client.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+<br><br><br>
 <table class="table">
     <thead>
         <tr>
