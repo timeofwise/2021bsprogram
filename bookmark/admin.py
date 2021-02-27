@@ -25,8 +25,8 @@ class ClientAdmin(admin.ModelAdmin):
 admin.site.register(Client,ClientAdmin)
 
 class MachineAdmin(admin.ModelAdmin):
-    list_display = ['id', 'model_type', 'part1', 'part1_qty']
-    list_editable = ['part1_qty']
+    list_display = ['id', 'part1_qty', 'part2_qty', 'part3_qty', 'part4_qty', 'part5_qty', 'part6_qty', 'part7_qty']
+    list_editable = ['part1_qty', 'part2_qty', 'part3_qty', 'part4_qty', 'part5_qty', 'part6_qty', 'part7_qty']
     # raw_id_fields = ['author']
 
 admin.site.register(Machine,MachineAdmin)

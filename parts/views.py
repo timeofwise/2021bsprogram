@@ -28,23 +28,23 @@ def PartsListView(request, client_slug=None):
 
     sum3 = 0
     for i in range(len(lists)):
-        sum1 += int(lists[i].model_type.part3_qty)
+        sum3 += int(lists[i].model_type.part3_qty)
 
     sum4 = 0
     for i in range(len(lists)):
-        sum2 += int(lists[i].model_type.part4_qty)
+        sum4 += int(lists[i].model_type.part4_qty)
 
     sum5 = 0
     for i in range(len(lists)):
-        sum1 += int(lists[i].model_type.part5_qty)
+        sum5 += int(lists[i].model_type.part5_qty)
 
     sum6 = 0
     for i in range(len(lists)):
-        sum2 += int(lists[i].model_type.part6_qty)
+        sum6 += int(lists[i].model_type.part6_qty)
 
     sum7 = 0
     for i in range(len(lists)):
-        sum2 += int(lists[i].model_type.part7_qty)
+        sum7 += int(lists[i].model_type.part7_qty)
 
     return render(request, 'parts/parts.html', {
         'lists' : lists,
