@@ -21,6 +21,10 @@ class Client(models.Model):
         #상세페이지 출력
         return reverse('sort_by_client', args=[self.slug])
 
+    def get_absolute_url_reports(self):
+        #상세페이지 출력
+        return reverse('reports_by_client', args=[self.slug])
+
 class Consumed(models.Model):
     part_code = models.CharField(max_length=20, null=True, unique=True)
     part_name = models.CharField(max_length=30, null=True)

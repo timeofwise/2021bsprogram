@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}BS 프로그램 리포트 -{% endblock %}
+
+{% block content %}
+<p></p>
+<div class="row">
+    <div class="col-lg-2">
+        <div id="expand_hide" class="list-group-flush">
+            <a href="{% url 'reports_list' %}" class="list-group-item list-group-item-action list-group-item-light {% if not current_client %}active{% endif %}">All</a>
+            {% for c in clients %}
+            <a href="{{ c.get_absolute_url_reports }}" class="list-group-item list-group-item-action list-group-item-light {% if current_client.slug == c.slug %}active{% endif %}">{{ c.name }}</a>
+            {% endfor %}
+        </div><br>
+    </div>
+    <div class="col-lg-10">
+        <div class="btn-group pull-right">
+            <a href="#" class="btn btn-secondary">리포트 등록</a>
+        </div>
+        <br><br><br>
+        <table class="table">
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block pagination %}
+{% endblock %}
