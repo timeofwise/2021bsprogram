@@ -18,8 +18,8 @@ def ReportsView(request, client_slug=None):
         current_client = get_object_or_404(Client, slug=client_slug)
         bookmarks = bookmarks.filter(client=current_client)
         reports = reports.filter(client=current_client)
-        product = reports.filter(item_id=5)
-        bs_issue = reports.filter(item_id=1)
+        product = reports.filter(item_id=6)
+        bs_issue = reports.filter(item_id=2)
 
 
 
