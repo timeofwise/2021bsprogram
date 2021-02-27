@@ -31,8 +31,8 @@ class ReportItemAdmin(admin.ModelAdmin):
 admin.site.register(Reportitem,ReportItemAdmin)
 
 class ReportAdmin(admin.ModelAdmin):
-    list_display = ['id', 'client', 'item', 'desc', 'img', 'target_goods', 'target_goods_price', 'target_goods_qty']
-    list_editable = ['client', 'item', 'desc', 'img']
+    list_display = ['id', 'client', 'item', 'mini_title', 'desc', 'img', 'target_goods', 'target_goods_price', 'target_goods_qty']
+    list_editable = ['client', 'item', 'mini_title', 'desc', 'img']
 
 admin.site.register(Report,ReportAdmin)
 

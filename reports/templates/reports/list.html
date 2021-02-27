@@ -58,10 +58,44 @@
             </table>
         </div>
         <div class="mb-5 mt-5">
-            <h4>2. BS 작업 간 특이사항</h4><br>
+            <h4>2. 생산 물종</h4><br>
+            <div class="row">
+                {% for p in product %}
+                <div class="col-sm-3">
+                    <div class="card h-100">
+                        <div class="card-header">{{ p.desc }}</div>
+                        <img src="{{p.img.url}}" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
         <div class="mb-5 mt-5">
-            <h4>3. 고객의 소리</h4><br>
+            <h4>3. BS 작업 중 특이사항</h4><br>
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>구분</th>
+                        <th>상세</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for b in bs_issue %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ b.mini_title }}</td>
+                        <td>{{ b.desc }}</td>
+                        {% if b.img.url != '/photos/no_image.png' %}
+                        <td><img src="{{ b.img.url }}" width="200px" alt="..."></td>
+                        {% else %}
+                        <td>-</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
         <div class="mb-5 mt-5">
             <h4>4. 기타</h4><br>

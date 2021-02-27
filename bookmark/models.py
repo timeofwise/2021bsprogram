@@ -48,6 +48,7 @@ class Reportitem(models.Model):
 class Report(models.Model):
     client = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, related_name='report_for_clients')
     item = models.ForeignKey(Reportitem, on_delete=models.SET_NULL, null=True, related_name='report_for_items')
+    mini_title = models.CharField(max_length=50, default='-', null=True)
     desc = models.CharField(max_length=250, null=True)
     img = models.ImageField(upload_to='static/img/report', default='photos/no_image.png', null=True)
     target_goods = models.CharField(max_length=50, default='-', null=True)
