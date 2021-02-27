@@ -40,13 +40,13 @@
                 <!--<td>{{ list.client }}</td>-->
                 <td id="parts">{{ list.model_type }}</td>
                 <td id="parts">{{ list.model_no }}</td>
-                <td id="parts">2</td>
-                <td id="parts">2</td>
-                <td id="parts">2</td>
-                <td id="parts">2</td>
-                <td id="parts">2</td>
-                <td id="parts">2</td>
-                <td id="parts">2</td>
+                <td id="parts">{% if list.model_type.model_type %}{{ list.model_type.part1_qty }}{% else %}False{% endif %}</td>
+                <td id="parts">{% if list.model_type.model_type %}{{ list.model_type.part2_qty }}{% else %}False{% endif %}</td>
+                <td id="parts">{% if list.model_type.model_type %}{{ list.model_type.part3_qty }}{% else %}False{% endif %}</td>
+                <td id="parts">{% if list.model_type.model_type %}{{ list.model_type.part4_qty }}{% else %}False{% endif %}</td>
+                <td id="parts">{% if list.model_type.model_type %}{{ list.model_type.part5_qty }}{% else %}False{% endif %}</td>
+                <td id="parts">{% if list.model_type.model_type %}{{ list.model_type.part6_qty }}{% else %}False{% endif %}</td>
+                <td id="parts">{% if list.model_type.model_type %}{{ list.model_type.part7_qty }}{% else %}False{% endif %}</td>
             </tr>
         {% endfor %}
     </tbody>

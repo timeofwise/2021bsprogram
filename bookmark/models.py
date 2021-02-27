@@ -152,7 +152,7 @@ class Bookmark(models.Model):
         ordering = ['-created']
 
     def __str__(self):
-        return "시리얼번호 : " + self.model_no + ", 생성일 : " + self.created.strftime("%Y-%m-%d %H:%M:%S")
+        return "고객명 : " + self.client.name + "시리얼번호 : " + self.model_no + ", 생성일 : " + self.created.strftime("%Y-%m-%d %H:%M:%S")
 
     def get_absolute_url(self):
         return reverse('detail', args=[str(self.id)])
