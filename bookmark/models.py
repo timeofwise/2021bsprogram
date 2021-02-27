@@ -157,7 +157,7 @@ class Bookmark(models.Model):
     available_display = models.BooleanField('Display', default=True)
 
     class Meta:
-        ordering = ['-created']
+        ordering = ['client', 'line', 'order', '-created']
 
     def __str__(self):
         return "고객명 : " + self.client.name + "시리얼번호 : " + self.model_no + ", 생성일 : " + self.created.strftime("%Y-%m-%d %H:%M:%S")
