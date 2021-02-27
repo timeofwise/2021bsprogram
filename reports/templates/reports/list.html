@@ -29,9 +29,26 @@
         {% if current_client %}
         <div>
             <h4>1. 라인 현황</h4><br>
-            {% for bookmark in bookmarks %}
-                {{ bookmark.model_type }}<br>
-            {% endfor %}
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th>라인</th>
+                        <th>호기</th>
+                        <th>모델</th>
+                        <th>일련번호</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for bookmark in bookmarks %}
+                    <tr>
+                        <td>{{ bookmark.line }}</td>
+                        <td>{{ bookmark.order }}</td>
+                        <td>{{ bookmark.model_type }}</td>
+                        <td>{{ bookmark.model_no }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
             <h4>2. BS 작업 간 특이사항</h4><br>
             <h4>3. 고객의 소리</h4><br>
             <h4>4. 기타</h4><br>
