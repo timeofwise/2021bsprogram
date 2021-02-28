@@ -80,6 +80,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% if bs_issue %}
                     {% for b in bs_issue %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
@@ -107,6 +108,14 @@
                         </td>
                     </tr>
                     {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td>-</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                    </tr>
+                    {% endif %}
                 </tbody>
             </table>
         </div><br><br>
@@ -122,6 +131,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% if voc %}
                     {% for v in voc %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
@@ -149,6 +159,14 @@
                         </td>
                     </tr>
                     {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td>-</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                    </tr>
+                    {% endif %}
                 </tbody>
             </table>
         </div><br><br>
