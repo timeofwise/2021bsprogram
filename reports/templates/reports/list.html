@@ -85,7 +85,7 @@
                     <tr>
                         <td>{{ forloop.counter }}</td>
                         <td>{{ b.mini_title }}</td>
-                        <td>{{ b.desc }}</td>
+                        <td>{{ b.desc|linebreaks }}</td>
                         <td>
                             {% if b.img.url != '/media/photos/no_image.png' %}
                             <figure class="rounded float-start">
@@ -136,7 +136,7 @@
                     <tr>
                         <td>{{ forloop.counter }}</td>
                         <td>{{ v.mini_title }}</td>
-                        <td>{{ v.desc }}</td>
+                        <td>{{ v.desc|linebreaks }}</td>
                         <td>
                             {% if v.img.url != '/media/photos/no_image.png' %}
                             <figure class="rounded float-start">
@@ -219,7 +219,7 @@
                     {% for e in etc %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ e.desc }}</td>
+                        <td>{{ e.desc|linebreaks }}</td>
                     </tr>
                     {% endfor %}
                     {% else %}
