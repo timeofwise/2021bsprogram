@@ -198,9 +198,13 @@
                 <tfoot>
                     <tr>
                         <td colspan="4">계</td>
-                        <td>-</td>
+                        <td><span id="sum_interested"></span></td>
                     </tr>
                 </tfoot>
+                <script>
+                    document.getElementById("sum_interested").innerHTML=('1111').toFixed(1)+"%";
+
+                </script>
                     {% else %}
                     <tr>
                         <td>-</td>
