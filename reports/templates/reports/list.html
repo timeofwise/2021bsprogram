@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load humanize %}
-{% load mathfilters %}
 
 {% block title %}BS 프로그램 리포트 -{% endblock %}
 
@@ -191,7 +190,7 @@
                         <td>{{ i.target_goods }}</td>
                         <td>₩&nbsp;{{ i.target_goods_price|intcomma }}</td>
                         <td>{{ i.target_goods_qty }}</td>
-                        <td>{{ i.target_goods_price|mul:i.target_goods_qty|intcomma }}</td>
+                        <td>-</td>
                     </tr>
                     {% endfor %}
                 <tfoot>
