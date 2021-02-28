@@ -130,13 +130,13 @@
                         <td>
                             {% if v.img.url != '/photos/no_image.png' %}
                             <figure class="rounded float-start">
-                                <img src="https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img.url}}" class="rounded float-start" width="100px" alt="{{v.img_alt}}" onclick="window.open('https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                                <img src="{{v.img.url}}" class="rounded float-start" width="100px" alt="{{v.img_alt}}" onclick="window.open('https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                                 <figcaption>{{v.img_alt}}</figcaption>
                             </figure>
                             {% endif %}
                             {% if v.img2.url != '/photos/no_image.png' %}
                             <figure class="rounded float-start">
-                                <img src="https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img2.url}}" class="rounded float-start" width="100px" alt="{{v.img2_alt}}" onclick="window.open('https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img2.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                                <img src="{{v.img2.url}}" class="rounded float-start" width="100px" alt="{{v.img2_alt}}" onclick="window.open('https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img2.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                                 <figcaption>{{v.img2_alt}}</figcaption>
                             </figure>
                             {% endif %}
@@ -165,23 +165,25 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% if interested %}
                     {% for i in interested %}
                     <tr>
-                        {% if i.target_goods %}
                         <td>{{ forloop.counter }}</td>
                         <td>{{ i.target_goods }}</td>
                         <td>{{ i.target_goods_price }}</td>
                         <td>{{ i.target_goods_qty }}</td>
                         <td>-</td>
-                        {% else %}
-                        <td>없음</td>
-                        <td>없음</td>
-                        <td>없음</td>
-                        <td>없음</td>
-                        <td>없음</td>
-                        {% endif %}
                     </tr>
                     {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td>-</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                    </tr>
+                    {% endif %}
                 </tbody>
             </table>
         </div><br><br>
