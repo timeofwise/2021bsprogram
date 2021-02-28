@@ -127,11 +127,26 @@
                         <td>{{ forloop.counter }}</td>
                         <td>{{ v.mini_title }}</td>
                         <td>{{ v.desc }}</td>
-                        {% if v.img.url != '/photos/no_image.png' %}
-                        <td><img src="{{ v.img.url }}" width="200px" alt="..."></td>
-                        {% else %}
-                        <td>-</td>
-                        {% endif %}
+                        <td>
+                            {% if v.img.url != '/photos/no_image.png' %}
+                            <figure class="rounded float-start">
+                                <img src="https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img.url}}" class="rounded float-start" width="100px" alt="{{v.img_alt}}" onclick="window.open('https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                                <figcaption>{{v.img_alt}}</figcaption>
+                            </figure>
+                            {% endif %}
+                            {% if v.img2.url != '/photos/no_image.png' %}
+                            <figure class="rounded float-start">
+                                <img src="https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img2.url}}" class="rounded float-start" width="100px" alt="{{v.img2_alt}}" onclick="window.open('https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img2.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                                <figcaption>{{v.img2_alt}}</figcaption>
+                            </figure>
+                            {% endif %}
+                            {% if v.img3.url != '/photos/no_image.png' %}
+                            <figure class="rounded float-start">
+                                <img src="https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img3.url}}" class="rounded float-start" width="100px" alt="{{v.img3_alt}}" onclick="window.open('https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{v.img3.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                                <figcaption>{{v.img3_alt}}</figcaption>
+                            </figure>
+                            {% endif %}
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
