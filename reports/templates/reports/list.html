@@ -84,7 +84,7 @@
                     {% for b in bs_issue %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ b.mini_title }}</td>
+                        <td>{{ b.mini_title_or_main_product }}</td>
                         <td>{{ b.desc|linebreaks }}</td>
                         <td>
                             {% if b.img.url != '/media/photos/no_image.png' %}
@@ -135,7 +135,7 @@
                     {% for v in voc %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ v.mini_title }}</td>
+                        <td>{{ v.mini_title_or_main_product }}</td>
                         <td>{{ v.desc|linebreaks }}</td>
                         <td>
                             {% if v.img.url != '/media/photos/no_image.png' %}
