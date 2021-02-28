@@ -6,7 +6,7 @@
 {% block content %}
 <p></p>
 <div class="row">
-    <div class="col-lg-2">
+    <div class="col-lg-2 d-print-none">
         <div id="expand_hide" class="list-group-flush">
             <a href="{% url 'reports_list' %}" class="list-group-item list-group-item-action list-group-item-light {% if not current_client %}active{% endif %}">초기 화면</a>
             {% for c in clients %}
