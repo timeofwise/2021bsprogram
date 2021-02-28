@@ -167,11 +167,19 @@
                 <tbody>
                     {% for i in interested %}
                     <tr>
+                        {% if i %}
                         <td>{{ forloop.counter }}</td>
                         <td>{{ i.target_goods }}</td>
                         <td>{{ i.target_goods_price }}</td>
                         <td>{{ i.target_goods_qty }}</td>
                         <td>-</td>
+                        {% else %}
+                        <td>없음</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
@@ -190,9 +198,15 @@
                 <tbody>
                     {% for e in etc %}
                     <tr>
+                        {% if e %}
                         <td>{{ forloop.counter }}</td>
                         <td>{{ e.desc }}</td>
                         <td>-</td>
+                        {% else %}
+                        <td>없음</td>
+                        <td>없음</td>
+                        <td>없음</td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
