@@ -202,8 +202,9 @@
                     </tr>
                 </tfoot>
                 <script>
-                    document.getElementById("sum_interested").innerHTML=('1111').toFixed(1)+"%";
-
+                    am4core.ready(function() {
+                    document.getElementById('sum_interested').innerHTML=('1111').toFixed(1)+"%";
+                    });
                 </script>
                     {% else %}
                     <tr>
