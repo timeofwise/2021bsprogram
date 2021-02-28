@@ -62,7 +62,7 @@
                 <div class="col-sm-3">
                     <div class="card h-100">
                         <div class="card-header">{{ p.desc }}</div>
-                        <img src="{{p.img.url}}" class="card-img-top" alt="..." onclick="window.open('http://hanwhasmt.pythonanywhere.com{{p.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                        <img src="{{p.img.url}}" class="card-img-top" alt="{{p.img_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{p.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                     </div>
                 </div>
                 {% endfor %}
@@ -85,15 +85,26 @@
                         <td>{{ forloop.counter }}</td>
                         <td>{{ b.mini_title }}</td>
                         <td>{{ b.desc }}</td>
-                        {% if b.img.url != '/photos/no_image.png' %}
                         <td>
-                            <div class="text-center">
-                                <img src="https://www.pythonanywhere.com/user/hanwhasmt/files/home/hanwhasmt{{b.img.url}}" class="rounded" alt="...">
-                            </div>
+                            {% if b.img.url != '/photos/no_image.png' %}
+                            <figure class="rounded float-start">
+                                <img src="{{b.img.url}}" class="rounded float-start" width="100px" alt="{{b.img_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{b.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                                <figcaption>{{b.img_alt}}</figcaption>
+                            </figure>
+                            {% endif %}
+                            {% if b.img2.url != '/photos/no_image.png' %}
+                            <figure class="rounded float-start">
+                                <img src="{{b.img2.url}}" class="rounded float-start" width="100px" alt="{{b.img2_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{b.img2.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                                <figcaption>{{b.img2_alt}}</figcaption>
+                            </figure>
+                            {% endif %}
+                            {% if b.img3.url != '/photos/no_image.png' %}
+                            <figure class="rounded float-start">
+                                <img src="{{b.img3.url}}" class="rounded float-start" width="100px" alt="{{b.img3_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{b.img3.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                                <figcaption>{{b.img3_alt}}</figcaption>
+                            </figure>
+                            {% endif %}
                         </td>
-                        {% else %}
-                        <td>-</td>
-                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
