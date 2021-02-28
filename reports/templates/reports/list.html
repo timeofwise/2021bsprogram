@@ -190,7 +190,7 @@
                         <td>{{ i.target_goods }}</td>
                         <td>{{ i.target_goods_price|intcomma }}</td>
                         <td>{{ i.target_goods_qty }}</td>
-                        <td>{% widthratio i.target_goods_price 1 i.target_goods_qty as multiply %}<span id="mul_interested">{{ multiply|intcomma }}</span></td>
+                        <td>{% widthratio i.target_goods_price 1 i.target_goods_qty as multiply %}{{ multiply|intcomma }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>
