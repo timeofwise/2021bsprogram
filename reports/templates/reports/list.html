@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load humanize %}
 
 {% block title %}BS 프로그램 리포트 -{% endblock %}
 
@@ -188,7 +188,7 @@
                     <tr>
                         <td>{{ forloop.counter }}</td>
                         <td>{{ i.target_goods }}</td>
-                        <td>{% load humanize %}₩&nbsp;{{ i.target_goods_price|intcomma }}</td>
+                        <td>₩&nbsp;{{ i.target_goods_price|intcomma }}</td>
                         <td>{{ i.target_goods_qty }}</td>
                         <td>-</td>
                     </tr>
