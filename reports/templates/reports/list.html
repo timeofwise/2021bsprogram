@@ -61,7 +61,7 @@
                 {% for p in product %}
                 <div class="col-sm-3">
                     <div class="card h-100">
-                        <div class="card-header">{{ p.desc }}</div>
+                        <div class="card-header">{{ p.mini_title_or_main_product }}</div>
                         <img src="{{p.img.url}}" class="card-img-top" alt="{{p.img_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{p.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                     </div>
                 </div>
@@ -87,19 +87,19 @@
                         <td>{{ b.mini_title }}</td>
                         <td>{{ b.desc }}</td>
                         <td>
-                            {% if b.img.url != '/photos/no_image.png' %}
+                            {% if b.img.url != '/media/photos/no_image.png' %}
                             <figure class="rounded float-start">
                                 <img src="{{b.img.url}}" class="rounded float-start" width="100px" alt="{{b.img_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{b.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                                 <figcaption>{{b.img_alt}}</figcaption>
                             </figure>
                             {% endif %}
-                            {% if b.img2.url != '/photos/no_image.png' %}
+                            {% if b.img2.url != '/media/photos/no_image.png' %}
                             <figure class="rounded float-start">
                                 <img src="{{b.img2.url}}" class="rounded float-start" width="100px" alt="{{b.img2_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{b.img2.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                                 <figcaption>{{b.img2_alt}}</figcaption>
                             </figure>
                             {% endif %}
-                            {% if b.img3.url != '/photos/no_image.png' %}
+                            {% if b.img3.url != '/media/photos/no_image.png' %}
                             <figure class="rounded float-start">
                                 <img src="{{b.img3.url}}" class="rounded float-start" width="100px" alt="{{b.img3_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{b.img3.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                                 <figcaption>{{b.img3_alt}}</figcaption>
@@ -138,19 +138,19 @@
                         <td>{{ v.mini_title }}</td>
                         <td>{{ v.desc }}</td>
                         <td>
-                            {% if v.img.url != '/photos/no_image.png' %}
+                            {% if v.img.url != '/media/photos/no_image.png' %}
                             <figure class="rounded float-start">
                                 <img src="{{v.img.url}}" class="rounded float-start" width="100px" alt="{{v.img_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{v.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                                 <figcaption>{{v.img_alt}}</figcaption>
                             </figure>
                             {% endif %}
-                            {% if v.img2.url != '/photos/no_image.png' %}
+                            {% if v.img2.url != '/media/photos/no_image.png' %}
                             <figure class="rounded float-start">
                                 <img src="{{v.img2.url}}" class="rounded float-start" width="100px" alt="{{v.img2_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{v.img2.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                                 <figcaption>{{v.img2_alt}}</figcaption>
                             </figure>
                             {% endif %}
-                            {% if v.img3.url != '/photos/no_image.png' %}
+                            {% if v.img3.url != '/media/photos/no_image.png' %}
                             <figure class="rounded float-start">
                                 <img src="{{v.img3.url}}" class="rounded float-start" width="100px" alt="{{v.img3_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{v.img3.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                                 <figcaption>{{v.img3_alt}}</figcaption>

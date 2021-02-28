@@ -48,8 +48,8 @@ class Reportitem(models.Model):
 class Report(models.Model):
     client = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, related_name='report_for_clients')
     item = models.ForeignKey(Reportitem, on_delete=models.SET_NULL, null=True, related_name='report_for_items')
-    mini_title = models.CharField(max_length=50, default='-', null=True)
-    desc = models.CharField(max_length=250, null=True)
+    mini_title_or_main_product = models.CharField(max_length=100, default='-', null=True)
+    desc = models.TextField(default='-', null=True)
     img = models.ImageField(upload_to='img/report', default='photos/no_image.png', null=True)
     img_alt = models.CharField(max_length=50, null=True, default='caption1')
     img2 = models.ImageField(upload_to='img/report', default='photos/no_image.png', null=True)
