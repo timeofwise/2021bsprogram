@@ -195,17 +195,13 @@
                         </td>
                     </tr>
                     {% endfor %}
+                </tbody>
                 <tfoot>
                     <tr>
                         <td colspan="4">계</td>
                         <td><span id="sum_interested"></span></td>
                     </tr>
                 </tfoot>
-                <script>
-                    am4core.ready(function() {
-                    document.getElementById('sum_interested').innerHTML=('1111').toFixed(1)+"%";
-                    });
-                </script>
                     {% else %}
                     <tr>
                         <td>-</td>
@@ -214,8 +210,8 @@
                         <td>없음</td>
                         <td>없음</td>
                     </tr>
-                    {% endif %}
                 </tbody>
+                    {% endif %}
             </table>
         </div><br><br>
         <div class="mb-5 mt-5">
