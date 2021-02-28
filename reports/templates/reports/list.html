@@ -62,7 +62,7 @@
                 <div class="col-sm-3">
                     <div class="card h-100">
                         <div class="card-header">{{ p.desc }}</div>
-                        <img src="{{p.img.url}}" class="card-img-top" alt="...">
+                        <img src="{{p.img.url}}" class="card-img-top" alt="..." onclick="window.open('http://hanwhasmt.pythonanywhere.com{{p.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                     </div>
                 </div>
                 {% endfor %}
