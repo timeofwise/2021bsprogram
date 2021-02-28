@@ -218,7 +218,7 @@
             getSum();
             function getSum(){
                 for(var i = 1; i < table.rows.length - 1; i++){
-                     sumVal = sumVal + parseInt(table.rows[1].cells[4].innerText.replaceAll(",",""));
+                     sumVal = sumVal + parseInt(table.rows[i].cells[4].innerText.replaceAll(",",""));
                 }
                 document.getElementById("sum_interested").innerHTML = sumVal.toLocaleString();
                 console.log("Sum => "+sumVal);
