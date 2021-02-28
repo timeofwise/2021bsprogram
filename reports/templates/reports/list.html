@@ -167,7 +167,7 @@
                 <tbody>
                     {% for i in interested %}
                     <tr>
-                        {% if i %}
+                        {% if i.target_goods %}
                         <td>{{ forloop.counter }}</td>
                         <td>{{ i.target_goods }}</td>
                         <td>{{ i.target_goods_price }}</td>
@@ -198,7 +198,7 @@
                 <tbody>
                     {% for e in etc %}
                     <tr>
-                        {% if e %}
+                        {% if e.desc %}
                         <td>{{ forloop.counter }}</td>
                         <td>{{ e.desc }}</td>
                         <td>-</td>
