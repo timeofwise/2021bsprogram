@@ -216,10 +216,11 @@
         <script>
             var table = document.getElementById("table_interested"), sumVal = 0;
             function getSum(){
-                for(var i = 1; i < table.rows.length; i++){
+                for(var i = 1; i < table.rows.length - 1; i++){
                      sumVal = sumVal + parseInt(table.rows[i].cells[4].innerHTML);
                 }
                 document.getElementById("sum_interested").innerHTML = sumVal;
+                console.log("Sum => "+sumVal);
             }
         </script>
 
