@@ -188,7 +188,7 @@
                     <tr>
                         <td>{{ forloop.counter }}</td>
                         <td>{{ i.target_goods }}</td>
-                        <td>₩&nbsp;{{ i.target_goods_price }}</td>
+                        <td>₩&nbsp;{{ i.target_goods_price|intcomma }}</td>
                         <td>{{ i.target_goods_qty }}</td>
                         <td>-</td>
                     </tr>
