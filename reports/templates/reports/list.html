@@ -198,19 +198,19 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% if etc %}
                     {% for e in etc %}
                     <tr>
-                        {% if e.desc == True %}
                         <td>{{ forloop.counter }}</td>
                         <td>{{ e.desc }}</td>
-                        <td>-</td>
-                        {% else %}
-                        <td>없음</td>
-                        <td>없음</td>
-                        <td>없음</td>
-                        {% endif %}
                     </tr>
                     {% endfor %}
+                    {% else %}
+                    <tr>
+                        <td>-</td>
+                        <td>없음</td>
+                    </tr>
+                    {% endif %}
                 </tbody>
             </table>
             <ul>지원 인력
