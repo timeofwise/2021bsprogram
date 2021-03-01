@@ -254,33 +254,33 @@
         <div class="mb-5 mt-5">
             <h4>7. 활동 사진</h4><br>
             <div class="row">
-                {% for p in photos %}
-                {% if p.img.url != '/media/photos/no_image.png' %}
+                {% for f in photos %}
+                {% if f.img.url != '/media/photos/no_image.png' %}
                 <div class="col-6 col-sm-3">
                     <div class="card h-100">
-                        <div class="card-header">{{ p.img_alt }}</div>
-                        <img src="{{p.img.url}}" class="card-img-top" alt="{{p.img_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{p.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                        <div class="card-header">{{ f.img_alt }}</div>
+                        <img src="{{f.img.url}}" class="card-img-top" alt="{{f.img_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{p.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                     </div>
                 </div>
-                {% else %}
+                {% else %}-1-
                 {% endif %}
-                {% if p.img2.url != '/media/photos/no_image.png' %}
+                {% if f.img2.url != '/media/photos/no_image.png' %}
                 <div class="col-6 col-sm-3">
                     <div class="card h-100">
-                        <div class="card-header">{{ p.img2_alt }}</div>
-                        <img src="{{p.img2.url}}" class="card-img-top" alt="{{p.img2_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{p.img2.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                        <div class="card-header">{{ f.img2_alt }}</div>
+                        <img src="{{f.img2.url}}" class="card-img-top" alt="{{f.img2_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{f.img2.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                     </div>
                 </div>
-                {% else %}
+                {% else %}-2-
                 {% endif %}
-                {% if p.img3.url != '/media/photos/no_image.png' %}
+                {% if f.img3.url != '/media/photos/no_image.png' %}
                 <div class="col-6 col-sm-3">
                     <div class="card h-100">
-                        <div class="card-header">{{ p.img3_alt }}</div>
-                        <img src="{{p.img3.url}}" class="card-img-top" alt="{{p.img3_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{p.img3.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
+                        <div class="card-header">{{ f.img3_alt }}</div>
+                        <img src="{{f.img3.url}}" class="card-img-top" alt="{{f.img3_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{f.img3.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                     </div>
                 </div>
-                {% else %}
+                {% else %}-3-
                 {% endif %}
                 {% endfor %}
             </div>
