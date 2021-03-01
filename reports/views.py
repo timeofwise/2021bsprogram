@@ -16,6 +16,7 @@ def ReportsView(request, client_slug=None):
     voc = None
     interested = None
     etc = None
+    photos = None
 
     if client_slug:
         current_client = get_object_or_404(Client, slug=client_slug)
