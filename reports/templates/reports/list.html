@@ -262,7 +262,7 @@
                         <img src="{{f.img.url}}" class="card-img-top" alt="{{f.img_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{p.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                     </div>
                 </div>
-                {% else %}-1-
+                {% else %}
                 {% endif %}
                 {% if f.img2.url != '/media/photos/no_image.png' %}
                 <div class="col-6 col-sm-3">
@@ -271,7 +271,7 @@
                         <img src="{{f.img2.url}}" class="card-img-top" alt="{{f.img2_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{f.img2.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                     </div>
                 </div>
-                {% else %}-2-
+                {% else %}
                 {% endif %}
                 {% if f.img3.url != '/media/photos/no_image.png' %}
                 <div class="col-6 col-sm-3">
@@ -280,7 +280,7 @@
                         <img src="{{f.img3.url}}" class="card-img-top" alt="{{f.img3_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{f.img3.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
                     </div>
                 </div>
-                {% else %}-3-
+                {% else %}
                 {% endif %}
                 {% endfor %}
             </div>
