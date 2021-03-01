@@ -26,6 +26,7 @@ def ReportsView(request, client_slug=None):
         voc = reports.filter(item_id=3)
         interested = reports.filter(item_id=4)
         etc = reports.filter(item_id=5)
+        photos = reports.filter(item_id=7)
 
 
 
@@ -42,4 +43,5 @@ def ReportsView(request, client_slug=None):
         'voc' : voc,
         'interested' : interested,
         'etc' : etc,
+        'photos' : photos,
     })
