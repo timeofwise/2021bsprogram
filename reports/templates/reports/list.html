@@ -59,7 +59,7 @@
             <h4>2. 생산 물종</h4><br>
             <div class="row">
                 {% for p in product %}
-                <div class="col-sm-3">
+                <div class="col-6 col-sm-3">
                     <div class="card h-100">
                         <div class="card-header">{{ p.mini_title_or_main_product }}</div>
                         <img src="{{p.img.url}}" class="card-img-top" alt="{{p.img_alt}}" onclick="window.open('http://hanwhasmt.pythonanywhere.com{{p.img.url}}','window_name','width=1920,height=1024,location=no,status=no,scrollbars=yes');">
