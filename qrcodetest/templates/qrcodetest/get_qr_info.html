@@ -110,10 +110,25 @@
     data = [];
     const params = new URLSearchParams(window.location.search);
     for (const param of params) {
-        console.log(param);
+        //console.log(param);
         data.push(param);
     }
-    console.log(data);
-
+    //console.log(data[0][1]);
+    var model_name = data[0][1];
+    var model_no = data[1][1];
+    var ver_sw = data[2][1];
+    var ver_mmi = data[3][1];
+    var ver_rt = data[4][1];
+    var ver_opti = data[5][1];
+    var ver_it = data[6][1];
+    var option_1 = data[7][1];
+    document.getElementById('id_model_name').value = model_name;
+    document.getElementById('id_model_no').value = model_no;
+    document.getElementById('id_ver_sw').value = ver_sw;
+    document.getElementById('id_ver_mmi').value = ver_mmi;
+    document.getElementById('id_ver_rt').value = ver_rt;
+    document.getElementById('id_ver_opti').value = ver_opti;
+    document.getElementById('id_ver_it').value = ver_it;
+    document.getElementById('id_option_1').value = option_1;
 </script>
 {% endblock %}
