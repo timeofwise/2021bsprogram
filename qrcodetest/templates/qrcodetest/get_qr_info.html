@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block title %}장비 등록 -{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 panel panel-default">
+            <div class="alert alert-info">
+                설비 정보를 확인 후 입력을 진행해주세요.<br>
+            </div>
+            <form action="" method="post" autocomplete="off">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width:20%">구분</th>
+                            <th style="width:50%">입력필드</th>
+                            <th style="width:30%">비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="id_model_name">Model name:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="model_name" maxlength="10" required="" id="id_model_name">
+                            </td>
+                            <td>{{ form.model_name.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_model_no">Model no:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="model_no" maxlength="10" required="" id="id_model_no">
+                            </td>
+                            <td>{{ form.model_no.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_ver_sw">Ver sw:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="ver_sw" maxlength="30" required="" id="id_ver_sw">
+                            </td>
+                            <td>{{ form.ver_sw.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_ver_mmi">Ver mmi:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="ver_mmi" maxlength="20" required="" id="id_ver_mmi">
+                            </td>
+                            <td>{{ form.ver_mmi.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_ver_rt">Ver rt:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="ver_rt" maxlength="20" required="" id="id_ver_rt">
+                            </td>
+                            <td>{{ form.ver_rt.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_ver_opti">Ver opti:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="ver_opti" maxlength="20" required="" id="id_ver_opti">
+                            </td>
+                            <td>{{ form.ver_opti.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_ver_it">Ver it:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="ver_it" maxlength="20" required="" id="id_ver_it">
+                            </td>
+                            <td>{{ form.ver_it.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_option_1">Option 1:</label>
+                            </td>
+                            <td>
+                                <select class="form-control" name="option_1" id="id_option_1">
+                                    <option value="unknown">알 수 없습니다.</option>
+                                    <option value="true">예</option>
+                                    <option value="false" selected="">아니오</option>
+                                </select>
+                            </td>
+                            <td>{{ form.option_1.errors }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input class="btn btn-primary" type="submit" value="등록" style="float:right">
+            </form>
+            <br><br><br><br><br>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+{% endblock %}

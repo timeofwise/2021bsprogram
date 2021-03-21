@@ -38,12 +38,7 @@ def BookmarkListByClient(request, category_slug=None):
 
 class BookmarkCreateView(CreateView):
     model = Bookmark
-    fields = [
-        'client',
-        'model_type',
-        'model_no',
-        'inspector',
-    ]
+
     success_url = reverse_lazy('list')
     template_name_suffix = '_create' #CreateView class template의  기본접미사(_form) 변경 : _form -> _create
 
