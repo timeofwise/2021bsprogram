@@ -39,3 +39,10 @@ survey_li {
 #caption_img {
     font-size:8px !important;
 }
+
+.fixed-custom {
+    position: fixed;
+    width:100%;
+    top:0;
+
+}
