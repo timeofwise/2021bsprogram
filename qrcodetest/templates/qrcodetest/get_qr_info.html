@@ -25,7 +25,7 @@
                                 <label for="id_model_name">Model name:</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="model_name" maxlength="10" required="" id="id_model_name">
+                                <input type="text" class="form-control form-control-sm" name="model_name" maxlength="10" required="" id="id_model_name">
                             </td>
                             <td>{{ form.model_name.errors }}</td>
                         </tr>
@@ -34,7 +34,7 @@
                                 <label for="id_model_no">Model no:</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="model_no" maxlength="10" required="" id="id_model_no">
+                                <input type="text" class="form-control form-control-sm" name="model_no" maxlength="10" required="" id="id_model_no">
                             </td>
                             <td>{{ form.model_no.errors }}</td>
                         </tr>
@@ -43,7 +43,7 @@
                                 <label for="id_ver_sw">Ver sw:</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="ver_sw" maxlength="30" required="" id="id_ver_sw">
+                                <input type="text" class="form-control form-control-sm" name="ver_sw" maxlength="30" required="" id="id_ver_sw">
                             </td>
                             <td>{{ form.ver_sw.errors }}</td>
                         </tr>
@@ -52,7 +52,7 @@
                                 <label for="id_ver_mmi">Ver mmi:</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="ver_mmi" maxlength="20" required="" id="id_ver_mmi">
+                                <input type="text" class="form-control form-control-sm" name="ver_mmi" maxlength="20" required="" id="id_ver_mmi">
                             </td>
                             <td>{{ form.ver_mmi.errors }}</td>
                         </tr>
@@ -61,7 +61,7 @@
                                 <label for="id_ver_rt">Ver rt:</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="ver_rt" maxlength="20" required="" id="id_ver_rt">
+                                <input type="text" class="form-control form-control-sm" name="ver_rt" maxlength="20" required="" id="id_ver_rt">
                             </td>
                             <td>{{ form.ver_rt.errors }}</td>
                         </tr>
@@ -70,31 +70,218 @@
                                 <label for="id_ver_opti">Ver opti:</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="ver_opti" maxlength="20" required="" id="id_ver_opti">
+                                <input type="text" class="form-control form-control-sm" name="ver_opti" maxlength="20" required="" id="id_ver_opti">
                             </td>
                             <td>{{ form.ver_opti.errors }}</td>
                         </tr>
                         <tr>
                             <td>
-                                <label for="id_ver_it">Ver it:</label>
+                                <label for="id_ver_it">Ver It:</label>
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="ver_it" maxlength="20" required="" id="id_ver_it">
+                                <input type="text" class="form-control form-control-sm" name="ver_it" maxlength="20" required="" id="id_ver_it">
                             </td>
                             <td>{{ form.ver_it.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_ver_basic_it">Ver Basic It:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="ver_basic_it" maxlength="20" required="" id="id_ver_basic_it">
+                            </td>
+                            <td>{{ form.ver_basic_it.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_ver_t_it_full">Ver T-It(Full):</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="ver_t_it_full" maxlength="20" required="" id="id_ver_t_it_full">
+                            </td>
+                            <td>{{ form.ver_t_it_full.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_ver_t_it_basic">Ver T-It(Basic):</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="ver_t_it_basic" maxlength="20" required="" id="id_ver_t_it_basic">
+                            </td>
+                            <td>{{ form.ver_t_it_basic.errors }}</td>
                         </tr>
                         <tr>
                             <td>
                                 <label for="id_option_1">Option 1:</label>
                             </td>
                             <td>
-                                <select class="form-control" name="option_1" id="id_option_1">
+                                <select class="form-control form-control-sm" name="option_1" id="id_option_1">
                                     <option value="unknown">알 수 없습니다.</option>
                                     <option value="true">예</option>
                                     <option value="false" selected="">아니오</option>
                                 </select>
                             </td>
                             <td>{{ form.option_1.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_option_2">Option 2:</label>
+                            </td>
+                            <td>
+                                <select class="form-control form-control-sm" name="option_2" id="id_option_2">
+                                    <option value="unknown">알 수 없습니다.</option>
+                                    <option value="true">예</option>
+                                    <option value="false" selected="">아니오</option>
+                                </select>
+                            </td>
+                            <td>{{ form.option_2.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_option_3">Option 3:</label>
+                            </td>
+                            <td>
+                                <select class="form-control form-control-sm" name="option_3" id="id_option_3">
+                                    <option value="unknown">알 수 없습니다.</option>
+                                    <option value="true">예</option>
+                                    <option value="false" selected="">아니오</option>
+                                </select>
+                            </td>
+                            <td>{{ form.option_3.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_option_4">Option 4:</label>
+                            </td>
+                            <td>
+                                <select class="form-control form-control-sm" name="option_4" id="id_option_4">
+                                    <option value="unknown">알 수 없습니다.</option>
+                                    <option value="true">예</option>
+                                    <option value="false" selected="">아니오</option>
+                                </select>
+                            </td>
+                            <td>{{ form.option_4.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_option_5">Option 5:</label>
+                            </td>
+                            <td>
+                                <select class="form-control form-control-sm" name="option_5" id="id_option_5">
+                                    <option value="unknown">알 수 없습니다.</option>
+                                    <option value="true">예</option>
+                                    <option value="false" selected="">아니오</option>
+                                </select>
+                            </td>
+                            <td>{{ form.option_5.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_fixed_cam">Fixed Camera:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="fixed_cam" maxlength="50" required="" id="id_fixed_cam">
+                            </td>
+                            <td>{{ form.fixed_cam.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_flying_cam">Flying Camera:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="flying_cam" maxlength="50" required="" id="id_flying_cam">
+                            </td>
+                            <td>{{ form.flying_cam.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_fid_cam">Fid. Camera:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="fid_cam" maxlength="50" required="" id="id_fid_cam">
+                            </td>
+                            <td>{{ form.fid_cam.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_conv_direction">Conveyor Direction:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="conv_direction" maxlength="5" required="" id="id_conv_direction">
+                            </td>
+                            <td>{{ form.conv_direction.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_conv_max_width_single">Conveyor Max Width (Single):</label>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control form-control-sm" name="conv_max_width_single" required="" id="id_conv_max_width_single">
+                            </td>
+                            <td>{{ form.conv_max_width_single.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_conv_max_length_single">Conveyor Max Length (Single):</label>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control form-control-sm" name="conv_max_length_single" required="" id="id_conv_max_length_single">
+                            </td>
+                            <td>{{ form.conv_max_length_single.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_conv_max_width_dual">Conveyor Max Width (Dual):</label>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control form-control-sm" name="conv_max_width_dual" required="" id="id_conv_max_width_dual">
+                            </td>
+                            <td>{{ form.conv_max_width_dual.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_conv_max_length_dual">Conveyor Max Length (Dual):</label>
+                            </td>
+                            <td>
+                                <input type="number" class="form-control form-control-sm" name="conv_max_length_dual" required="" id="id_conv_max_length_dual">
+                            </td>
+                            <td>{{ form.conv_max_length_dual.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_cpu">CPU(SBC Board):</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="cpu" maxlength="50" required="" id="id_cpu">
+                            </td>
+                            <td>{{ form.cpu.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_feederbase_tape">Feederbase (Tape):</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm name="feederbase_tape" maxlength="50" required="" id="id_feederbase_tape">
+                            </td>
+                            <td>{{ form.feederbase_tape.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_feederbase_tray">Feederbase (Tray):</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="feederbase_tray" maxlength="50" required="" id="id_feederbase_tray">
+                            </td>
+                            <td>{{ form.feederbase_tray.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="id_last_cali_date">Calibration Date (latest):</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="last_cali_date" maxlength="50" required="" id="id_last_cali_date">
+                            </td>
+                            <td>{{ form.last_cali_date.errors }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -122,6 +309,33 @@
     var ver_opti = data[5][1];
     var ver_it = data[6][1];
     var option_1 = data[7][1];
+    var option_2 = data[8][1];
+    var option_3 = data[9][1];
+    var option_4 = data[10][1];
+    var option_5 = data[11][1];
+    var option_6 = data[12][1];
+    var option_7 = data[13][1];
+    var option_8 = data[14][1];
+    var option_9 = data[15][1];
+    var option_10 = data[16][1];
+    var option_11 = data[17][1];
+    var option_12 = data[18][1];
+    var option_13 = data[19][1];
+    var option_14 = data[20][1];
+    var option_15 = data[21][1];
+    var fixed_cam = data[22][1];
+    var flying_cam = data[23][1];
+    var fid_cam = data[24][1];
+    var conv_direction = data[25][1];
+    var conv_max_width_single = data[26][1];
+    var conv_max_length_single = data[27][1];
+    var conv_max_width_dual = data[28][1];
+    var conv_max_length_dual = data[29][1];
+    var cpu = data[30][1];
+    var feederbase_tape = data[31][1];
+    var feederbase_tray = data[32][1];
+    var latest_cali_date = data[33][1];
+
     document.getElementById('id_model_name').value = model_name;
     document.getElementById('id_model_no').value = model_no;
     document.getElementById('id_ver_sw').value = ver_sw;
@@ -130,5 +344,32 @@
     document.getElementById('id_ver_opti').value = ver_opti;
     document.getElementById('id_ver_it').value = ver_it;
     document.getElementById('id_option_1').value = option_1;
+    document.getElementById('id_option_2').value = option_2;
+    document.getElementById('id_option_3').value = option_3;
+    document.getElementById('id_option_4').value = option_4;
+    document.getElementById('id_option_5').value = option_5;
+    document.getElementById('id_option_6').value = option_6;
+    document.getElementById('id_option_7').value = option_7;
+    document.getElementById('id_option_8').value = option_8;
+    document.getElementById('id_option_9').value = option_9;
+    document.getElementById('id_option_10').value = option_10;
+    document.getElementById('id_option_11').value = option_11;
+    document.getElementById('id_option_12').value = option_12;
+    document.getElementById('id_option_13').value = option_13;
+    document.getElementById('id_option_14').value = option_14;
+    document.getElementById('id_option_15').value = option_15;
+    document.getElementById('id_fixed_cam').value = fixed_cam;
+    document.getElementById('id_flying_cam').value = flying_cam;
+    document.getElementById('id_fid_cam').value = fid_cam;
+    document.getElementById('id_fid_cam').value = fid_cam;
+    document.getElementById('id_conv_direction').value = conv_direction;
+    document.getElementById('id_conv_max_width_single').value = conv_max_width_single;
+    document.getElementById('id_conv_max_length_single').value = conv_max_length_single;
+    document.getElementById('id_conv_max_width_dual').value = conv_max_width_dual;
+    document.getElementById('id_conv_max_length_dual').value = conv_max_length_dual;
+    document.getElementById('id_cpu').value = cpu;
+    document.getElementById('id_feederbase_tape').value = feederbase_tape;
+    document.getElementById('id_feederbase_tray').value = feederbase_tray;
+    document.getElementById('id_latest_cali_date').value = latest_cali_date;
 </script>
 {% endblock %}
