@@ -67,6 +67,15 @@
                         </tr>
                         <tr>
                             <td>
+                                <label for="id_ver_vision">Ver vision:</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control form-control-sm" name="ver_vision" maxlength="20" required="" id="id_ver_vision">
+                            </td>
+                            <td>{{ form.ver_vision.errors }}</td>
+                        </tr>
+                        <tr>
+                            <td>
                                 <label for="id_ver_opti">Ver opti:</label>
                             </td>
                             <td>
@@ -306,44 +315,46 @@
     var ver_sw = data[2][1];
     var ver_mmi = data[3][1];
     var ver_rt = data[4][1];
-    var ver_opti = data[5][1];
-    var ver_it = data[6][1];
-    var ver_basic_it = data[7][1];
-    var ver_t_it_full = data[8][1];
-    var ver_t_it_basic = data[9][1];
-    var option_1 = data[10][1];
-    var option_2 = data[11][1];
-    var option_3 = data[12][1];
-    var option_4 = data[13][1];
-    var option_5 = data[14][1];
-    var option_6 = data[15][1];
-    var option_7 = data[16][1];
-    var option_8 = data[17][1];
-    var option_9 = data[18][1];
-    var option_10 = data[19][1];
-    var option_11 = data[20][1];
-    var option_12 = data[21][1];
-    var option_13 = data[22][1];
-    var option_14 = data[23][1];
-    var option_15 = data[24][1];
-    var fixed_cam = data[25][1];
-    var flying_cam = data[26][1];
-    var fid_cam = data[27][1];
-    var conv_direction = data[28][1];
-    var conv_max_width_single = data[29][1];
-    var conv_max_length_single = data[30][1];
-    var conv_max_width_dual = data[31][1];
-    var conv_max_length_dual = data[32][1];
-    var cpu = data[33][1];
-    var feederbase_tape = data[34][1];
-    var feederbase_tray = data[35][1];
-    var latest_cali_date = data[36][1];
+    var ver_vision = data[5][1];
+    var ver_opti = data[6][1];
+    var ver_it = data[7][1];
+    var ver_basic_it = data[8][1];
+    var ver_t_it_full = data[9][1];
+    var ver_t_it_basic = data[10][1];
+    var option_1 = data[11][1];
+    var option_2 = data[12][1];
+    var option_3 = data[13][1];
+    var option_4 = data[14][1];
+    var option_5 = data[15][1];
+    var option_6 = data[16][1];
+    var option_7 = data[17][1];
+    var option_8 = data[18][1];
+    var option_9 = data[19][1];
+    var option_10 = data[20][1];
+    var option_11 = data[21][1];
+    var option_12 = data[22][1];
+    var option_13 = data[23][1];
+    var option_14 = data[24][1];
+    var option_15 = data[25][1];
+    var fixed_cam = data[26][1];
+    var flying_cam = data[27][1];
+    var fid_cam = data[28][1];
+    var conv_direction = data[29][1];
+    var conv_max_width_single = data[30][1];
+    var conv_max_length_single = data[31][1];
+    var conv_max_width_dual = data[32][1];
+    var conv_max_length_dual = data[33][1];
+    var cpu = data[34][1];
+    var feederbase_tape = data[35][1];
+    var feederbase_tray = data[36][1];
+    var latest_cali_date = data[37][1];
 
     console.log(model_name);
     console.log(model_no);
     console.log(ver_sw);
     console.log(ver_mmi);
     console.log(ver_rt);
+    console.log(ver_vision);
     console.log(ver_opti);
     console.log(ver_it);
     console.log(ver_mmi);
@@ -364,6 +375,7 @@
     document.getElementById('id_ver_sw').value = ver_sw;
     document.getElementById('id_ver_mmi').value = ver_mmi;
     document.getElementById('id_ver_rt').value = ver_rt;
+    document.getElementById('id_ver_vision').value = ver_vision;
     document.getElementById('id_ver_opti').value = ver_opti;
     document.getElementById('id_ver_it').value = ver_it;
     document.getElementById('id_ver_basic_it').value = ver_basic_it;

@@ -8,6 +8,7 @@ class qr_info(models.Model):
     ver_sw = models.CharField(max_length=30, null=True)
     ver_mmi = models.CharField(max_length=20, null=True)
     ver_rt = models.CharField(max_length=20, null=True)
+    ver_vision = models.CharField(max_length=20, null=True)
     ver_opti = models.CharField(max_length=20, null=True)
     ver_it = models.CharField(max_length=20, null=True)
     ver_basic_it = models.CharField(max_length=20, null=True)
