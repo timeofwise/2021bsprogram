@@ -3,7 +3,7 @@
 {% block title %}BS 프로그램 대상 설비 목록 -{% endblock %}
 
 {% block content %}
-
+<div class="container">
 <div class="btn-group">
     <a href="{% url 'add' %}" class="btn btn-info">BS 대상 설비 추가</a>
 </div>
@@ -64,9 +64,6 @@
         {% endfor %}
     </tbody>
 </table>
-{% endblock %}
-
-{% block pagination %}
     {% if is_paginated %}
         <ul class="pagination justify-content-center pagination-sm">
             {% if page_obj.has_previous %}
@@ -96,4 +93,5 @@
             {% endif %}
         </ul>
     {% endif %}
+</div>
 {% endblock %}
