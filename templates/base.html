@@ -20,28 +20,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'list' %}">리스트</a>
+          <a class="nav-link" aria-current="page" href="{% url 'list' %}">BS PROGRAM</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'survey_add' %}">고객 설문</a>
+          <a class="nav-link" aria-current="page" href="{% url 'survey_add' %}">AM PRODUCTS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'list_qr_info' %}">QR코드 테스트</a>
+          <a class="nav-link" aria-current="page" href="{% url 'list_qr_info' %}">TEST QR-CODE</a>
         </li>
-        {% if user.is_authenticated %}
-          {% if user.get_username != 'admin' %}
-          {% else %}
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'parts' %}">소모내역</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'survey_list' %}">설문 결과</a>
-        </li>
-        <li>
-            <a class="nav-link" aria-current="page" href="{% url 'reports_list' %}">리포트</a>
-        </li>
-          {% endif %}
-        {% endif %}
       </ul>
       <ul class="navbar-nav pull-right mb-2 mb-lg-0">
         {% if user.is_authenticated %}
@@ -71,10 +57,6 @@
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light my-navbar">
   <div class="container">
-    <a class="navbar-brand" href="{% url 'home' %}">한화정밀기계 BS 프로그램</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -101,29 +83,6 @@
           {% endif %}
         {% endif %}
       </ul>
-      <ul class="navbar-nav pull-right mb-2 mb-lg-0">
-        {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link" href="#">안녕하세요, {{user.get_username}} 님</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">로그아웃</a>
-        </li>
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">로그인</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'register' %}">정보 등록</a>
-        </li>
-        {% endif %}
-      </ul>
-      <!--
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      -->
     </div>
   </div>
 </nav>
