@@ -4,6 +4,7 @@
 {% block title %}Customer Survey -{% endblock %}
 
 {% block content %}
+<div class="container">
 <form action="" method="post">
     {% csrf_token %}
     {{ form.non_field_errors }}
@@ -305,5 +306,6 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 {% endblock %}

@@ -4,6 +4,7 @@
 {% block title %}Customer Survey -{% endblock %}
 
 {% block content %}
+<div class="container">
 <form action="" method="post">
     {% csrf_token %}
     {{ form.non_field_errors }}
@@ -268,6 +269,7 @@
     </ul>
 <input type="submit" value="제출하기" class="btn btn-primary" style="float:right">
 <br><br><br><br>
+</form>
 <!--
     <script> function btn(){ alert('현재 제출기능은 꺼진 상태입니다.'); } </script>
 -->
@@ -311,4 +313,5 @@
     </div>
   </div>
 </div><br><br><br>
+</div>
 {% endblock %}
