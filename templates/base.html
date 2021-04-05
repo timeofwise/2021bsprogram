@@ -124,11 +124,11 @@
 <br><br><br><br>
     <script>
         var height= $('#header').height();
-        var second-height = $('#second-header').height();
+        var second_height = $('#second-header').height();
         $(window).scroll(function(){
             if($(this).scrollTop() > height){
                 $('.my-navbar').addClass('fixed-custom');
-                $('#main-body').css('top', second-height);
+                $('#main-body').css('top', second_height);
             } else {
                 $('.my-navbar').removeClass('fixed-custom');
                 $('#main-body').css('top', '0px');
