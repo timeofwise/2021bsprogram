@@ -53,6 +53,10 @@ survey_li {
         height:85vh;
         background-attachment: fixed !important;
     }
+    #t_sol_olp{
+        height:40vh;
+        background-attachment: fixed !important;
+    }
 }
 
 @media (max-width: 992px){
@@ -65,6 +69,10 @@ survey_li {
         height:80vh;
         background-attachment: fixed !important;
     }
+    #t_sol_olp{
+        height:45vh;
+        background-attachment: fixed !important;
+    }
 }
 
 @media (max-width: 768px){
@@ -73,6 +81,9 @@ survey_li {
     #t_sol_main_copy{
         height:70vh;
     }
+    #t_sol_olp{
+        height:45vh;
+    }
 }
 
 @media (max-width: 576px){
@@ -80,6 +91,9 @@ survey_li {
 
     #t_sol_main_copy{
         height:60vh;
+    }
+    #t_sol_olp{
+        height:45vh;
     }
 }
 
@@ -108,3 +122,14 @@ survey_li {
     background-color:gray;
     color:#cacaca;
 }
+
+#t_sol_olp header {
+    max-width:80%;
+    position:relative;
+    left:50%;
+    top:50%;
+    transform:translateX(-50%) translateY(-50%);
+    font-size:1rem;
+    text-align:center;
+}
+
