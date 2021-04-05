@@ -172,3 +172,10 @@ survey_li {
     text-align:center;
 }
 
+#goods_img{
+    background:url('/static/img/softwares/t-solution/goods_spec_orange.jpg') no-repeat center top !important;
+    background-size:cover;
+    width:100%;
+    overflow:hidden;
+}
+
