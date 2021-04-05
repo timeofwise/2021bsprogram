@@ -179,3 +179,25 @@ survey_li {
     overflow:hidden;
 }
 
+#goods_desc{
+    line-height:140%;
+    margin-bottom:10px;
+}
+
+#table_th th{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight:500;
+    font-size:13px;
+    color:#2a2a2a;
+    padding:4px;
+    vertical-align:middle;
+}
+#table_td td{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight:400;
+    font-size:13px;
+    color:#808080;
+    padding:4px;
+    vertical-align:middle;
+}
+
