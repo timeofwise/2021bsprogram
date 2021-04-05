@@ -18,15 +18,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item" data-bs-target="#bs-program">
-          <a class="nav-link" aria-current="page" href="{% url 'list' %}">BS PROGRAM</a>
-        </li>
-        <li class="nav-item" data-bs-target="#am-products">
-          <a class="nav-link" aria-current="page" href="{% url 'survey_add' %}">AM PRODUCTS</a>
+      <ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0" id="pills-tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" data-bs-target="#bs-program" href="#">BS PROGRAM</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'list_qr_info' %}">TEST QR-CODE</a>
+          <a class="nav-link" aria-current="page" data-bs-target="#am-products" href="#">AM PRODUCTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">TEST QR-CODE</a>
         </li>
       </ul>
       <ul class="navbar-nav pull-right mb-2 mb-lg-0">
@@ -55,42 +55,34 @@
     </div>
   </div>
 </nav>
-<nav class="navbar navbar-expand-lg navbar-light bg-light my-navbar mb-3">
-  <div class="container">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul id="bs-program" class="navbar-nav me-auto mb-2 mb-lg-0 fade show active">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'list' %}">리스트</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'survey_add' %}">고객 설문</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{% url 'list_qr_info' %}">QR코드 테스트</a>
-        </li>
+<div class="container">
+    <ul id="bs-program" class="nav nav-pills flex-column flex-sm-row my-navbar mt-2 mb-2" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a href="{% url 'list' %}" class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" type="button" role="tab" style="border:0px;margin-right:10px">리스트</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a href="{% url 'survey_add' %}" class="flex-sm-fill text-sm-center nav-link" id="pills-profile-tab" type="button" role="tab" style="border:0px;margin-right:10px">고객 설문</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a href="{% url 'list_qr_info' %}" class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab"  type="button" role="tab" style="border:0px;margin-right:10px">QR코드 테스트</a>
+      </li>
         {% if user.is_authenticated %}
-          {% if user.get_username != 'admin' %}
-          {% else %}
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'parts' %}">소모내역</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{% url 'survey_list' %}">설문 결과</a>
-        </li>
-        <li>
-            <a class="nav-link" aria-current="page" href="{% url 'reports_list' %}">리포트</a>
-        </li>
-          {% endif %}
-        {% endif %}
-      </ul>
-      <ul id="am-products" class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-      </ul>
-    </div>
-  </div>
-</nav>
+              {% if user.get_username != 'admin' %}
+              {% else %}
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'parts' %}">소모내역</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'survey_list' %}">설문 결과</a>
+            </li>
+            <li>
+                <a class="nav-link" aria-current="page" href="{% url 'reports_list' %}">리포트</a>
+            </li>
+              {% endif %}
+            {% endif %}
+    </ul>
+</div>
+
 
 <nav class="navbar navbar-light bg-light fixed-bottom d-print-none">
   <div class="container">
