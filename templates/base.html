@@ -128,10 +128,10 @@
         var second_height = $('#second-header').height();
         $(window).scroll(function(){
             if($(this).scrollTop() > height){
-                $('.my-navbar').addClass('fixed-custom');
+                $('#second-header').addClass('fixed-custom');
                 $('#main-body').css('top', height);
             } else {
-                $('.my-navbar').removeClass('fixed-custom');
+                $('#second-header').removeClass('fixed-custom');
                 $('#main-body').css('top', '0px');
             }
         });
