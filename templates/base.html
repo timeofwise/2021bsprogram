@@ -134,7 +134,18 @@
                 $('#main-body').css('top', '0px');
             }
         });
-
+        $(document).ready(function(){
+            $('#bs-program-primary').click(function(){
+                $(this).parent().parent().parent().parent().parent().next().find('ul').removeClass('visible');
+                $('#bs-program-secondary').addClass('visible');
+            });
+        });
+        $(document).ready(function(){
+            $('#am-products-primary').click(function(){
+                $(this).parent().parent().parent().parent().parent().next().find('ul').removeClass('visible');
+                $('#am-products-secondary').addClass('visible');
+            });
+        });
         $(document).ready(function(){
             if(location.hash.substr(2,2) == 'bs'){
                 $('#bs-program-secondary').addClass('visible');
