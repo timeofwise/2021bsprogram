@@ -26,7 +26,7 @@
           <a id="am-products-primary" class="nav-link" aria-current="page" data-bs-target="#am-products" href="#!am">AM PRODUCTS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">TEST QR-CODE</a>
+          <a id="qr-test-primary" class="nav-link" aria-current="page" href="#!qr">TEST QR-CODE</a>
         </li>
       </ul>
       <ul class="navbar-nav pull-right mb-2 mb-lg-0">
@@ -83,13 +83,13 @@
     </ul>
     <ul id="am-products-secondary" class="nav nav-pills flex-column flex-lg-row my-navbar pt-2 pb-2" id="pills-tab" role="tablist" style="background-color:white;display:none">
       <li class="nav-item" role="presentation">
-        <a href="{% url 'list' %}#!am" class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" type="button" role="tab" style="border:0px;margin-right:10px">리스트2</a>
+        <a href="{% url 'list' %}#!am" class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" type="button" role="tab" style="border:0px;margin-right:10px">Hardware Solutions</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a href="{% url 'survey_add' %}#!am" class="flex-sm-fill text-sm-center nav-link" id="pills-profile-tab" type="button" role="tab" style="border:0px;margin-right:10px">고객 설문2</a>
+        <a href="{% url 'survey_add' %}#!am" class="flex-sm-fill text-sm-center nav-link" id="pills-profile-tab" type="button" role="tab" style="border:0px;margin-right:10px">Software Solutions</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a href="{% url 'list_qr_info' %}#!am" class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab"  type="button" role="tab" style="border:0px;margin-right:10px">QR코드 테스트2</a>
+        <a href="{% url 'list_qr_info' %}#!am" class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab"  type="button" role="tab" style="border:0px;margin-right:10px">Accessories</a>
       </li>
         {% if user.is_authenticated %}
               {% if user.get_username != 'admin' %}
