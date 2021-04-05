@@ -58,25 +58,25 @@
 <div id="second-header" class="container d-print-none">
     <ul id="bs-program-secondary" class="nav nav-pills flex-column flex-lg-row my-navbar pt-2 pb-2" id="pills-tab" role="tablist" style="background-color:white;display:none">
       <li class="nav-item" role="presentation">
-        <a id="list" href="{% url 'list' %}#!bs_list" class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" type="button" role="tab" style="border:0px;margin-right:10px">리스트</a>
+        <a id="list" href="{% url 'list' %}#!bs-list" class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" type="button" role="tab" style="border:0px;margin-right:10px">리스트</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a id="survey" href="{% url 'survey_add' %}#!bs_survey" class="flex-sm-fill text-sm-center nav-link" id="pills-profile-tab" type="button" role="tab" style="border:0px;margin-right:10px">고객 설문</a>
+        <a id="survey" href="{% url 'survey_add' %}#!bs-survey" class="flex-sm-fill text-sm-center nav-link" id="pills-profile-tab" type="button" role="tab" style="border:0px;margin-right:10px">고객 설문</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a id="qr" href="{% url 'list_qr_info' %}#!bs_qr" class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab"  type="button" role="tab" style="border:0px;margin-right:10px">QR코드 테스트</a>
+        <a id="qr" href="{% url 'list_qr_info' %}#!bs-qr" class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab"  type="button" role="tab" style="border:0px;margin-right:10px">QR코드 테스트</a>
       </li>
         {% if user.is_authenticated %}
               {% if user.get_username != 'admin' %}
               {% else %}
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{% url 'parts' %}">소모내역</a>
+                <a id="consumed" class="nav-link" aria-current="page" href="{% url 'parts' %}#!bs-consumed">소모내역</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{% url 'survey_list' %}">설문 결과</a>
+                <a id="survey_result" class="nav-link" aria-current="page" href="{% url 'survey_list' %}#!bs-survey_result">설문 결과</a>
             </li>
             <li>
-                <a class="nav-link" aria-current="page" href="{% url 'reports_list' %}">리포트</a>
+                <a id="survey_report" class="nav-link" aria-current="page" href="{% url 'reports_list' %}#!bs-survey_report">리포트</a>
             </li>
               {% endif %}
             {% endif %}
