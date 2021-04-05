@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'parts',
     'reports',
     'qrcodetest',
+    'products',
 ]
 
 MIDDLEWARE = [
