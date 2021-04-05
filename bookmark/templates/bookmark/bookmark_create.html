@@ -3,7 +3,7 @@
 {% block title %}설비 등록 - {% endblock %}
 
 {% block content %}
-<div class="container">
+<div id="main-body" class="container">
 <form action="" method="post">
     {% csrf_token %}
     {{ form.non_field_errors }}
