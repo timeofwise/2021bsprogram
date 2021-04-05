@@ -128,7 +128,7 @@
         $(window).scroll(function(){
             if($(this).scrollTop() > height){
                 $('.my-navbar').addClass('fixed-custom');
-                $('#main-body').css('top', second_height);
+                $('#main-body').css('top', height);
             } else {
                 $('.my-navbar').removeClass('fixed-custom');
                 $('#main-body').css('top', '0px');
