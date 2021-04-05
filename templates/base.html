@@ -63,9 +63,7 @@
       <li class="nav-item" role="presentation">
         <a id="survey" href="{% url 'survey_add' %}#!bs-survey" class="flex-sm-fill text-sm-center nav-link" id="pills-profile-tab" type="button" role="tab" style="border:0px;margin-right:10px">고객 설문</a>
       </li>
-      <li class="nav-item" role="presentation">
-        <a id="qr" href="{% url 'list_qr_info' %}#!bs-qr" class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab"  type="button" role="tab" style="border:0px;margin-right:10px">QR코드 테스트</a>
-      </li>
+
         {% if user.is_authenticated %}
               {% if user.get_username != 'admin' %}
               {% else %}
@@ -94,7 +92,7 @@
     </ul>
     <ul id="qr-test-secondary" class="nav nav-pills flex-column flex-lg-row my-navbar pt-2 pb-2" id="pills-tab" role="tablist" style="background-color:white;display:none">
       <li class="nav-item" role="presentation">
-        <a href="{% url 'list' %}#!qr-test_list" class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" type="button" role="tab" style="border:0px;margin-right:10px">테스트 페이지</a>
+        <a id="testlist" href="{% url 'list_qr_info' %}#!qr-testlist" class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab"  type="button" role="tab" style="border:0px;margin-right:10px">QR코드 테스트</a>
       </li>
     </ul>
 </div>
