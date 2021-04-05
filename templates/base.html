@@ -55,7 +55,7 @@
     </div>
   </div>
 </nav>
-<div class="container">
+<div id="second-header" class="container">
     <ul id="bs-program-secondary" class="nav nav-pills flex-column flex-sm-row my-navbar pt-2 pb-2" id="pills-tab" role="tablist" style="background-color:white;display:none">
       <li class="nav-item" role="presentation">
         <a href="{% url 'list' %}" class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" type="button" role="tab" style="border:0px;margin-right:10px">리스트</a>
@@ -124,13 +124,14 @@
 <br><br><br><br>
     <script>
         var height= $('#header').height();
+        var second-height = $('#second-header').height();
         $(window).scroll(function(){
             if($(this).scrollTop() > height){
                 $('.my-navbar').addClass('fixed-custom');
-                $('#main-body').addClass('fixed-custom-main-body');
+                $('#main-body').css('top', second-height);
             } else {
                 $('.my-navbar').removeClass('fixed-custom');
-                $('#main-body').removeClass('fixed-custom-main-body');
+                $('#main-body').css('top', '0px');
             }
         });
         $(document).ready(function(){

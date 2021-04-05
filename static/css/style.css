@@ -47,9 +47,7 @@ survey_li {
     z-index:3000;
 }
 
-.fixed-custom-main-body {
-    top:40px!important;
-}
+
 
 #main-body {
     position:relative!important;
