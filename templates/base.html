@@ -92,7 +92,7 @@
         <a href="{% url 'list_qr_info' %}#!am-acc" class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab"  type="button" role="tab" style="border:0px;margin-right:10px">Accessories</a>
       </li>
     </ul>
-    <ul id="qr-products-secondary" class="nav nav-pills flex-column flex-lg-row my-navbar pt-2 pb-2" id="pills-tab" role="tablist" style="background-color:white;display:none">
+    <ul id="qr-test-secondary" class="nav nav-pills flex-column flex-lg-row my-navbar pt-2 pb-2" id="pills-tab" role="tablist" style="background-color:white;display:none">
       <li class="nav-item" role="presentation">
         <a href="{% url 'list' %}#!qr-test_list" class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" type="button" role="tab" style="border:0px;margin-right:10px">테스트 페이지</a>
       </li>
@@ -138,7 +138,7 @@
             });
         });
         $(document).ready(function(){
-            $('#qr-products-primary').click(function(){
+            $('#qr-test-primary').click(function(){
                 $(this).parent().parent().parent().parent().parent().next().find('ul').removeClass('visible');
                 $('#qr-products-secondary').addClass('visible');
             });
@@ -147,25 +147,25 @@
             if(location.hash.substr(2,2) == 'bs'){
                 $('#bs-program-secondary').addClass('visible');
                 $('#am-products-secondary').removeClass('visible');
-                $('#qr-products-secondary').removeClass('visible');
+                $('#qr-test-secondary').removeClass('visible');
                 $('#second-header').find('a').removeClass('active');
                 $('#'+location.hash.substr(5)).addClass('active');
             } else if(location.hash.substr(2,2) == 'am') {
                 $('#bs-program-secondary').removeClass('visible');
                 $('#am-products-secondary').addClass('visible');
-                $('#qr-products-secondary').removeClass('visible');
+                $('#qr-test-secondary').removeClass('visible');
                 $('#second-header').find('a').removeClass('active');
                 $('#'+location.hash.substr(5)).addClass('active');
             } else if(location.hash.substr(2,2) == 'qr') {
                 $('#bs-program-secondary').removeClass('visible');
                 $('#am-products-secondary').removeClass('visible');
-                $('#qr-products-secondary').addClass('visible');
+                $('#qr-test-secondary').addClass('visible');
                 $('#second-header').find('a').removeClass('active');
                 $('#'+location.hash.substr(5)).addClass('active');
             } else {
                 $('#am-products-secondary').removeClass('visible');
                 $('#bs-program-secondary').removeClass('visible');
-                $('#qr-products-secondary').removeClass('visible');
+                $('#qr-test-secondary').removeClass('visible');
             };
         });
 
