@@ -147,18 +147,6 @@
             });
         });
         $(document).ready(function(){
-            if(location.hash.substr(2) == 'bs'){
-                $('#bs-program-secondary').addClass('visible');
-                $('#am-products-secondary').removeClass('visible');
-            } else if(location.hash.substr(2) == 'am') {
-                $('#am-products-secondary').addClass('visible');
-                $('#bs-program-secondary').removeClass('visible');
-            } else {
-                $('#am-products-secondary').removeClass('visible');
-                $('#bs-program-secondary').removeClass('visible');
-            };
-        });
-        $(document).ready(function(){
             if(location.hash.substr(2,2) == 'bs'){
                 $('#bs-program-secondary').addClass('visible');
                 $('#am-products-secondary').removeClass('visible');
@@ -169,7 +157,6 @@
                 $('#am-products-secondary').removeClass('visible');
                 $('#bs-program-secondary').removeClass('visible');
             };
-
         });
 
     </script>
