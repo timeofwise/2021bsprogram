@@ -159,10 +159,10 @@
             };
         });
         $(document).ready(function(){
-            if(location.hash.substr(2) == 'bs'){
+            if(location.hash.substr(2,3) == 'bs'){
                 $('#bs-program-secondary').addClass('visible');
                 $('#am-products-secondary').removeClass('visible');
-            } else if(location.hash.substr(2) == 'am') {
+            } else if(location.hash.substr(2,3) == 'am') {
                 $('#am-products-secondary').addClass('visible');
                 $('#bs-program-secondary').removeClass('visible');
             } else {
