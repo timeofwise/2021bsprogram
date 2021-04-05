@@ -150,9 +150,13 @@
             if(location.hash.substr(2,2) == 'bs'){
                 $('#bs-program-secondary').addClass('visible');
                 $('#am-products-secondary').removeClass('visible');
+                $('#second-header').find('a').removeClass('active');
+                $('#'+location.hash.substr(5)).addClass('active');
             } else if(location.hash.substr(2,2) == 'am') {
                 $('#am-products-secondary').addClass('visible');
                 $('#bs-program-secondary').removeClass('visible');
+                $('#second-header').find('a').removeClass('active');
+                $('#'+location.hash.substr(5)).addClass('active');
             } else {
                 $('#am-products-secondary').removeClass('visible');
                 $('#bs-program-secondary').removeClass('visible');
