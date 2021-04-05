@@ -66,3 +66,18 @@ survey_li {
 .visible {
     display : flex!important;
 }
+
+/*
+----------Products
+*/
+
+/* Badge Option */
+#ok_badge{
+    background-color:gray;
+    color:#0d1049 !important;
+}
+
+#no_badge{
+    background-color:gray;
+    color:#cacaca;
+}
