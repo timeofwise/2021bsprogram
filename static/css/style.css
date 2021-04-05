@@ -50,3 +50,8 @@ survey_li {
 .fixed-custom-main-body {
     top:40px!important;
 }
+
+#main_body {
+    position:relative!important;
+    margin-top:20px!important;
+}
