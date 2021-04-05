@@ -174,7 +174,7 @@ survey_li {
 
 #goods_img{
     background:url('/static/img/softwares/t-solution/goods_spec_orange.jpg') no-repeat center top !important;
-    background-size:contain;
+    background-size:contain !important;
     width:auto;
     overflow:hidden;
 }
