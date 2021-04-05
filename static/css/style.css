@@ -51,6 +51,7 @@ survey_li {
 
     #t_sol_main_copy{
         height:85vh;
+        background-attachment: fixed !important;
     }
 }
 
@@ -62,6 +63,7 @@ survey_li {
 
     #t_sol_main_copy{
         height:80vh;
+        background-attachment: fixed !important;
     }
 }
 
