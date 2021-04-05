@@ -136,13 +136,13 @@
         });
         $(document).ready(function(){
             $('#bs-program-primary').click(function(){
-                $('#second-header').removeClass('visible');
+                $(this).parent().removeClass('visible');
                 $('#bs-program-secondary').addClass('visible');
             });
         });
         $(document).ready(function(){
             $('#am-products-primary').click(function(){
-                $('#second-header').removeClass('visible');
+                $(this).parent().removeClass('visible');
                 $('#am-products-secondary').addClass('visible');
             });
         });
