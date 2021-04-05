@@ -20,10 +20,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0" id="pills-tab" role="tablist">
         <li class="nav-item">
-          <a id="bs-program-primary" class="nav-link" aria-current="page" data-bs-target="#bs-program" href="#bs">BS PROGRAM</a>
+          <a id="bs-program-primary" class="nav-link" aria-current="page" data-bs-target="#bs-program" href="#!bs">BS PROGRAM</a>
         </li>
         <li class="nav-item">
-          <a id="am-products-primary" class="nav-link" aria-current="page" data-bs-target="#am-products" href="#am">AM PRODUCTS</a>
+          <a id="am-products-primary" class="nav-link" aria-current="page" data-bs-target="#am-products" href="#!am">AM PRODUCTS</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">TEST QR-CODE</a>
@@ -145,6 +145,18 @@
                 $('#am-products-secondary').addClass('visible');
                 $('#bs-program-secondary').removeClass('visible');
             });
+        });
+        $(document).ready(function(){
+            if(location.hash.substr(2) == 'bs'){
+                $('#bs-program-secondary').addClass('visible');
+                $('#am-products-secondary').removeClass('visible');
+            } else if(location.hash.substr(2) == 'am') {
+                $('#am-products-secondary').addClass('visible');
+                $('#bs-program-secondary').removeClass('visible');
+            } else {
+                $('#am-products-secondary').removeClass('visible');
+                $('#bs-program-secondary').removeClass('visible');
+            };
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
