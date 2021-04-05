@@ -32,7 +32,7 @@
                     <th scope="col">결과</th>
                     <th scope="col">진단 및 확인</th>
                     <th scope="col">삭제</th>
-                    <th scope="col">출력</th>
+
                 </tr>
             </thead>
             <tbody>
@@ -68,7 +68,7 @@
                         {% else %}
                         <td><a href="{% url 'delete' pk=bookmark.id %}" class="btn btn-danger btn-sm">삭제</a></td>
                         {% endif %}
-                        <td><a href="{% url 'print' pk=bookmark.id %}" class="btn btn-info btn-sm">출력</a></td>
+
                     </tr>
                 {% endfor %}
             </tbody>
