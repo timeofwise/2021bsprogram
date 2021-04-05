@@ -102,8 +102,10 @@
         $(window).scroll(function(){
             if($(this).scrollTop() > height){
                 $('.my-navbar').addClass('fixed-custom');
+                $('#main-body').addClass('fixed-custom-main-body');
             } else {
                 $('.my-navbar').removeClass('fixed-custom');
+                $('#main-body').removeClass('fixed-custom-main-body');
             }
         });
     </script>
