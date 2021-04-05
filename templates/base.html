@@ -20,10 +20,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav nav-pills me-auto mb-2 mb-lg-0" id="pills-tab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" data-bs-target="#bs-program" href="#">BS PROGRAM</a>
+          <a id="bs-program-primary" class="nav-link" aria-current="page" data-bs-target="#bs-program" href="#">BS PROGRAM</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" data-bs-target="#am-products" href="#">AM PRODUCTS</a>
+          <a id="am-products-primary" class="nav-link" aria-current="page" data-bs-target="#am-products" href="#">AM PRODUCTS</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="#">TEST QR-CODE</a>
@@ -56,7 +56,7 @@
   </div>
 </nav>
 <div class="container">
-    <ul id="bs-program" class="nav nav-pills flex-column flex-sm-row my-navbar pt-2 pb-2" id="pills-tab" role="tablist" style="background-color:white">
+    <ul id="bs-program-secondary" class="nav nav-pills flex-column flex-sm-row my-navbar pt-2 pb-2" id="pills-tab" role="tablist" style="background-color:white;display:none">
       <li class="nav-item" role="presentation">
         <a href="{% url 'list' %}" class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" type="button" role="tab" style="border:0px;margin-right:10px">리스트</a>
       </li>
@@ -65,6 +65,31 @@
       </li>
       <li class="nav-item" role="presentation">
         <a href="{% url 'list_qr_info' %}" class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab"  type="button" role="tab" style="border:0px;margin-right:10px">QR코드 테스트</a>
+      </li>
+        {% if user.is_authenticated %}
+              {% if user.get_username != 'admin' %}
+              {% else %}
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'parts' %}">소모내역</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{% url 'survey_list' %}">설문 결과</a>
+            </li>
+            <li>
+                <a class="nav-link" aria-current="page" href="{% url 'reports_list' %}">리포트</a>
+            </li>
+              {% endif %}
+            {% endif %}
+    </ul>
+    <ul id="am-products-secondary" class="nav nav-pills flex-column flex-sm-row my-navbar pt-2 pb-2" id="pills-tab" role="tablist" style="background-color:white;display:none">
+      <li class="nav-item" role="presentation">
+        <a href="{% url 'list' %}" class="flex-sm-fill text-sm-center nav-link active" id="pills-home-tab" type="button" role="tab" style="border:0px;margin-right:10px">리스트2</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a href="{% url 'survey_add' %}" class="flex-sm-fill text-sm-center nav-link" id="pills-profile-tab" type="button" role="tab" style="border:0px;margin-right:10px">고객 설문2</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a href="{% url 'list_qr_info' %}" class="flex-sm-fill text-sm-center nav-link" id="pills-contact-tab"  type="button" role="tab" style="border:0px;margin-right:10px">QR코드 테스트2</a>
       </li>
         {% if user.is_authenticated %}
               {% if user.get_username != 'admin' %}
@@ -107,6 +132,18 @@
                 $('.my-navbar').removeClass('fixed-custom');
                 $('#main-body').removeClass('fixed-custom-main-body');
             }
+        });
+        $(document).ready(function(){
+            $('#bs-program-primary').click(function(){
+                $('#bs-program-secondary').addClass('visible');
+                $('#am-products-secondary').removeClass('visible');
+            });
+        });
+        $(document).ready(function(){
+            $('#am-products-primary').click(function(){
+                $('#am-products-secondary').addClass('visible');
+                $('#bs-program-secondary').removeClass('visible');
+            });
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
